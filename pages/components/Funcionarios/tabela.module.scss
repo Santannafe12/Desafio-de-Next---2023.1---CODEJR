@@ -1,0 +1,36 @@
+.tableContainer {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  
+.table {
+    width: 100%;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    padding: 2rem;
+  
+    th,
+    td {
+      padding: 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    th {
+      background-color: #f2f2f2;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+  
+      th,
+      td {
+        padding: 0.3rem;
+      }
+    }
+  }

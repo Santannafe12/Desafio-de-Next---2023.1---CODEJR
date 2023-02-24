@@ -1,0 +1,59 @@
+.boxContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+    width: 60%;
+    margin: 0 auto;
+    height: 300px;
+    margin-top: 2rem;
+
+    @media screen and (max-width: 1200px) {
+        width: 80%;
+        grid-template-columns: repeat(1, 1fr);
+
+        .container {
+            padding: 2.5rem;
+        }
+
+    }
+
+    .box {
+        display: grid;
+        grid-template-rows: 1fr auto;
+
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        .container {
+            position: relative;
+
+            .text {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                margin: 0;
+                padding: 1.2rem;
+                background-image: linear-gradient(to right, rgba(141,3,168,0.5), rgba(163,155,146,0.2));
+                color: #fff;
+                text-align: center;
+                font-size: 22px;
+                font-weight: 600;
+
+                @media screen and (max-width: 1200px) {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+.image_categorias {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}

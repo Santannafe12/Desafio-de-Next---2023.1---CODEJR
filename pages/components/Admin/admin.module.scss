@@ -1,0 +1,55 @@
+.box__admin {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tableContainer {
+    width: 100%;
+    background-color: #fff;
+  }
+  
+.table {
+    width: 100%;
+    font-size: 18px;
+
+    th {
+      font-size: 25px;
+      padding: 0.5rem;
+      text-align: left;
+      background-color: #fff;
+      color: #000F18;
+    }
+
+    td {
+      padding: 0.5rem;
+      text-align: left;
+      background-color: #fff;
+      color: black;
+    }
+  
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+  
+      th,
+      td {
+        padding: 0.3rem;
+      }
+    }
+  }
+
+  .crud__box {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .crud__icons {
+    font-size: 40px;
+    cursor: pointer;
+    color: #000F18;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      color: #256e9e;
+      transform: scale(1.03);
+    }
+  }

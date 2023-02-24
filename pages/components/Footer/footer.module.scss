@@ -1,0 +1,122 @@
+.section__padding {
+    padding: 4rem 4rem;
+}
+
+.footer {
+    background-color: #000F18;
+    width: 100%;
+}
+
+.sb__footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.footer__links_div {
+    width: 150px;
+    margin: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: white;
+
+    h4 {
+        font-size: 22px;
+        line-height: 20px;
+        margin-bottom: 0.9rem;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 15px;
+        margin: 0.5rem 0;
+        cursor: pointer;
+
+        &:hover {
+            color: #6289EC;
+            transition: 0.3s ease-in-out;
+        }
+    }
+}
+
+.footer__links_next {
+    color: lightgray;
+    text-decoration: none;
+}
+
+.socialmedia {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer__imagem {
+    margin-right: 0.7rem;
+}
+
+.footer__below {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.footer__below_links {
+    display: flex;
+    flex-direction: row;
+
+    p {
+        font-size: 15px;
+        line-height: 15px;
+        margin-left: 2rem;
+        color: white;
+
+        &:hover {
+            color: #6289EC;
+            transition: 0.3s ease-in-out;
+        }
+    }
+}
+
+.hr {
+    color: white !important;
+    width: 100%;
+}
+
+.footer__copyright p {
+    font-size: 13px;
+    line-height: 15px;
+    color: rgb(139, 139, 139);
+    font-weight: 600;
+}
+
+@media screen and (max-width: 580px) {
+    .footer__links div {
+        margin: 1rem 0;
+    }
+
+    .footer__below {
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .footer__below_links {
+        flex-direction: column;
+
+        p {
+            margin-left: 0rem;
+            margin-top: 1rem;
+        }
+    }
+
+}

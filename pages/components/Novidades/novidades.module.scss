@@ -1,0 +1,79 @@
+.div__Novidades {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+  max-width: 90%;
+  margin-top: 1.5rem;
+  margin-bottom: 10rem;
+  gap: 5rem;
+
+  .div__NovidadesImagens {
+    margin: 0 auto;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      z-index: 10;
+    }
+
+    .imagem_redonda {
+      cursor: pointer;
+      border-radius: 20px;
+
+      &:hover {
+        box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 1);
+      }
+    }
+  }
+  
+  .div__NovidadesParagrafo {
+    color: white;
+    overflow: auto;
+    text-align: start;
+    font-size: 20px;
+    max-width: 460px;
+    height: 6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #000F18;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #9e9d9d;
+    }
+
+  }
+
+  .div__NovidadesLancamento {
+    color: red;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .div__Novidades {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    gap: 0;
+
+    .div__NovidadesImagens {
+      max-width: 100%;
+      margin-top: 2rem;
+
+      .imagem_redonda {
+        max-width: 100%;
+      }
+    }
+  }
+}

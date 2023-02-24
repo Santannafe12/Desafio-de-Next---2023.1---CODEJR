@@ -1,0 +1,111 @@
+.carousel__Box {
+  width: 1100px;
+  height: auto;
+  margin-bottom: 6rem;
+}
+
+.caorusel {
+  position: relative;
+  margin: 0 auto;
+}
+
+.imageContainer {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0 auto;
+
+    &:hover {
+      box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 1);
+      transform: scale(1.02);
+      z-index: 10;
+    }
+
+    .imagem_redonda {
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+  }
+
+.controls {
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 1.2rem;
+}
+
+.indicatorsImage {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .indicatorImage {
+    border-radius: 20px;
+    max-width: 250px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .activeIndicatorImage {
+    opacity: 30%;
+  }
+}
+
+.controls__Botao {
+  display: none;
+}
+
+  @media (max-width: 1150px) {
+
+    .carousel__Box {
+      margin: 0 16px; 
+      height: auto;
+    }
+    
+    .imageContainer {
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .indicatorsImage {
+      display: none;
+    }
+
+    .controls__Botao {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -2rem;
+      position: absolute;
+      width: 100%;
+  
+      .indicatorBotao {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        margin: 0 0.5rem;
+        background-color: transparent;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+  
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+      
+      .activeIndicatorBotao {
+        background-color: #fff;
+      }
+    }
+  }

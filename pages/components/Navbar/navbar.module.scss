@@ -1,0 +1,100 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000F18;
+  padding: 0.5rem;
+  color: #fff;
+
+  .navbar__logo {
+    margin: 15px;
+  }
+
+  .navbar__itens {
+    display: flex;
+    gap: 2rem;
+    margin-right: 15px;
+    position: relative;
+  }
+
+}
+
+.texto {
+  font-size: 28px;
+  display: inline-block;
+  position: relative;
+  color: #fff;
+}
+
+.texto:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom left;
+  transition: transform 0.3s ease-out;
+}
+
+.texto:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.hamburguer_sidenav {
+  display: none;
+}
+
+.navbar__logo__2 {
+  display: none;
+}
+
+@media screen and (max-width: 1050px) {
+  .texto {
+    font-size: 22px;
+  }
+
+  .navbar__logo {
+   display: none;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 590px) {
+  .texto {
+    font-size: 15px;
+  }
+
+  .navbar {
+    justify-content: center;
+
+    .navbar__itens {
+      display: flex;
+      gap: 10px;
+      margin: 0;
+      position: relative;
+      justify-content: center;
+    }
+  }
+  
+
+}
+
+@media screen and (max-width: 440px) {
+  .texto {
+    font-size: 10px;
+  }
+}
+
+
+
+
+
+

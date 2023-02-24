@@ -1,0 +1,144 @@
+.side_nav_container {
+    background-color: #000F18;
+    width: 350px;
+    height: 100vh;
+    position: absolute;
+    color: white;
+    transition: 0.8s;
+    z-index: 100000;
+    text-align: center;
+  }
+  
+  .side_nav_container_NX {
+    width: 160px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    transition: 0.6s;
+  }
+
+.nav_upper,
+.nav_heading,
+.nav_menu,
+.menu_item,
+.nav_footer {
+	/* border: 2px solid white; */
+	display: grid;
+}
+
+.nav_heading {
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: 1fr;
+	height: 75px;
+    margin-top: 1rem;
+}
+
+.nav_brand {
+	display: flex;
+	color: white;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+.hamburger_out_1 {
+  display: none;
+}
+
+.hamburger_image_2 {
+    display: none;
+}
+
+.hamburger_out_2 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    cursor: pointer;
+}
+
+.hamburger_in {
+    cursor: pointer;
+}
+
+.nav_menu {
+	grid-template-rows: repeat(7, 1fr);
+	margin-top: 50px;
+}
+
+.menu_item {
+	height: 57px;
+	display: flex;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: auto 20px 2rem;
+    align-items: center;
+
+    p {
+        margin-left: 10px;
+    }
+
+    &:hover {
+        background-color: #1B2931;
+        padding: 2px;
+        border-radius: 10px;
+        padding-left: 10px;
+    }
+
+}
+
+.menu_item_NX {
+    margin: auto 20px 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.menu_item_icon:hover {
+    transform: scale(1.08);
+    transition: 0.3s ease-in-out;
+}
+
+.nav_footer {
+	width: 100%;
+	height: 87px;
+}
+
+.nav_details {
+	display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.nav_footer_avatar {
+    margin-right: 1.5rem;
+}
+
+.nav_footer_user_name {
+	font-size: 18px;
+	font-weight: 900;
+}
+
+.nav_footer_user_position {
+	color: gray;
+}
+
+.logout_icon_div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin-top: 2.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+.logout_icon {
+    cursor: pointer;
+}
+
+.logout_icon:hover {
+	transform: scale(1.1);
+}
+

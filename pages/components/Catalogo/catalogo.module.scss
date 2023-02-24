@@ -1,0 +1,73 @@
+.box {
+    width: 60%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    opacity: 85%;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 100%;
+    }
+  
+    .image {
+        background-color: blue;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 6.5px 0px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .text {
+        background-image: linear-gradient(to right, #000F18, #111F25);
+        border: 1px groove rgb(124, 124, 124);
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        justify-content: space-evenly;
+        box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
+        color: white;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .botao_catalogo {
+            width: 40%;
+            border-radius: 10px;
+            font-size: 20px;
+            background-image: linear-gradient(to right, #8d03a8, #a39b92);
+            opacity: 80%;
+            color: rgb(223, 223, 223);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-weight: 600;
+
+            &:hover {
+                transition: 0.2s ease-in-out;
+                opacity: 100%;
+            }
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        .alternativo_catalogo {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 0;
+            margin-bottom: 0;
+            color: gray;
+            font-size: 20px;
+            margin-top: -80px;
+        }
+    }
+  
+  }

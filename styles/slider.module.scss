@@ -1,0 +1,45 @@
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 500px;
+  
+    .button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px;
+      font-size: 2rem;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1;
+  
+      &:first-child {
+        left: 20px;
+      }
+  
+      &:last-child {
+        right: 20px;
+      }
+    }
+  
+    .images {
+      display: flex;
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+  
+      .imageWrapper {
+        position: relative;
+        height: 100%;
+      }
+    }
+  }
+
+  .imagemslider {
+    object-fit: cover;
+  }
