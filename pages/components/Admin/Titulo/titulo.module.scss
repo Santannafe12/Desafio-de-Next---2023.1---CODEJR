@@ -1,11 +1,22 @@
 .nav__titulo {
-    height: 15vh;
+    height: 126px;
     width: 100%;
     background-color: #000F18;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
     padding: 2rem;
+
+    .admin_icon {
+        font-size: 66px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
 
     h1 {
         color: white;

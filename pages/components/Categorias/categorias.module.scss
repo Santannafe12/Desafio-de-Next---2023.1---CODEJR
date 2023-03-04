@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1rem;
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     height: 300px;
     margin-top: 2rem;
@@ -20,8 +20,8 @@
     .box {
         display: grid;
         grid-template-rows: 1fr auto;
-
         transition: 0.3s ease-in-out;
+        color: white;
 
         &:hover {
             transform: scale(1.05);
@@ -37,14 +37,16 @@
                 width: 100%;
                 margin: 0;
                 padding: 1.2rem;
-                background-image: linear-gradient(to right, rgba(141,3,168,0.5), rgba(163,155,146,0.2));
-                color: #fff;
+                background-image: linear-gradient(to right, rgba(141,3,168,0.3), rgba(163,155,146,0.3));
                 text-align: center;
                 font-size: 22px;
                 font-weight: 600;
 
-                @media screen and (max-width: 1200px) {
+                @media screen and (max-width: 1201px) {
+                    .text {
                     font-size: 30px;
+
+                    }
                 }
             }
         }

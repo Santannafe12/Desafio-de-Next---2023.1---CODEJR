@@ -4,7 +4,6 @@
     display: grid;
     grid-template-columns: 60% 40%;
     opacity: 85%;
-    cursor: pointer;
 
     &:hover {
         opacity: 100%;
@@ -15,6 +14,7 @@
         position: relative;
         border-radius: 8px;
         box-shadow: 6.5px 0px 4px rgba(0, 0, 0, 0.7);
+        cursor: pointer;
     }
 
     .text {
@@ -38,17 +38,12 @@
             border-radius: 10px;
             font-size: 20px;
             background-image: linear-gradient(to right, #8d03a8, #a39b92);
-            opacity: 80%;
             color: rgb(223, 223, 223);
             border: none;
             cursor: pointer;
             padding: 10px;
             font-weight: 600;
-
-            &:hover {
-                transition: 0.2s ease-in-out;
-                opacity: 100%;
-            }
+            transition: 0.2s ease-in-out;
         }
 
         h1 {
@@ -69,5 +64,4 @@
             margin-top: -80px;
         }
     }
-  
   }
