@@ -1,53 +1,83 @@
 import Image from 'next/image';
 import styles from './destaques.module.scss';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { NextArrow, PrevArrow } from '../Utils';
+import { useRef, useState } from 'react';
+import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
+import { destaqueDescontos } from '../constants';
 
-type DestaquesProps = {
-    imagesDestaque: string[];
-    paragrafo: string[];
-    desconto: string[];
-    antigoValor: string[];
-    novoValor: string[];
-};
+export default function Destaques() {
+    const sliderRef = useRef<Slider>(null);
+    const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-export default function Destaques({ imagesDestaque, paragrafo, desconto, antigoValor, novoValor }: DestaquesProps) {
+    const goToNext = () => {
+        sliderRef?.current?.slickNext();
+    };
+
+    const goToPrev = () => {
+        sliderRef?.current?.slickPrev();
+    };
+
+    const settings = {
+        dots: false,
+        infinite: false,
+        speed: 600,
+        slidesToShow: 4,
+        slidesToScroll: 3,
+        initialSlide: 0,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
+        arrows: false,
+        beforeChange: (current: number, next: number) => setCurrentIndex(next),
+        responsive: [
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true,
+                },
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1,
+                },
+            },
+        ],
+    };
+
     return (
-        <div className={styles.div__Destaque}>
-            <div className={styles.div__DestaqueImagens}>
-                <Image src={imagesDestaque[0]} alt={paragrafo[0]} width={280} height={420} quality={100} className={styles.imagem_redonda} />
-                <div className={styles.div__DestaqueParagrafo}><p>{paragrafo[0]}</p></div>
-                <div className={styles.div__DestaqueDesconto}>
-                    <div className={styles.div__Desconto}><p>-{desconto[0]}</p></div>
-                    <div><p className={styles.div__antigoValor}>{antigoValor[0]}</p></div>
-                    <div><p>{novoValor[0]}</p></div>
+        <div className={styles.AppDestaques}>
+            <div className={styles.DestaquesTop}>
+                <h1>Destaques dos descontos dessa semana</h1>
+                <div className={styles.arrowButtonsDestaques}>
+                    < IoIosArrowDropleftCircle className={styles.prevButtonIconDestaques} onClick={goToPrev} />
+                    < IoIosArrowDroprightCircle className={styles.nextButtonIconDestaques} onClick={goToNext} />
                 </div>
             </div>
-            <div className={styles.div__DestaqueImagens}>
-                <Image src={imagesDestaque[1]} alt={paragrafo[1]} width={280} height={420} quality={100} className={styles.imagem_redonda} />
-                <div className={styles.div__DestaqueParagrafo}><p>{paragrafo[1]}</p></div>
-                <div className={styles.div__DestaqueDesconto}>
-                    <div className={styles.div__Desconto}><p>-{desconto[1]}</p></div>
-                    <div><p className={styles.div__antigoValor}>{antigoValor[1]}</p></div>
-                    <div><p>{novoValor[1]}</p></div>
-                </div>
-            </div>
-            <div className={styles.div__DestaqueImagens}>
-                <Image src={imagesDestaque[2]} alt={paragrafo[2]} width={280} height={420} quality={100} className={styles.imagem_redonda} />
-                <div className={styles.div__DestaqueParagrafo}><p>{paragrafo[2]}</p></div>
-                <div className={styles.div__DestaqueDesconto}>
-                    <div className={styles.div__Desconto}><p>-{desconto[2]}</p></div>
-                    <div><p className={styles.div__antigoValor}>{antigoValor[2]}</p></div>
-                    <div><p>{novoValor[2]}</p></div>
-                </div>
-            </div>
-            <div className={styles.div__DestaqueImagens}>
-                <Image src={imagesDestaque[3]} alt={paragrafo[3]} width={280} height={420} quality={100} className={styles.imagem_redonda} />
-                <div className={styles.div__DestaqueParagrafo}><p>{paragrafo[3]}</p></div>
-                <div className={styles.div__DestaqueDesconto}>
-                    <div className={styles.div__Desconto}><p>-{desconto[3]}</p></div>
-                    <div><p className={styles.div__antigoValor}>{antigoValor[3]}</p></div>
-                    <div><p>{novoValor[3]}</p></div>
-                </div>
-            </div>
+            <Slider {...settings} ref={sliderRef} >
+                {destaqueDescontos.map(item => (
+                    <div className={styles.card}>
+                        <div className={styles.cardTopDestaques}>
+                            <Image src={item.imageUrl} alt={item.alt} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />
+                        </div>
+                        <div className={styles.cardMiddleDestaques}>
+                            <p>{item.nome}</p>
+                        </div>
+                        <div className={styles.cardBottomDestaques}>
+                            <p className={styles.cardDiscountDestaques}>-{item.desconto}</p>
+                            <p className={styles.cardOldDestaques}>{item.antigoValor}</p>
+                            <p>{item.novoValor}</p>
+                        </div>
+                    </div>
+                ))}
+            </Slider>
         </div>
     );
 }

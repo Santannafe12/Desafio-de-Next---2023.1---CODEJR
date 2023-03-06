@@ -8,12 +8,6 @@ import Link from 'next/link';
 export default function Titulo() {
     const [showCriarModal, setShowCriarModal] = useState(false);
 
-    function handleConfirmModalAdicionar() {
-        // Do something when the user confirms the modal
-        setShowCriarModal(false);
-    };
-
-
     return (
         <nav className={styles.nav__titulo}>
             <Link href={'/'}><AiFillHome className={styles.admin_icon}/></Link>

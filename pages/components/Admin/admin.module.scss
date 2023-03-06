@@ -4,52 +4,92 @@
 }
 
 .tableContainer {
-    width: 100%;
-    background-color: #fff;
-  }
-  
+  width: 100%;
+  background-color: #fff;
+}
+
 .table {
-    width: 100%;
-    font-size: 18px;
+  width: 100%;
+  font-size: 18px;
 
-    th {
-      font-size: 25px;
-      padding: 0.5rem;
-      text-align: left;
-      background-color: #fff;
-      color: #000F18;
+  th {
+    font-size: 25px;
+    padding: 0.5rem;
+    text-align: left;
+    background-color: #fff;
+    color: #000F18;
+  }
+
+  td {
+    padding: 0.5rem;
+    text-align: left;
+    background-color: #fff;
+    color: black;
+
+    h1 {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1040px) {
+
+    thead {
+      display: none;
     }
 
-    td {
-      padding: 0.5rem;
-      text-align: left;
-      background-color: #fff;
-      color: black;
-    }
-  
-    @media (max-width: 768px) {
-      font-size: 0.8rem;
-  
-      th,
-      td {
-        padding: 0.3rem;
+    tbody,
+    td,
+    tr {
+      display: block;
+      width: 100%;
+      font-size: 2rem;
+
+      h1 {
+        color: #000F18;
+        font-size: 30px;
+        display: flex;
       }
     }
   }
 
-  .crud__box {
-    display: flex;
-    justify-content: space-around;
-  }
-
   .crud__icons {
-    font-size: 40px;
-    cursor: pointer;
-    color: #000F18;
-    transition: 0.3s ease-in-out;
+    font-size: 55px;
+  }
+}
 
-    &:hover {
-      color: #256e9e;
-      transform: scale(1.03);
+.crud__box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.crud__icons {
+  font-size: 40px;
+  cursor: pointer;
+  color: #000F18;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    color: #256e9e;
+    transform: scale(1.03);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .table {
+    td {
+      font-size: 15px;
+    }
+
+    tr {
+      h1 {
+        font-size: 18px;
+      }
+    }
+
+    .crud__icons {
+      font-size: 30px;
     }
   }
+
+
+}

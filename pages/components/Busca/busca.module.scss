@@ -1,6 +1,5 @@
 .container__busca {
     width: 100%;
-    max-width: 1100px;
     margin: 0 auto;
     margin-bottom: 1rem;
     margin-top: 2rem;
@@ -10,15 +9,15 @@
 .box__busca {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .search {
     display: flex;
-    flex: 1 1 auto;
     margin-right: 1rem;
     background: #3F3F3F;
     border-radius: 20px;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
 
     input {
         flex: 1 1 auto;
@@ -38,7 +37,6 @@
 
 
     button {
-        flex: 0 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -83,33 +81,14 @@
 }
 
 @media (max-width: 700px) {
-    .container__busca {
-        margin-left: 1rem;
-    }
 
     .box__busca {
         flex-direction: column;
+        margin: 0 auto;
     }
 
     .search {
         margin-bottom: 1rem;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    .container__busca {
-        margin-bottom: 1rem;
-    }
-
-    .search {
-        padding: 5px;
-        margin-top: 10px;
-    }
-
-    .parametros {
-        display: flex;
-        justify-content: space-evenly;
-        font-size: 12px;
-        gap: 5px;
+        padding: 0 0rem;
     }
 }

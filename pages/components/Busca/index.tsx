@@ -15,7 +15,7 @@ export default function Busca() {
       <div className={styles.box__busca}>
         <div className={styles.search}>
           <input type="text" placeholder="Procurar jogos" />
-          <button type="submit"><AiOutlineSearch /></button>
+          <button><AiOutlineSearch /></button>
         </div>
         <ul className={styles.parametros}>
           {buscaParametros.map((item) => (

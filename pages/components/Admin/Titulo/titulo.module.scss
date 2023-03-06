@@ -43,3 +43,37 @@
         }
     }
 }
+
+@media screen and (max-width: 1040px) {
+    .nav__titulo {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+
+        .admin_icon {
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .nav__titulo {
+        h1 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .nav__titulo_botao {
+            width: 100%;
+
+            .titulo__icons {
+                display: none;
+            }
+        }
+    }
+}
+

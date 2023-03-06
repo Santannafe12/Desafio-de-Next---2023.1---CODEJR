@@ -32,24 +32,6 @@
         }
     }
 
-    .novidades {
-        width: 87%;
-        margin: 0 auto;
-        margin-bottom: 2rem;
-
-        h1 {
-            font-size: 30px;
-            color: white;
-        }
-
-        @media (max-width: 1111px) {
-            h1 {
-                text-align: center;
-            }
-        }
-
-    }
-
     .curiosidades {
         display: flex;
         justify-content: center;
@@ -60,10 +42,3 @@
     }
 
 }
-
-.catalogo {
-    display: flex;
-    justify-content: center;
-    height: 500px;
-}
-

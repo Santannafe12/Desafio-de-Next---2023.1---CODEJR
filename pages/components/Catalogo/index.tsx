@@ -1,23 +1,21 @@
-import styles from './catalogo.module.scss'
-import Image from 'next/image';
+import React from 'react';
+import styles from './catalogo.module.scss';
 
-interface BoxProps {
-    imageUrl: string;
-    text: string;
-    text2: string;
+interface Props {
+  imageUrl: string;
+  text: string;
 }
 
-export default function Catalogo({ imageUrl, text, text2, }: BoxProps ) {
-    return (
-        <div className={styles.box}>
-            <div className={styles.image}>
-                <Image src={imageUrl} alt="Image" fill className={styles.imagem_catalogo} quality={100} />
-            </div>
-            <div className={styles.text}>
-                <h1>{text}</h1>
-                <p className={styles.alternativo_catalogo}>{text2}</p>
-                <div><button className={styles.botao_catalogo}>Catálogo completo</button></div>
-            </div>
-        </div>
-    );
-}
+const Catalogo: React.FC<Props> = ({ imageUrl, text }) => {
+  return (
+    <div className={styles.AppCatalogo}>
+      <div className={styles.TextCatalogo}>
+        <h1>Explore nosso catálogo!</h1>
+        <p>Pesquise por gênero, características, preço e muito mais para encontrar seu próximo jogo favorito.</p>
+        <button>Catálogo Completo</button>
+      </div>
+    </div>
+  );
+};
+
+export default Catalogo;
