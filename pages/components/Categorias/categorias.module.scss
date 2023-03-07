@@ -1,7 +1,16 @@
 .CategoriasApp {
-    width: 60%;
+    width: 85%;
     margin: 0 auto;
     margin-bottom: 8rem;
+
+    @media screen and (max-width: 650px) {
+        margin-bottom: 5rem;
+    }
+
+    .categoriasSlider {
+        background: #0A1A22;
+        padding: 20px;
+    }
 
     .CategoriasTop {
         width: 96.6%;
@@ -9,22 +18,47 @@
         display: flex;
         justify-content: space-between;
 
-        h1 {
-            font-size: 30px;
-            color: white;
-            width: 50%;
-            font-weight: 400;
-
-            @media (max-width: 700px) {
-                font-size: 20px;
-            }
+        @media screen and (max-width: 900px) {
+            width: 90%;
         }
+
+        div {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+      
+            &:hover {
+              
+              .CategoriasTopIcon {
+                transform: scale(1.02);
+                transform: translateX(10px);
+              }
+            }
+      
+            .CategoriasTopIcon {
+              color: rgb(158, 158, 158);
+              margin-left: 0.5rem;
+              font-size: 20px;
+              margin-top: 0.3rem;
+              transition: transform 0.3s;
+            }
+      
+            h1 {
+              font-size: 30px;
+              color: white;
+              font-weight: 400;
+      
+              @media (max-width: 700px) {
+                font-size: 20px;
+              }
+            }
+          }
     }
 
     .arrowButtonsCategorias {
         width: 50%;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
         margin-bottom: 0.8rem;
 
@@ -57,37 +91,36 @@
     }
 
     .card {
-        opacity: 75%;
         transition: 0.15s;
+        opacity: 80%;
 
         &:hover {
             opacity: 100%;
         }
 
         .cardTop {
-            margin-top: 1rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-
+            
             .CategoriasImg {
                 cursor: pointer;
-                width: 82%;
-                height: 82%;
+                width: 95%;
+                height: 100%;
             }
         }
 
         .cardBottom {
-            width: 82%;
-            transform: translateY(-60px);
+            width: 95%;
 
             p {
-                font-size: 20px;
+                font-size: 24px;
                 text-align: center;
                 color: white;
                 padding: 20px;
                 background-image: linear-gradient(to right, rgba(141, 3, 168, 0.5), rgba(163, 155, 146, 0.5));
+                cursor: pointer;
             }
         }
     }

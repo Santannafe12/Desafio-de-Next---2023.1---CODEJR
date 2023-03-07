@@ -7,43 +7,84 @@
     padding: 30px;
     justify-content: center;
     align-items: center;
-
+  
     .TextCatalogo {
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+  
+      h1 {
+        color: white;
+        text-align: center;
+        font-size: 45px;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+      }
+  
+      p {
+        color: rgb(201, 200, 200);
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+  
+      button {
         padding: 20px;
-        align-items: center;
-        justify-content: center;
-
-        h1 {
-            color: white;
-            text-align: center;
-            font-size: 45px;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
+        background-color: rgb(255, 255, 255);
+        font-size: 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        opacity: 70%;
+  
+        &:hover {
+          opacity: 100%;
         }
-
-        p {
-            color: rgb(201, 200, 200);
-            font-size: 26px;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        button {
-            padding: 20px;
-            background-color: rgb(255, 255, 255);
-            font-size: 20px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s ease-in-out;
-            opacity: 70%;
-
-            &:hover {
-                opacity: 100%;
-            }
-        }
+      }
     }
-}
+    
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      padding: 20px;
+  
+      .TextCatalogo {
+        h1 {
+          font-size: 32px;
+        }
+        
+        p {
+          font-size: 20px;
+          margin-bottom: 2rem;
+        }
+  
+        button {
+          font-size: 18px;
+          padding: 12px;
+        }
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      width: 90%;
+  
+      .TextCatalogo {
+        h1 {
+          font-size: 28px;
+        }
+        
+        p {
+          font-size: 18px;
+          margin-bottom: 1.5rem;
+        }
+  
+        button {
+          font-size: 16px;
+          padding: 10px;
+        }
+      }
+    }
+  }

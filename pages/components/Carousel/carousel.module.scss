@@ -1,106 +1,250 @@
-.carousel__Box {
-  width: 1200px;
-  height: auto;
-  margin-bottom: 6rem;
-}
-
-.caorusel {
-  position: relative;
-  margin: 0 auto;
-}
-
-.imageContainer {
-    position: relative;
-    height: 650px;
-    width: 100%;
-    border-radius: 20px;
-    transition: 0.3s;
-    margin: 0 auto;
-    opacity: 85%;
-
-    &:hover {
-      opacity: 100%;
-    }
-
-    .imagem_redonda {
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-  }
-
-.controls {
-  max-width: 1300px;
-  margin: 0 auto;
-  margin-top: 1.2rem;
-}
-
-.indicatorsImage {
+.carouselApp {
   width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 
-  .indicatorImage {
-    border-radius: 20px;
-    max-width: 250px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    margin-right: 7.5px;
-    margin-left: 7.5px;
+  @media screen and (max-width: 1100px) {
+    display: none;
   }
 
-  .activeIndicatorImage {
-    opacity: 30%;
-  }
-}
+  .carousel__Box {
+    width: 80%;
+    height: auto;
+    margin-bottom: 6rem;
 
-.controls__Botao {
-  display: none;
-}
+    .carousel {
+      position: relative;
+      margin: 0 auto;
 
-  @media (max-width: 1150px) {
+      .imageContainer {
+        position: relative;
+        height: 800px;
+        width: 100%;
+        transition: 0.3s;
+        margin: 0 auto;
+        cursor: pointer;
 
-    .carousel__Box {
-      margin: 0 16px; 
-      height: auto;
+        .imagem_redonda {
+          cursor: pointer;
+        }
+
+        .carousel__text {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+          color: white;
+          font-size: 2vw;
+          text-align: left;
+          padding: 20px;
+          z-index: 1;
+
+          @media (max-width: 768px) {
+            font-size: 16px;
+            padding: 10px;
+          }
+
+          .carouselTextTop {
+            margin-top: 10rem;
+
+            @media screen and (max-width: 810px) {
+              margin-top: 0rem;
+            }
+
+            p {
+              font-size: 20px;
+              width: 35%;
+              margin-bottom: 2rem;
+              font-family: 'Roboto', sans-serif;
+              font-weight: 500;
+              letter-spacing: 1.5px;
+              cursor: text;
+
+              @media (max-width: 768px) {
+                font-size: 16px;
+                margin-bottom: 1.5rem;
+                width: 65%;
+              }
+
+              @media screen and (max-width: 450px) {
+                font-size: 10px;
+                margin-bottom: 1rem;
+                width: 80%;
+              }
+            }
+          }
+
+          .carouselPurchaseTop {
+
+            p {
+              font-size: 20px;
+              color: rgb(233, 233, 250);
+              margin-bottom: 0.3rem;
+              letter-spacing: 1.5px;
+              width: 80%;
+              cursor: text;
+
+              @media (max-width: 768px) {
+                font-size: 14px;
+                margin-bottom: 0.2rem;
+              }
+
+              @media screen and (max-width: 450px) {
+                font-size: 8px;
+                margin-bottom: 0.1rem;
+              }
+            }
+
+            .carouselPurchaseButton {
+
+              button {
+                margin-right: 1rem;
+                font-size: 20px;
+                border: none;
+                cursor: pointer;
+                padding: 16px;
+                border-radius: 4px;
+
+                @media (max-width: 768px) {
+                  font-size: 16px;
+                  padding: 10px;
+                }
+
+                @media screen and (max-width: 450px) {
+                  font-size: 10px;
+                  padding: 5px;
+                }
+              }
+
+              .carouselBuyNow {
+                transition: 0.3s;
+
+                &:hover {
+                  opacity: 80%;
+                }
+              }
+
+              .carouselWishlist {
+                background: transparent;
+                transition: 0.3s;
+                color: white;
+
+                &:hover {
+                  background: rgb(255, 255, 255, 0.2);
+                }
+              }
+            }
+          }
+        }
+      }
     }
-    
-    .imageContainer {
+
+    .controls {
       width: 100%;
-      height: 0;
-      padding-bottom: 56.25%;
+      margin: 0 auto;
+      margin-top: 1.2rem;
     }
 
     .indicatorsImage {
-      display: none;
-    }
-
-    .controls__Botao {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      margin-top: -2rem;
-      position: absolute;
-      width: 100%;
-  
-      .indicatorBotao {
-        width: 1rem;
-        height: 1rem;
-        border-radius: 50%;
-        border: 2px solid #fff;
-        margin: 0 0.5rem;
-        background-color: transparent;
+
+      .indicatorImage {
         cursor: pointer;
         transition: transform 0.2s ease;
-  
-        &:hover {
-          transform: scale(1.2);
+        border-radius: 20px;
+      }
+
+      .activeIndicatorImage {
+        opacity: 30%;
+      }
+    }
+
+    @media (max-width: 1562px) {
+      .carousel__Box {
+        margin: 0 16px;
+        height: auto;
+      }
+
+      .carousel {
+        .imageContainer {
+          width: 100%;
+          height: 0;
+          padding-bottom: 56.25%;
         }
       }
-      
-      .activeIndicatorBotao {
-        background-color: #fff;
+
+      .indicatorsImage {
+        display: none;
+      }
+
+      .controls__Botao {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -2rem;
+        position: absolute;
+        width: 100%;
+
+        .indicatorBotao {
+          width: 1rem;
+          height: 1rem;
+          border-radius: 50%;
+          border: 2px solid #fff;
+          margin: 0 0.5rem;
+          background-color: transparent;
+          cursor: pointer;
+          transition: transform 0.2s ease;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+
+        .activeIndicatorBotao {
+          background-color: #fff;
+        }
       }
     }
   }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    .carousel__text {
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .carouselTextTop {
+      h6 {
+        font-size: 14px;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .carouselPurchaseTop {
+      p {
+        font-size: 14px;
+        margin-bottom: 0.2rem;
+      }
+
+      .carouselPurchaseButton {
+        button {
+          font-size: 16px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

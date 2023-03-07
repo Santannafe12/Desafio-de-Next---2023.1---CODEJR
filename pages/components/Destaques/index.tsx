@@ -7,6 +7,7 @@ import { NextArrow, PrevArrow } from '../Utils';
 import { useRef, useState } from 'react';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
 import { destaqueDescontos } from '../constants';
+import { AiOutlineRight } from 'react-icons/ai';
 
 export default function Destaques() {
     const sliderRef = useRef<Slider>(null);
@@ -38,7 +39,7 @@ export default function Destaques() {
                     slidesToShow: 2,
                     slidesToScroll: 2,
                     infinite: true,
-                    dots: true,
+                    dots: false,
                 },
             },
             {
@@ -55,7 +56,10 @@ export default function Destaques() {
     return (
         <div className={styles.AppDestaques}>
             <div className={styles.DestaquesTop}>
-                <h1>Destaques dos descontos dessa semana</h1>
+                <div>
+                    <h1>Destaques dos descontos dessa semana</h1>
+                    <AiOutlineRight className={styles.DestaquesTopIcon} />
+                </div>
                 <div className={styles.arrowButtonsDestaques}>
                     < IoIosArrowDropleftCircle className={styles.prevButtonIconDestaques} onClick={goToPrev} />
                     < IoIosArrowDroprightCircle className={styles.nextButtonIconDestaques} onClick={goToNext} />
@@ -66,6 +70,9 @@ export default function Destaques() {
                     <div className={styles.card}>
                         <div className={styles.cardTopDestaques}>
                             <Image src={item.imageUrl} alt={item.alt} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />
+                        </div>
+                        <div className={styles.gameInformationDestaques}>
+                            <p>{item.gameInformation}</p>
                         </div>
                         <div className={styles.cardMiddleDestaques}>
                             <p>{item.nome}</p>

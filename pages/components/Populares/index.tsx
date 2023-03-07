@@ -6,6 +6,7 @@ import Image from 'next/image';
 import styles from './populares.module.scss';
 import { novidadesPopulares } from "../constants";
 import { FaShoppingCart } from "react-icons/fa";
+import { AiOutlineRight } from "react-icons/ai";
 
 export default function Populares() {
   const sliderRef = useRef<Slider>(null);
@@ -37,7 +38,7 @@ export default function Populares() {
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -53,7 +54,10 @@ export default function Populares() {
   return (
     <div className={styles.NovidadesApp}>
       <div className={styles.PopularesTop}>
+        <div>
         <h1>Populares entre jogadores</h1>
+        <AiOutlineRight className={styles.PopularesTopIcon}/>
+        </div>
         <div className={styles.arrowButtonsPopulares}>
           < IoIosArrowDropleftCircle className={styles.prevButtonIconPopulares} onClick={goToPrev} />
           < IoIosArrowDroprightCircle className={styles.nextButtonIconPopulares} onClick={goToNext} />
@@ -69,18 +73,20 @@ export default function Populares() {
             <div className={styles.cardMiddle}>
               <p className={styles.description}>{item.description}</p>
             </div>
-            <div className={styles.cardBottom}>
-              <div className={styles.cardPricePop}>
-                <p>{item.price}</p>
-                 <div>
-                 <FaShoppingCart className={styles.cardPriceIconPop}/>
-                  <button>+Carrinho</button>
-                  </div>
+            <div className={styles.gameInformationPop}>
+              <p>{item.gameInformation}</p>
+            </div>
+            <div className={styles.gameBox}>
+              <div className={styles.gameName}>{item.nomePop}</div>
+              <div className={styles.gameInfo}>
+                <div className={styles.gameText}>{item.price}</div>
+                <button className={styles.gameButton}><FaShoppingCart/> +Carrinho</button>
               </div>
             </div>
           </div>
-        ))}
-      </Slider>
-    </div>
+        ))
+        }
+      </Slider >
+    </div >
   )
 }

@@ -3,7 +3,54 @@
     margin: 0 auto;
     margin-top: 8rem;
     margin-bottom: 14rem;
-    cursor: grab;
+
+    @media screen and (max-width: 850px) {
+        margin-bottom: 4rem;
+    }
+
+    .AguardadosTop {
+        width: 96.8%;
+        margin: 0 auto;
+        display: flex;
+        
+        @media screen and (max-width: 900px) {
+            width: 90%;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            width: 50%;
+
+            &:hover {
+                .AguardadosTopIcon {
+                    transform: scale(1.02);
+                    transform: translateX(10px);
+                }
+            }
+
+            .AguardadosTopIcon {
+                color: rgb(158, 158, 158);
+                margin-left: 0.5rem;
+                font-size: 20px;
+                margin-top: 0.3rem;
+                transition: transform 0.3s;
+                margin-bottom: 0.3rem;
+            }
+
+            h1 {
+                font-size: 22px;
+                color: white;
+                font-weight: 400;
+                margin-bottom: 0.3rem;
+
+                @media (max-width: 700px) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
 
     .arrowButtonsAguardados {
         width: 96.9%;
@@ -107,7 +154,7 @@
 
             h1 {
                 font-size: 26px;
-                color: white;
+                color: rgb(171, 236, 220);
                 text-align: center;
             }
         }
@@ -192,9 +239,13 @@
             width: 90%;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
             align-items: center;
             cursor: default;
+            justify-content: space-between;
+
+            @media screen and (max-width: 600px) {
+                justify-content: left;
+            }
 
             p {
                 color: rgb(126, 125, 125);
@@ -209,63 +260,76 @@
             .cardBottomIcons {
                 width: 18%;
                 display: flex;
-                justify-content: space-between;
                 color: rgb(255, 255, 255);
-                font-size: 20px;
+                font-size: 22px;
                 cursor: default;
+                margin-left: 2rem;
+
+                @media screen and (max-width: 300px) {
+                    font-size: 14px;
+                    margin-left: 0.5rem;
+                }
+
+                span {
+                    margin-right: 0.8rem;
+
+                    @media screen and (max-width: 300px) {
+                        margin-right: 0.1rem;
+                    }
+                }
             }
         }
 
-            .cardCategories {
-                display: flex;
-                margin: 0 auto;
-                margin-top: 1.2rem;
-                width: 90%;
-    
-                @media screen and (max-width: 500px) {
-                    flex-direction: column;
-                }
+        .cardCategories {
+            display: flex;
+            margin: 0 auto;
+            margin-top: 1.2rem;
+            width: 90%;
 
-                p {
-                    background-color: rgb(78, 78, 78);
-                    padding: 5px;
-                    color: white;
-                    margin-right: 5px;
-                    cursor: pointer;
-
-                    &:hover {
-                        background-color: rgb(131, 125, 125)
-                    }
-                }
+            @media screen and (max-width: 500px) {
+                flex-direction: column;
             }
 
-            .cardAguardadosWishlist {
-                width: 90%;
-                margin: 0 auto;
-                display: flex;
+            p {
+                background-color: rgb(78, 78, 78);
+                padding: 5px;
+                color: white;
+                margin-right: 5px;
+                cursor: pointer;
 
-                button {
-                    width: 50%;
-                    padding: 10px;
-                    font-size: 20px;
-                    margin-top: 1rem;
-                    background-color: #385b6d;
-                    border: none;
-                    cursor: pointer;
-                    color: #7592dd;
+                &:hover {
+                    background-color: rgb(131, 125, 125)
+                }
+            }
+        }
 
-                    @media screen and (max-width: 350px) {
-                        width: 100%;
-                    }
-    
-                    &:hover {
-                        background: linear-gradient(129deg, rgba(64,201,189,1) 30%, rgba(5,149,171,1) 71%);
-                        color: white;
-                    }
+        .cardAguardadosWishlist {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+
+            button {
+                width: 50%;
+                padding: 10px;
+                font-size: 20px;
+                margin-top: 1rem;
+                background-color: #385b6d;
+                border: none;
+                cursor: pointer;
+                color: #7592dd;
+
+                @media screen and (max-width: 350px) {
+                    width: 100%;
+                }
+
+                &:hover {
+                    background: linear-gradient(129deg, rgba(64, 201, 189, 1) 30%, rgba(5, 149, 171, 1) 71%);
+                    color: white;
                 }
             }
         }
     }
+}
 
 
 @media (max-width: 768px) {

@@ -1,12 +1,7 @@
 import React from 'react';
 import styles from './catalogo.module.scss';
 
-interface Props {
-  imageUrl: string;
-  text: string;
-}
-
-const Catalogo: React.FC<Props> = ({ imageUrl, text }) => {
+export default function Catalogo() {
   return (
     <div className={styles.AppCatalogo}>
       <div className={styles.TextCatalogo}>
@@ -17,5 +12,3 @@ const Catalogo: React.FC<Props> = ({ imageUrl, text }) => {
     </div>
   );
 };
-
-export default Catalogo;

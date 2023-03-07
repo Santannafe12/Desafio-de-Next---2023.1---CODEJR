@@ -1,13 +1,12 @@
 import Slider from 'react-slick';
 import React, { useRef, useState } from 'react';
-import { AiFillWindows } from 'react-icons/ai';
-import { FaPlaystation, FaXbox } from 'react-icons/fa';
 import { BsFillCalendarFill } from 'react-icons/bs';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
 import Image from 'next/image';
 import styles from './aguardados.module.scss';
 import { NextArrow, PrevArrow } from '../Utils';
 import { jogosAguardados } from '../constants';
+import { AiOutlineRight } from 'react-icons/ai';
 
 export default function Aguardados() {
   const sliderRef = useRef<Slider>(null);
@@ -39,7 +38,7 @@ export default function Aguardados() {
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -59,10 +58,17 @@ export default function Aguardados() {
         <h1>JOGOS MAIS AGUARDADOS</h1>
         <h6>ANO DE 2023</h6>
       </div>
-      <div className={styles.arrowButtonsAguardados}>
-        < IoIosArrowDropleftCircle className={styles.prevButtonIconAguardados} onClick={goToPrev} />
-        < IoIosArrowDroprightCircle className={styles.nextButtonIconAguardados} onClick={goToNext} />
+      <div className={styles.AguardadosTop}>
+        <div>
+          <h1>Exibir coleção completa</h1>
+          <AiOutlineRight className={styles.AguardadosTopIcon} />
+        </div>
+        <div className={styles.arrowButtonsAguardados}>
+          < IoIosArrowDropleftCircle className={styles.prevButtonIconAguardados} onClick={goToPrev} />
+          < IoIosArrowDroprightCircle className={styles.nextButtonIconAguardados} onClick={goToNext} />
+        </div>
       </div>
+
       <Slider {...settings} ref={sliderRef}>
         {jogosAguardados.map(item => (
           <div className={styles.card}>
@@ -83,17 +89,17 @@ export default function Aguardados() {
             <div className={styles.cardBottom}>
               <p>{item.developer}</p>
               <div className={styles.cardBottomIcons}>
-                <FaPlaystation />
-                <FaXbox />
-                <AiFillWindows />
-              </div>
-            </div>
-              <div className={styles.cardCategories}>
-                {item.categories.map(categorie => (
-                  <p>{categorie}</p>
+                {item.devices.map(device => (
+                  <span>{device}</span>
                 ))}
               </div>
-              <div className={styles.cardAguardadosWishlist}><button>+ Lista de desejos</button></div>
+            </div>
+            <div className={styles.cardCategories}>
+              {item.categories.map(categorie => (
+                <p>{categorie}</p>
+              ))}
+            </div>
+            <div className={styles.cardAguardadosWishlist}><button>+ Lista de desejos</button></div>
           </div>
         ))}
       </Slider>

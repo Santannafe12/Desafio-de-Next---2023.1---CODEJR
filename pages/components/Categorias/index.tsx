@@ -4,17 +4,10 @@ import Slider from "react-slick";
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
 import { useRef, useState } from 'react';
 import { NextArrow, PrevArrow } from '../Utils';
+import { AiOutlineRight } from 'react-icons/ai';
+import { categories } from '../constants';
 
-type BoxProps = {
-  image: string;
-  text: string;
-};
-
-type BoxContainerProps = {
-  boxes: BoxProps[];
-};
-
-function BoxContainer(props: BoxContainerProps) {
+export default function Categorias() {
   const sliderRef = useRef<Slider>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
@@ -30,7 +23,7 @@ function BoxContainer(props: BoxContainerProps) {
     dots: false,
     infinite: false,
     speed: 800,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
     nextArrow: <NextArrow />,
@@ -44,7 +37,7 @@ function BoxContainer(props: BoxContainerProps) {
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -60,17 +53,20 @@ function BoxContainer(props: BoxContainerProps) {
   return (
     <div className={styles.CategoriasApp}>
       <div className={styles.CategoriasTop}>
-          <h1>Explore por categorias</h1>
+        <div>
+        <h1>Explore por categorias</h1>
+        <AiOutlineRight className={styles.CategoriasTopIcon}/>
+        </div>
         <div className={styles.arrowButtonsCategorias}>
           < IoIosArrowDropleftCircle className={styles.prevButtonIconCategorias} onClick={goToPrev} />
           < IoIosArrowDroprightCircle className={styles.nextButtonIconCategorias} onClick={goToNext} />
         </div>
       </div>
-      <Slider {...settings} ref={sliderRef}>
-        {props.boxes.map(item => (
+      <Slider {...settings} ref={sliderRef} className={styles.categoriasSlider}>
+        {categories.map(item => (
           <div className={styles.card}>
             <div className={styles.cardTop}  >
-              <Image src={item.image} alt="" width={200} height={280} className={styles.CategoriasImg} quality={100} />
+              <Image src={item.image} alt="" width={3072} height={2048} className={styles.CategoriasImg} quality={100} />
               <div className={styles.cardBottom}>
                 <p className={styles.description}>{item.text}</p>
               </div>
@@ -81,5 +77,3 @@ function BoxContainer(props: BoxContainerProps) {
     </div>
   );
 }
-
-export default BoxContainer;

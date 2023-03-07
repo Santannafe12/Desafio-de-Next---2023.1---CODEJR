@@ -11,31 +11,10 @@
         margin-bottom: 2rem;
     }
 
-    .destaqueBox {
-        width: 100%;
-
-        .destaque {
-            width: 76%;
-            margin: 0 auto;
-            margin-bottom: 2rem;
-        }
-
-        h1 {
-            font-size: 30px;
-            color: white;
-        }
-
-        @media (max-width: 664px) {
-            h1 {
-                text-align: center;
-            }
-        }
-    }
-
     .curiosidades {
         display: flex;
         justify-content: center;
-        width: 60%;
+        width: 70%;
         margin: 0 auto;
         margin-bottom: 10rem;
         margin-top: 15rem;

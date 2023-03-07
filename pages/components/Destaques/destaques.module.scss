@@ -1,8 +1,12 @@
 .AppDestaques {
   width: 85%;
   margin: 0 auto;
-  margin-bottom: 12rem;
+  margin-bottom: 8rem;
   margin-top: 4rem;
+
+  @media screen and (max-width: 650px) {
+    margin-bottom: 4rem;
+}
 
   .DestaquesTop {
     width: 98%;
@@ -10,13 +14,39 @@
     display: flex;
     justify-content: space-between;
 
-    h1 {
-      font-size: 30px;
-      color: white;
-      font-weight: 400;
+    @media screen and (max-width: 900px) {
+      width: 90%;
+  }
 
-      @media (max-width: 700px) {
+    div {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        
+        .DestaquesTopIcon {
+          transform: scale(1.02);
+          transform: translateX(10px);
+        }
+      }
+
+      .DestaquesTopIcon {
+        color: rgb(158, 158, 158);
+        margin-left: 0.5rem;
         font-size: 20px;
+        margin-top: 0.3rem;
+        transition: transform 0.3s;
+      }
+
+      h1 {
+        font-size: 30px;
+        color: white;
+        font-weight: 400;
+
+        @media (max-width: 700px) {
+          font-size: 20px;
+        }
       }
     }
   }
@@ -57,6 +87,23 @@
 
   .card {
 
+    .gameInformationDestaques {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      margin-top: 1.4rem;
+
+      p {
+          text-transform: uppercase;
+          color: rgb(155, 147, 147);
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          line-height: 15px;
+          font-family: Inter,sans-serif;
+      }
+  }
+
     .cardTopDestaques {
       margin-top: 1rem;
 
@@ -65,7 +112,6 @@
         height: 90%;
         margin: 0 auto;
         cursor: pointer;
-        border-radius: 20px;
         transition: 0.3s ease-in-out;
 
         &:hover {
@@ -79,7 +125,6 @@
       display: flex;
       width: 90%;
       margin: 0 auto;
-      justify-content: center;
       align-items: center;
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
@@ -119,6 +164,4 @@
       }
     }
   }
-
-
 }
