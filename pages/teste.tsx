@@ -1,5 +1,5 @@
 import styles from '../styles/teste.module.scss'
-import Carousel2 from './components/Carousel2'
+import Carousel2 from './components/CarouselMainSlider'
 
 export default function Teste() {
     return(

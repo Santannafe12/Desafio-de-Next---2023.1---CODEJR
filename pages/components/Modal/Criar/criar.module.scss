@@ -10,116 +10,78 @@
   align-items: center;
 }
 
-.formContainer {
+.formApp {
   margin: 0 auto;
-  max-width: 600px;
-  width: 90%;
+  width: 45%;
+  height: 90%;
   background-color: #fff;
   border-radius: 20px;
   padding: 2rem;
 
-
-    .criar__titulo {
-        display: flex;
-        padding: 1.5rem;
-        justify-content: center;
-    }
-
-    h1 {
-        font-size: 34px;
-        color: black;
-    }
-
-  }
-  
-  .formTitle {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .formGroup {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    width: 90%;
+  form {
+    width: 100%;
+    height: 90%;
     margin: 0 auto;
-  }
-  
-  .formLabel {
-    font-size: 1.2rem;
-    margin-bottom: 0.2rem;
-    font-size: 22px;
-  }
-  
-  .formInput {
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    background-color: rgb(179, 208, 218);
-    outline: none;
+    display: flex;
+    flex-direction: column;
 
-    &::placeholder {
-        color: #3d8585;
+    label {
+      font-size: 20px;
+    }
+
+    input {
+      padding: 7px;
+      border-radius: 10px;
+      border-color: #bfc2c7;
     }
   }
-  
-  .formButtonCriar {
-    background-color: #0070f3;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 26px;
-    padding: 0.5rem;
-    transition: background-color 0.2s ease-in-out;
+
+  .buttonCreateApp {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    .createButton {
+      background-color: #0070f3;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 26px;
+      padding: 0.5rem;
+      transition: background-color 0.2s ease-in-out;
 
       &:hover {
-    background-color: #005ae0;
-  }
-  }
-  
+        background-color: #005ae0;
+      }
+    }
 
+    .cancelButton {
+      font-size: 26px;
+      background-color: #dd4641;
+      cursor: pointer;
+      color: white;
+      padding: 0.5rem;
+      transition: background-color 0.2s ease-in-out;
+      border: none;
+      border-radius: 4px;
 
-  .Botao__Criar {
-    display: flex;
-    width: 90%;
-    justify-content: space-between;
-    padding: 0.5rem;
-    padding-bottom: 2rem;
-    margin: 0 auto;
-    margin-top: 1rem;
-  }
-
-  .cancelButton {
-    font-size: 26px;
-    background-color: #dd4641;
-    cursor: pointer;
-    color: white;
-    padding: 0.5rem;
-    transition: background-color 0.2s ease-in-out;
-    border: none;
-    border-radius: 4px;
-
-    &:hover {
+      &:hover {
         background-color: #a50600;
+      }
     }
   }
+}
 
-  @media screen and (max-width: 380px) {
-    .Botao__Criar {
-        .cancelButton {
-            font-size: 16px;
-        }
-        .formButton {
-            font-size: 16px;
-        }
+@media screen and (max-width: 380px) {
+  .Botao__Criar {
+    .cancelButton {
+      font-size: 16px;
+    }
+
+    .formButton {
+      font-size: 16px;
     }
   }
+}

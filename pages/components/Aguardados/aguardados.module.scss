@@ -56,7 +56,7 @@
         width: 96.9%;
         margin: 0 auto;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
         margin-bottom: 0.8rem;
 
@@ -156,6 +156,7 @@
                 font-size: 26px;
                 color: rgb(171, 236, 220);
                 text-align: center;
+                cursor: text;
             }
         }
 
@@ -262,8 +263,9 @@
                 display: flex;
                 color: rgb(255, 255, 255);
                 font-size: 22px;
-                cursor: default;
+                cursor: pointer;
                 margin-left: 2rem;
+
 
                 @media screen and (max-width: 300px) {
                     font-size: 14px;
@@ -272,6 +274,12 @@
 
                 span {
                     margin-right: 0.8rem;
+                    transition: 0.3s;
+
+                    &:hover {
+                        transform: scale(1.2);
+                        color: rgb(150, 243, 238);
+                    }
 
                     @media screen and (max-width: 300px) {
                         margin-right: 0.1rem;

@@ -16,7 +16,7 @@
     }
 
     .DestaquesTop {
-        width: 98%;
+        width: 95%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -115,6 +115,13 @@
             margin-top: 1.4rem;
             flex-direction: column;
 
+            h5 {
+                font-size: 20px;
+                color: white;
+                margin-bottom: 0.5rem;
+                cursor: text;
+            }
+
             p {
                 text-transform: uppercase;
                 color: rgb(155, 147, 147);
@@ -123,6 +130,25 @@
                 letter-spacing: 1px;
                 line-height: 15px;
                 font-family: Inter, sans-serif;
+                overflow: auto;
+                height: 3rem;
+                cursor: text;
+
+                &::-webkit-scrollbar {
+                    width: 12px;
+                }
+    
+                &::-webkit-scrollbar-track {
+                    background-color: #000F18;
+                }
+    
+                &::-webkit-scrollbar-thumb {
+                    background-color: #fff;
+                }
+    
+                &::-webkit-scrollbar-thumb:hover {
+                    background-color: #9e9d9d;
+                }
             }
         }
 
@@ -216,6 +242,7 @@
         flex-direction: column;
 
         button {
+            margin-top: 0.8rem;
             margin-right: 1rem;
             font-size: 20px;
             border: none;
@@ -236,7 +263,6 @@
 
         .carouselBuyNow {
             transition: 0.3s;
-            margin-bottom: 1rem;
 
             &:hover {
                 opacity: 80%;

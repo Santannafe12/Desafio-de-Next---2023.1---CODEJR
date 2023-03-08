@@ -7,7 +7,7 @@ export const carouselImages = [
   "/images/returnal.jpg",
   "/images/csgo.jpg",
   "/images/devilmaycry.jpg",
-  "/images/Genshin.jpg"
+  "/images/poefire.jpg"
 ];
 
 export const carouselText = [
@@ -15,7 +15,7 @@ export const carouselText = [
   "Enfrente desafios roguelike. Encare inimigos em lutas de bullet hell. Divida sua jornada em Returnal™ com outro jogador.",
   "CS:GO é um FPS da Valve disputado entre duas equipes. Elas se revezam entre terroristas e contra terroristas, os terroristas armam a bomba enquanto o outro time protege os sites, locais onde os explosivos devem ser plantados.",
   "Devil May Cry 5 é o novo jogo desta lendária série de ação e junta a sua clássica ação cheia de adrenalina e personagens sobrenaturais peculiares.",
-  "Genshin Impact trata-se de um novo RPG de ação e mundo aberto, no qual a exploração é livre e oferece um mapa enorme e várias missões e desafios ao jogador."
+  "Você é um exilado, lutando para sobreviver no continente sombrio de Wraeclast, enquanto luta para ganhar o poder que permitirá que você se vingue daqueles que o injustiçaram."
 ];
 
 export const carouselPrice = [
@@ -34,49 +34,67 @@ export const purchaseButton = [
   "Baixe agora"
 ];
 
-export const carouselDesconto = [
-
-];
-
 export const carouselTitle = [
-
+  "Dead Space Remake",
+  "Returnal",
+  "Counter Strike: Global Offensive",
+  "Devil May Cry 5",
+  "Path of Exile"
 ];
+
+export const carouselWishlist = [
+  "+ Lista de desejos",
+  "+ Lista de desejos",
+  "",
+  "+ Lista de desejos",
+  ""
+]
 
 export const carouselObjects = [
   {
     imageUrl: "/images/deadspaceSlider.jpg",
-    imageLogoUrl: "/images/deadspaceremakeLogo.png",
+    alt: "Dead Space Remake",
     description: "O clássico de terror de sobrevivência e ficção científica está de volta, totalmente reformulado para oferecer uma experiência ainda mais imersiva.",
     price: "R$ 249,90",
-    purchaseButton: "Compre agora"
+    purchaseButton: "Compre agora",
+    name: "Dead Space Remake",
+    wishlist: "+ Lista de desejos"
   },
   {
     imageUrl: "/images/returnalSlider.jpg",
-    imageLogoUrl: "/images/returnalLogo.png",
+    alt: "Returnal",
     description: "Enfrente desafios roguelike. Encare inimigos em lutas de bullet hell. Divida sua jornada em Returnal™ com outro jogador.",
     price: "R$ 249,90",
-    purchaseButton: "Compre agora"
+    purchaseButton: "Compre agora",
+    name: "Returnal",
+    wishlist: "+ Lista de desejos"
   },
   {
     imageUrl: "/images/thelast1.jpg",
-    imageLogoUrl: "/images/tlou1Logo.png",
+    alt: "The Last of Us 1",
     description: "Conheça a história emocionante e os personagens inesquecíveis de The Last of Us, vencedor de mais de 200 prêmios de Jogo do Ano.",
     price: "R$ 249,99",
-    purchaseButton: "Compre agora"
-  },
-  {
-    imageUrl: "/images/genshinSlider.jpg",
-    imageLogoUrl: "/images/totalwar3Logo.png",
-    description:   "Genshin Impact trata-se de um novo RPG de ação e mundo aberto, no qual a exploração é livre e oferece um mapa enorme e várias missões e desafios ao jogador.",
-    price: "Gratuito",
-    purchaseButton: "Baixe Agora"
+    purchaseButton: "Jogar",
+    name: "The last of Us - Part 1",
+    wishlist: "Gratuito p/jogar"
   },
   {
     imageUrl: "/images/devilmaycrySlider.jpg",
-    imageLogoUrl: "/images/eldenringlLogo.png",
-    description:   "Devil May Cry 5 é o novo jogo desta lendária série de ação e junta a sua clássica ação cheia de adrenalina e personagens sobrenaturais peculiares.",
-    price: "R$ 249,90",
-    purchaseButton: "Compre agora"
+    alt: "Devil May Cry 5",
+    description: "Devil May Cry 5 é o novo jogo desta lendária série de ação e junta a sua clássica ação cheia de adrenalina e personagens sobrenaturais peculiares.",
+    price: "R$ 252,00",
+    purchaseButton: "Compre agora",
+    name: "Devil May Cry 5",
+    wishlist: "+ Lista de desejos"
+  },
+  {
+    imageUrl: "/images/poe2160.jpg",
+    alt: "Path of Exile",
+    description: "Você é um exilado, lutando para sobreviver no continente sombrio de Wraeclast, enquanto luta para ganhar o poder que permitirá que você se vingue daqueles que o injustiçaram.",
+    price: "Gratuito",
+    purchaseButton: "Jogar",
+    name: "Path of Exile",
+    wishlist: "Gratuito p/jogar"
   }
 ];
 
@@ -85,91 +103,82 @@ export const destaqueDescontos = [
     imageUrl: "/images/thelast1.jpg",
     nome: "The Last of Us. Part I",
     desconto: "15%",
-    antigoValor: "R$ 249,99",
-    novoValor: "******",
+    antigoValor: "R$ 249.99",
     gameInformation: "Jogo base",
     alt: 'Imagem do jogo The Last of Us 1',
-
+    id: "1",
   },
   {
     imageUrl: "/images/thelou2.jpg",
     nome: "The Last of Us. Part II",
     desconto: "30%",
-    antigoValor: "R$ 199,99",
-    novoValor: "******",
+    antigoValor: "R$ 199.99",
     gameInformation: "Jogo base",
     alt: 'Imagem do jogo The Last of Us 2',
-
+    id: "2",
   },
   {
     imageUrl: "/images/resident.jpg",
     nome: "Resident Evil 4",
     desconto: "45%",
-    antigoValor: "R$ 149,99",
-    novoValor: "******",
+    antigoValor: "R$ 149.99",
     gameInformation: "Jogo base",
     alt: 'Imagem do jogo Resident Evil 4',
-
+    id: "3",
   },
   {
     imageUrl: "/images/hogwartsDeluxe.jpg",
     nome: "Hogwarts Legacy - Deluxe",
     desconto: "20%",
-    antigoValor: "R$ 249,99",
-    novoValor: "******",
+    antigoValor: "R$ 249.99",
     gameInformation: "Edição",
     alt: 'Imagem do jogo Hogwarts Legacy',
-
+    id: "4",
   },
   {
     imageUrl: "/images/subnauticabelow.jpg",
     nome: "Subnautica Below Zero",
     desconto: "10%",
-    antigoValor: "R$ 155,89",
-    novoValor: "******",
+    antigoValor: "R$ 155.89",
     gameInformation: "Jogo base",
     alt: 'Imagem do jogo Subnautica Below Zero',
-
+    id: "5",
   },
   {
     imageUrl: "/images/assassinscreed.jpg",
     nome: "Assassin's Creed Valhalla",
     desconto: "67%",
-    antigoValor: "R$ 199,99",
-    novoValor: "******",
+    antigoValor: "R$ 199.99",
     gameInformation: "Jogo base",
     alt: 'Imagem do jogo Assassins Creed Valhalla',
-
+    id: "6",
   },
   {
     imageUrl: "/images/residentevilvillage.jpg",
     nome: "Resident Evil Village",
     desconto: "50%",
-    antigoValor: "R$ 139,90",
-    novoValor: "******",
+    antigoValor: "R$ 139.90",
     gameInformation: "Jogo base",
     alt: 'Imagem do jogo Resident Evil Village',
-
+    id: "7",
   },
   {
     imageUrl: "/images/gtav.jpg",
     nome: "Grand Theft Auto V",
     desconto: "65%",
-    antigoValor: "R$ 99,99",
-    novoValor: "******",
+    antigoValor: "R$ 99.99",
     gameInformation: "Jogo base",
     alt: 'Imagem do jogo Grand Theft Auto V',
-
+    id: "8",
   },
   {
     imageUrl: "/images/borderlands3.jpg",
     nome: "Borderlands 3",
     desconto: "25%",
-    antigoValor: "R$ 119,90",
-    novoValor: "******",
+    antigoValor: "R$ 119.90",
     gameInformation: "Jogo base",
     alt: 'Imagem do jogo Borderlands 3',
-
+    id: "9",
   },
 ];
 

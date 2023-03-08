@@ -10,7 +10,7 @@ import Categorias from './components/Categorias'
 import Aguardados from './components/Aguardados'
 import Populares from './components/Populares'
 import { carouselImages } from './components/constants'
-import Carousel2 from './components/Carousel2'
+import Carousel2 from './components/CarouselMainSlider'
 
 export default function Home() {
   return (

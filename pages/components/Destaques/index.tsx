@@ -9,6 +9,13 @@ import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons
 import { destaqueDescontos } from '../constants';
 import { AiOutlineRight } from 'react-icons/ai';
 
+function applyDiscount(antigoValor: string, desconto: string) {
+    const antigoValorNumber = parseFloat(antigoValor.replace('R$ ', '').replace(',', '.'));
+    const descontoNumber = parseFloat(desconto.replace('%', ''));
+    const novoValor = antigoValorNumber * (1 - descontoNumber/100);
+    return novoValor.toFixed(2);
+}
+
 export default function Destaques() {
     const sliderRef = useRef<Slider>(null);
     const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -61,29 +68,31 @@ export default function Destaques() {
                     <AiOutlineRight className={styles.DestaquesTopIcon} />
                 </div>
                 <div className={styles.arrowButtonsDestaques}>
-                    < IoIosArrowDropleftCircle className={styles.prevButtonIconDestaques} onClick={goToPrev} />
-                    < IoIosArrowDroprightCircle className={styles.nextButtonIconDestaques} onClick={goToNext} />
+                    <IoIosArrowDropleftCircle className={styles.prevButtonIconDestaques} onClick={goToPrev} />
+                    <IoIosArrowDroprightCircle className={styles.nextButtonIconDestaques} onClick={goToNext} />
                 </div>
             </div>
             <Slider {...settings} ref={sliderRef} >
-                {destaqueDescontos.map(item => (
-                    <div className={styles.card}>
-                        <div className={styles.cardTopDestaques}>
-                            <Image src={item.imageUrl} alt={item.alt} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />
+                {destaqueDescontos.map((item) => {
+                    return (
+                        <div className={styles.card} >
+                            <div className={styles.cardTopDestaques}>
+                                <Image src={item.imageUrl} alt={item.alt} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />
+                            </div>
+                            <div className={styles.gameInformationDestaques}>
+                                <p>{item.gameInformation}</p>
+                            </div>
+                            <div className={styles.cardMiddleDestaques}>
+                                <p>{item.nome}</p>
+                            </div>
+                            <div className={styles.cardBottomDestaques}>
+                                <p className={styles.cardDiscountDestaques}>-{item.desconto}</p>
+                                <p className={styles.cardOldDestaques}>{item.antigoValor}</p>
+                                <p>R$ {applyDiscount(item.antigoValor, item.desconto)}</p>
+                            </div>
                         </div>
-                        <div className={styles.gameInformationDestaques}>
-                            <p>{item.gameInformation}</p>
-                        </div>
-                        <div className={styles.cardMiddleDestaques}>
-                            <p>{item.nome}</p>
-                        </div>
-                        <div className={styles.cardBottomDestaques}>
-                            <p className={styles.cardDiscountDestaques}>-{item.desconto}</p>
-                            <p className={styles.cardOldDestaques}>{item.antigoValor}</p>
-                            <p>{item.novoValor}</p>
-                        </div>
-                    </div>
-                ))}
+                    )
+                })}
             </Slider>
         </div>
     );

@@ -3,13 +3,11 @@ import Navbar from "./components/Navbar";
 import Table from "./components/Funcionarios";
 
 export default function Funcionarios() {
-    return(
+    return (
         <>
-        <Navbar />
-        <div>
+            <Navbar />
             <Table />
-        </div>
-        <Footer />
+            <Footer />
         </>
     )
 }

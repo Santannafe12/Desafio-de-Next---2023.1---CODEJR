@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { NextArrow, PrevArrow } from '../Utils';
 import { useRef, useState } from 'react';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
-import { carouselObjects, destaqueDescontos } from '../constants';
+import { carouselObjects } from '../constants';
 import { AiOutlineRight } from 'react-icons/ai';
 
 export default function Destaques() {
@@ -69,16 +69,17 @@ export default function Destaques() {
         {carouselObjects.map(item => (
           <div className={styles.card}>
             <div className={styles.cardTopDestaques}>
-              <Image src={item.imageUrl} alt={''} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />
+              <Image src={item.imageUrl} alt={item.alt} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />
             </div>
             <div className={styles.gameInformationDestaques}>
+              <h5>{item.name}</h5>
               <p>{item.description}</p>
             </div>
             <div className={styles.carouselPurchaseTop}>
               <p>{item.price}</p>
               <div className={styles.carouselPurchaseButton}>
                 <button className={styles.carouselBuyNow}>{item.purchaseButton}</button>
-                <button className={styles.carouselWishlist}>+ Lista de desejos</button>
+                <button className={styles.carouselWishlist}>{item.wishlist}</button>
               </div>
             </div>
           </div>

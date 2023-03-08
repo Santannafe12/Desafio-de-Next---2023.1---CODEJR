@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from './carousel.module.scss';
-import { carouselObjects, carouselText, carouselPrice, purchaseButton } from "../constants";
+import { carouselText, carouselPrice, purchaseButton, carouselTitle, carouselWishlist } from "../constants";
 import Slider from "react-slick";
 import { NextArrow, PrevArrow } from "../Utils";
-import Carousel2 from "../Carousel2";
+import Carousel2 from "../CarouselMainSlider";
 
 type Props = {
   images: string[];
@@ -76,17 +76,23 @@ export default function Carousel({ images }: Props) {
     <div className={styles.carousel__Box}>
       <div className={styles.carousel}>
         <div className={styles.imageContainer}>
-          <Image src={images[currentImage]} alt={"Imagem do carousel"} fill quality={100} className={styles.imagem_redonda} />
+          <Image src={images[currentImage]} 
+          alt={"Imagem do carousel"} 
+          fill 
+          quality={100} 
+          sizes=" 100vw, 50vw, 33.3vw" 
+          className={styles.imagem_redonda} 
+          priority={true}/>
           <div className={styles.carousel__text}>
             <div className={styles.carouselTextTop}>
-              <h1></h1>
+              <h1>{carouselTitle[currentImage]}</h1>
               <p>{carouselText[currentImage]}</p>
             </div>
             <div className={styles.carouselPurchaseTop}>
               <p>{carouselPrice[currentImage]}</p>
               <div className={styles.carouselPurchaseButton}>
                 <button className={styles.carouselBuyNow}>{purchaseButton[currentImage]}</button>
-                <button className={styles.carouselWishlist}>+ Lista de desejos</button>
+                <button className={styles.carouselWishlist}>{carouselWishlist[currentImage]}</button>
               </div>
             </div>
           </div>
@@ -95,7 +101,7 @@ export default function Carousel({ images }: Props) {
       <div className={styles.controls}>
         <div className={styles.indicatorsImage}>
           {images.map((image, index,) => (
-            <Image key={index} className={`${styles.indicatorImage} ${currentImage === index ? styles.activeIndicatorImage : ""}`} onClick={() => handleIndicatorClick(index)} src={image} alt={''} width={250} height={160} quality={100} />
+            <Image className={`${styles.indicatorImage} ${currentImage === index ? styles.activeIndicatorImage : ""}`} onClick={() => handleIndicatorClick(index)} src={image} alt={''} width={220} height={120} quality={100} />
           ))}
         </div>
       </div>

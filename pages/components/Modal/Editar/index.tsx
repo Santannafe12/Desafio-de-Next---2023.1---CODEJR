@@ -1,14 +1,16 @@
 import styles from './editar.module.scss'
+import { useToast } from '@chakra-ui/react'
 
 type EditarProps = {
   onClose: () => void;
 };
 
 export default function Editar(props: EditarProps) {
+  const toast = useToast();
 
-    return(
-        <div className={styles.overlay} onClick={props.onClose}>
-          <div className={styles.formContainer} onClick={(e) => e.stopPropagation()}>
+  return (
+    <div className={styles.overlay} onClick={props.onClose}>
+      <div className={styles.formContainer} onClick={(e) => e.stopPropagation()}>
         <div className={styles.criar__titulo} ><h1 className={styles.formTitle}>Edite os dados do funcionário</h1></div>
         <form className={styles.form} >
           <div className={styles.formGroup}>
@@ -32,11 +34,19 @@ export default function Editar(props: EditarProps) {
             <input type="text" id="input5" className={styles.formInput} placeholder='Salário' />
           </div>
           <div className={styles.Botao__Criar}>
-          <button className={styles.cancelButton} onClick={props.onClose}>Cancelar</button>
-          <button type="submit" className={styles.formButton} onClick={props.onClose}>Atualizar</button>
+            <button className={styles.cancelButton} onClick={props.onClose}>Cancelar</button>
+            <button type="submit" className={styles.formButton} onClick={() => {
+              props.onClose();
+              toast({
+                title: 'Funcionário atualizado com sucesso!',
+                status: 'success',
+                duration: 8000,
+                isClosable: true,
+              });
+            }}>Atualizar</button>
           </div>
         </form>
       </div>
-      </div>
-    );
+    </div>
+  );
 }

@@ -18,10 +18,10 @@ export default function Busca() {
           <button><AiOutlineSearch /></button>
         </div>
         <ul className={styles.parametros}>
-          {buscaParametros.map((item) => (
-            <li key={item.url}>
-              <Link href={item.url}>
-                <p>{item.name}</p>
+          {buscaParametros.map((item, index) => (
+            <li key={`searchBarLi_${index}`}>
+              <Link href={item.url} key={`searchBarLink_${index}`} >
+                <p key={`searchBarP_${index}`} >{item.name}</p>
               </Link>
             </li>
           ))}

@@ -47,8 +47,6 @@
                 }
             }
         }
-
-
     }
 
     .arrowButtonsPopulares {
@@ -56,6 +54,7 @@
         display: flex;
         justify-content: flex-end;
         margin-bottom: 0.8rem;
+        cursor: default;
 
         .prevButtonIconPopulares {
             font-size: 30px;
@@ -114,6 +113,8 @@
                 margin-top: 1rem;
                 color: rgb(16, 213, 219);
                 text-align: center;
+                cursor: text;
+                font-size: 30px;
             }
         }
 
@@ -125,6 +126,10 @@
             height: 7rem;
             margin-top: 1rem;
             width: 90%;
+
+            p {
+                cursor: text;
+            }
 
             &::-webkit-scrollbar {
                 width: 12px;
@@ -155,7 +160,8 @@
                 font-weight: 600;
                 letter-spacing: 1px;
                 line-height: 15px;
-                font-family: Inter,sans-serif;
+                font-family: Inter, sans-serif;
+                cursor: text;
             }
         }
 
@@ -182,6 +188,7 @@
             font-size: 18px;
             justify-self: center;
             align-self: center;
+            cursor: text;
 
             @media screen and (max-width: 500px) {
                 font-size: 22px;
@@ -203,6 +210,7 @@
             background-color: black;
             margin-right: 0.8rem;
             margin-left: 0.2rem;
+            cursor: text;
         }
 
         .gameButton {
