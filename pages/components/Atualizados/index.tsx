@@ -78,7 +78,6 @@ export default function Atualizados() {
                             <Image src={item.imageUrl} alt={''} width={1920} height={1080} className={styles.PopularesImg} />
                         </div>
                         <div className={styles.gameInformation}>
-                            <p>{item.gameInformation}</p>
                             <div><h1>{item.name}</h1></div>
                         </div>
                         <div className={styles.cardMiddle}>

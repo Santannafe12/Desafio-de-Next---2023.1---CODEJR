@@ -22,9 +22,9 @@ export default function Categorias() {
   const settings = {
     dots: false,
     infinite: false,
-    speed: 800,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    speed: 600,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     initialSlide: 0,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -34,14 +34,12 @@ export default function Categorias() {
       {
         breakpoint: 1280,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          infinite: true,
-          dots: false,
+          slidesToShow: 3,
+          slidesToScroll: 3,
         },
       },
       {
-        breakpoint: 900,
+        breakpoint: 700,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

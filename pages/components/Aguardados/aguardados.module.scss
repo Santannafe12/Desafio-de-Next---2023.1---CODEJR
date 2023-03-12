@@ -1,11 +1,10 @@
 .AppAguardados {
     width: 85%;
     margin: 0 auto;
-    margin-top: 8rem;
-    margin-bottom: 14rem;
+    margin-top: 7rem;
 
-    @media screen and (max-width: 850px) {
-        margin-bottom: 4rem;
+    @media screen and (max-width: 650px) {
+        margin-top: 4.5rem;
     }
 
     .AguardadosTop {
@@ -88,7 +87,7 @@
 
 
     .upperAguardados {
-        width: 96.9%;
+        width: 96.8%;
         margin: 0 auto;
         background: linear-gradient(142deg, rgba(5, 163, 218, 1) 20%, rgba(66, 103, 189, 1) 80%);
         display: flex;
@@ -97,6 +96,10 @@
         align-items: center;
         padding: 20px;
         margin-bottom: 2rem;
+
+        @media screen and (max-width: 900px) {
+            width: 90%;
+        }
 
         h1 {
             color: white;

@@ -1,0 +1,42 @@
+.displayApp {
+    width: 83.5%;
+    margin: 0 auto;
+    margin-top: 4.5rem;
+
+    .displaySales {
+        color: white;
+    }
+
+.bestSellers {
+
+    border-right: solid black 2px;
+
+    .bestSellersInfo {
+        display: flex;
+    }
+
+    .bestSellersPrice {
+        display: flex;
+    }
+}
+
+    h1 {
+        color: white;
+        font-size: 28px;
+        margin-bottom: 0.8rem;
+    }
+
+    .displayInfo {
+        display: flex;
+        margin-bottom: 0.5rem;
+        
+        .devices {
+            display: flex;
+            color: white;
+        }
+    }
+
+    .mostPlayed {
+        border-right: solid black 2px;
+    }
+}

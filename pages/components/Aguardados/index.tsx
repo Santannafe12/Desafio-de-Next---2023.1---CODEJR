@@ -23,7 +23,7 @@ export default function Aguardados() {
   const settings = {
     dots: false,
     infinite: false,
-    speed: 800,
+    speed: 600,
     slidesToShow: 3,
     slidesToScroll: 2,
     initialSlide: 0,

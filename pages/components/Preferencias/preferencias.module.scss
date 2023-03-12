@@ -1,0 +1,262 @@
+.AtualizadosApp {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 4.5rem;
+
+    @media screen and (max-width: 650px) {
+        margin-top: 4.5rem;
+    }
+
+    .AtualizadosTop {
+        width: 97.55%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 600px) {
+            width: 90%;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                .AtualizadosTopIcon {
+                    transform: scale(1.02);
+                    transform: translateX(10px);
+                }
+            }
+
+            .AtualizadosTopIcon {
+                color: rgb(158, 158, 158);
+                margin-left: 0.5rem;
+                font-size: 20px;
+                margin-top: 0.3rem;
+                transition: transform 0.3s;
+            }
+
+            h1 {
+                font-size: 30px;
+                color: white;
+                font-weight: 400;
+
+                @media (max-width: 700px) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .arrowButtonsAtualizados {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 0.8rem;
+        cursor: default;
+
+        .prevButtonIconAtualizados {
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            opacity: 80%;
+            margin-right: 0.55rem;
+            user-select: none;
+
+            &:hover {
+                opacity: 100%;
+            }
+        }
+
+        .nextButtonIconAtualizados {
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            opacity: 80%;
+            user-select: none;
+
+            &:hover {
+                opacity: 100%;
+            }
+        }
+    }
+
+    .cardAtualizados {
+        .cardTop {
+            margin-top: 1rem;
+
+            .PopularesImg {
+                width: 90%;
+                height: 90%;
+                margin: 0 auto;
+                cursor: pointer;
+                transition: transform 0.3s ease-in-out;
+
+                &:hover {
+                    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 1);
+                    transform: scale(1.02);
+                }
+            }
+        }
+
+        .cardBottom {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            cursor: default;
+
+            div {
+                border-bottom: solid rgb(17, 28, 53) 1px;
+                background: radial-gradient(circle, rgba(20,35,43,1) 0%, rgba(17,31,37,1) 100%);
+                opacity: 80%;
+                cursor: pointer;
+                color: rgb(199, 196, 196);
+                padding: 1.5px;
+
+                &:hover {
+                    opacity: 100%;
+                    color: rgb(219, 219, 219);
+                    background: radial-gradient(circle, rgb(33, 59, 73) 0%, rgb(19, 43, 53) 100%);
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                justify-content: left;
+            }
+
+            p {
+                margin-bottom: 1px;
+                font-size: 20px;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .buttonCategories {
+            color: white;
+        }
+
+            .cardMiddle {
+                color: white;
+                overflow: auto;
+                font-size: 20px;
+                margin: 0 auto;
+                height: 7rem;
+                margin-top: 1rem;
+                width: 90%;
+    
+                p {
+                    cursor: text;
+                    padding: 2px;
+                }
+    
+                &::-webkit-scrollbar {
+                    width: 12px;
+                }
+    
+                &::-webkit-scrollbar-track {
+                    background-color: #000F18;
+                }
+    
+                &::-webkit-scrollbar-thumb {
+                    background-color: #fff;
+                }
+    
+                &::-webkit-scrollbar-thumb:hover {
+                    background-color: #9e9d9d;
+                }
+            }
+
+            .gameInformation {
+                width: 90%;
+                margin: 0 auto;
+                display: flex;
+                height: 3rem;
+
+                h1 {
+                        text-transform: uppercase;
+                        color: rgb(255, 255, 255);
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        line-height: 15px;
+                        font-family: Inter, sans-serif;
+                        cursor: text;
+                        margin-top: 1rem;
+                }
+    
+                p {
+                    text-transform: uppercase;
+                    color: rgb(155, 147, 147);
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    line-height: 15px;
+                    font-family: Inter, sans-serif;
+                    cursor: text;
+                }
+            }
+
+            .detalhes {
+                color: rgb(46, 117, 250);
+                width: 90%;
+                margin: 0 auto;
+                margin-top: 1rem;
+
+                p {
+                    cursor: pointer;
+
+                    &:hover {
+                        color: rgb(128, 169, 245);
+                    }
+                }
+            }
+
+            .gameBox {
+                display: flex;
+                justify-content: flex-start;
+                width: 90%;
+                margin: 0 auto;
+                margin-top: 0.65rem;
+
+                .gameName {
+                    color: white;
+                    font-size: 18px;
+                    justify-self: center;
+                    align-self: center;
+                    cursor: text;
+        
+                    @media screen and (max-width: 500px) {
+                        font-size: 22px;
+                        margin-bottom: 0.5rem;
+                    }
+                }
+        
+                .gameInfo {
+                    display: flex;
+                    align-items: center;
+                    padding: 5px 3.5px;
+                    background-color: rgba(0, 0, 0, 0.247);
+                    border-radius: 5px;
+                }
+        
+                .gameText {
+                    color: white;
+                    font-size: 16px;
+                    margin-right: 0.8rem;
+                    margin-left: 0.2rem;
+                    cursor: text;
+                }
+    
+                @media screen and (max-width: 500px) {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+    }
+}
