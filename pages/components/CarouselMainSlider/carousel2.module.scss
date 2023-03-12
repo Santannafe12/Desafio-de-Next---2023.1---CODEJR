@@ -7,7 +7,7 @@
 
     display: none;
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 1150px) {
         display: block;
     }
 
@@ -230,11 +230,6 @@
             font-size: 14px;
             margin-bottom: 0.2rem;
         }
-
-        @media screen and (max-width: 450px) {
-            font-size: 8px;
-            margin-bottom: 0.1rem;
-        }
     }
 
     .carouselPurchaseButton {
@@ -254,15 +249,11 @@
                 font-size: 16px;
                 padding: 10px;
             }
-
-            @media screen and (max-width: 450px) {
-                font-size: 10px;
-                padding: 5px;
-            }
         }
 
         .carouselBuyNow {
             transition: 0.3s;
+            background-color: white;
 
             &:hover {
                 opacity: 80%;

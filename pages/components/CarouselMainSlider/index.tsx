@@ -9,7 +9,7 @@ import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons
 import { carouselObjects } from '../constants';
 import { AiOutlineRight } from 'react-icons/ai';
 
-export default function Destaques() {
+export default function CarouselMainSlider() {
   const sliderRef = useRef<Slider>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 

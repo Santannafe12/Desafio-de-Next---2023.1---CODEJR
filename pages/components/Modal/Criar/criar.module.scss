@@ -1,87 +1,63 @@
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 9999;
+.modalButton {
+  margin: 1rem;
+}
+
+.modalContent {
+  width: 30rem;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.modalHeader {
+  background-color: #3182ce;
+  color: white;
+  padding: 1rem;
+}
+
+.modalCloseButton {
+  color: white;
+}
+
+.modalBody {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.modalInput {
+  margin-bottom: 1rem;
+}
+
+.modalFooter {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalSecondaryButton {
+  color: #3182ce;
+}
+
+.nav__titulo_botao {
+  width: 300px;
+  height: 60px;
+  background-color: rgb(38, 148, 38);
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border: none;
+  text-align: center;
   display: flex;
   align-items: center;
-}
+  justify-content: space-evenly;
 
-.formApp {
-  margin: 0 auto;
-  width: 45%;
-  height: 90%;
-  background-color: #fff;
-  border-radius: 20px;
-  padding: 2rem;
-
-  form {
-    width: 100%;
-    height: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-
-    label {
-      font-size: 20px;
-    }
-
-    input {
-      padding: 7px;
-      border-radius: 10px;
-      border-color: #bfc2c7;
-    }
-  }
-
-  .buttonCreateApp {
-    display: flex;
-    width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-
-    .createButton {
-      background-color: #0070f3;
-      border: none;
-      border-radius: 4px;
-      color: #fff;
-      cursor: pointer;
-      font-size: 26px;
-      padding: 0.5rem;
-      transition: background-color 0.2s ease-in-out;
-
-      &:hover {
-        background-color: #005ae0;
-      }
-    }
-
-    .cancelButton {
-      font-size: 26px;
-      background-color: #dd4641;
-      cursor: pointer;
-      color: white;
-      padding: 0.5rem;
-      transition: background-color 0.2s ease-in-out;
-      border: none;
-      border-radius: 4px;
-
-      &:hover {
-        background-color: #a50600;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .Botao__Criar {
-    .cancelButton {
-      font-size: 16px;
-    }
-
-    .formButton {
-      font-size: 16px;
-    }
+  &:hover {
+    transform: scale(1.02);
   }
 }

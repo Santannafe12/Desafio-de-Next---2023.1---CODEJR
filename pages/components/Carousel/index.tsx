@@ -4,7 +4,7 @@ import styles from './carousel.module.scss';
 import { carouselText, carouselPrice, purchaseButton, carouselTitle, carouselWishlist } from "../constants";
 import Slider from "react-slick";
 import { NextArrow, PrevArrow } from "../Utils";
-import Carousel2 from "../CarouselMainSlider";
+import CarouselMainSlider from "../CarouselMainSlider";
 
 type Props = {
   images: string[];
@@ -26,7 +26,7 @@ export default function Carousel({ images }: Props) {
       dots: false,
       infinite: false,
       speed: 600,
-      slidesToShow: 4,
+      slidesToShow: 5,
       slidesToScroll: 3,
       initialSlide: 0,
       nextArrow: <NextArrow />,
@@ -37,18 +37,10 @@ export default function Carousel({ images }: Props) {
           {
               breakpoint: 1280,
               settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 2,
-                  infinite: true,
-                  dots: true,
-              },
-          },
-          {
-              breakpoint: 900,
-              settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  initialSlide: 1,
+                  slidesToShow: 5,
+                  slidesToScroll: 5,
+                  infinite: false,
+                  dots: false,
               },
           },
       ],
@@ -72,7 +64,7 @@ export default function Carousel({ images }: Props) {
 
   return (
     <div className={styles.carouselApp}>   
-    <Carousel2/>
+    <CarouselMainSlider/>
     <div className={styles.carousel__Box}>
       <div className={styles.carousel}>
         <div className={styles.imageContainer}>
@@ -98,13 +90,12 @@ export default function Carousel({ images }: Props) {
           </div>
         </div>
       </div>
-      <div className={styles.controls}>
         <div className={styles.indicatorsImage}>
           {images.map((image, index,) => (
-            <Image className={`${styles.indicatorImage} ${currentImage === index ? styles.activeIndicatorImage : ""}`} onClick={() => handleIndicatorClick(index)} src={image} alt={''} width={220} height={120} quality={100} />
+            <><Image className={`${styles.indicatorImage} ${currentImage === index ? styles.activeIndicatorImage : ""}`} onClick={() => handleIndicatorClick(index)} src={image} alt={''} width={200} height={120} quality={100} />
+            <button onClick={() => handleIndicatorClick(index)} className={styles.indicatorButton}></button></>
           ))}
         </div>
-      </div>
     </div>
     </div>
   );

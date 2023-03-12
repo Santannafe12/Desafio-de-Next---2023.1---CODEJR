@@ -1,50 +1,130 @@
 import styles from './criar.module.scss'
-import { useToast } from '@chakra-ui/react'
+import React, { useEffect, useState } from "react";
+import {
+    Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, FormControl, FormLabel, Input, useDisclosure, ModalCloseButton, useToast,
+} from "@chakra-ui/react";
+import { BsPlusCircleFill } from 'react-icons/bs';
 
-type CriarProps = {
-  onClose: () => void;
-};
+interface Funcionario {
+    aniversario: string;
+    cargo: string;
+    email: string;
+    id: number;
+    name: string;
+    salario: number;
+}
 
-export default function Criar(props: CriarProps) {
-  const toast = useToast();
+const CreateModal = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const toast = useToast();
+    const [funcionarios, setFuncionarios] = useState<Funcionario[]>([]);
+    const [newFuncionario, setNewFuncionario] = useState<Funcionario>({
+        aniversario: '',
+        cargo: '',
+        email: '',
+        id: 0,
+        name: '',
+        salario: 0,
+    });
 
-  return (
-    <div className={styles.overlay} onClick={props.onClose}>
-      <div className={styles.formApp} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.modalContent}>
-          <form>
-            <label htmlFor="input1">Nome</label>
-            <input type="text" name="input1" placeholder='Digite o nome' />
+    function handleCreate() {
+        window.location.reload();
+        fetch('http://localhost:3000/funcionarios', {
+            method: 'POST',
+            body: JSON.stringify(newFuncionario),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setFuncionarios([...funcionarios, data]);
+                setNewFuncionario({
+                    aniversario: '',
+                    cargo: '',
+                    email: '',
+                    id: 0,
+                    name: '',
+                    salario: 0,
+                });
+                toast({
+                    title: 'Funcionário criado com sucesso!',
+                    status: 'success',
+                    duration: 3000,
+                    isClosable: true,
+                });
+            })
+            .catch((error) => console.log(error));
+    }
 
-            <label htmlFor="input2">E-mail</label>
-            <input type="text" name="input2" placeholder='Digite o e-mail' />
+    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+        const { name, value } = event.target;
+        setNewFuncionario((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
+    }
 
-            <label htmlFor="input3">Aniversário</label>
-            <input type="text" name="input3" placeholder='Digite o aniversário' />
+    function handleCreateAndClose() {
+        handleCreate();
+        onClose();
+      }
 
-            <label htmlFor="input4">Cargo</label>
-            <input type="text" name="input4" placeholder='Digite o cargo' />
+    return (
+        <>
+            <button onClick={onOpen} className={styles.nav__titulo_botao}><BsPlusCircleFill className={styles.titulo__icons} />Adicionar Funcionário</button>
 
-            <label htmlFor="input5">Salário</label>
-            <input type="text" name="input5" placeholder='Digite o salário' />
-          </form>
-          <div className={styles.buttonCreateApp}>
-            <button type="button" onClick={props.onClose} className={styles.cancelButton}>
-              Fechar
-            </button>
-            <button className={styles.createButton} onClick={() => {
-              props.onClose();
-              toast({
-                title: 'Funcionário adicionado com sucesso!',
-                status: 'success',
-                duration: 8000,
-                isClosable: true,
-              });
-            }}
-            >Adicionar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+            <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose} motionPreset='slideInBottom'>
+                <ModalOverlay />
+                <ModalContent className={styles.modalContent}>
+                    <ModalHeader className={styles.modalHeader}>Adicionar Funcionário</ModalHeader>
+                    <ModalCloseButton className={styles.modalCloseButton} />
+                    <ModalBody className={styles.modalBody}>
+                        <FormControl>
+                            <FormLabel>Nome</FormLabel>
+                            <Input
+                                name="name"
+                                value={newFuncionario.name}
+                                onChange={handleInputChange} />
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel>E-mail</FormLabel>
+                            <Input
+                                name="email"
+                                value={newFuncionario.email}
+                                onChange={handleInputChange} />
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel>Aniversário</FormLabel>
+                            <Input
+                                name="aniversario"
+                                value={newFuncionario.aniversario}
+                                onChange={handleInputChange} />
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel>Cargo</FormLabel>
+                            <Input
+                                name="cargo"
+                                value={newFuncionario.cargo}
+                                onChange={handleInputChange} />
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel>Salário</FormLabel>
+                            <Input
+                                name="salario"
+                                type="number"
+                                value={newFuncionario.salario}
+                                onChange={handleInputChange} />
+                        </FormControl>
+                    </ModalBody>
+                    <ModalFooter className={styles.modalFooter}>
+                        <Button onClick={onClose} className={styles.modalButton}>Cancelar</Button>
+                        <Button colorScheme="green" onClick={handleCreateAndClose} className={styles.modalButton}>Adicionar</Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
+        </>
+    )
+}
+
+export default CreateModal;

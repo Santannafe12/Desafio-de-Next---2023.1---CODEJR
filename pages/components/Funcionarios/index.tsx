@@ -12,9 +12,14 @@ interface Funcionarios {
 
 export default function Table() {
   const [funcionarios, setFuncionarios] = useState<Funcionarios[]>([])
-  useEffect(()=>{ 
-    fetch('/api/workers').then((response)=> response.json().then((workers:{funcionarios: Funcionarios[]})=>setFuncionarios(workers.funcionarios)))
-   }, [])
+  
+  useEffect(() => {
+    fetch('http://localhost:3000/funcionarios')
+      .then((response) => response.json())
+      .then((data) => setFuncionarios(data))
+      .catch((error) => console.log(error));
+  }, []);
+  
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>

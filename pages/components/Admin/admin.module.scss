@@ -30,6 +30,7 @@
   td {
     padding: 0.5rem;
     text-align: left;
+    font-size: 20px;
   }
 
   tr:nth-child(even) {
@@ -111,25 +112,6 @@
     font-size: 36px;
     font-weight: 600;
   }
-
-  .nav__titulo_botao {
-    width: 300px;
-    height: 60px;
-    background-color: rgb(38, 148, 38);
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    border: none;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
 }
 
 @media screen and (max-width: 1040px) {
@@ -163,4 +145,8 @@
       }
     }
   }
+}
+
+.ul {
+  color: black;
 }

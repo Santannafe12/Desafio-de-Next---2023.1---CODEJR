@@ -52,7 +52,7 @@ export default function Populares() {
     ],
   };
   return (
-    <div className={styles.NovidadesApp}>
+    <div className={styles.PopularesApp}>
       <div className={styles.PopularesTop}>
         <div>
         <h1>Populares entre jogadores</h1>
@@ -77,10 +77,8 @@ export default function Populares() {
               <p>{item.gameInformation}</p>
             </div>
             <div className={styles.gameBox}>
-              <div className={styles.gameName}>{item.nomePop}</div>
               <div className={styles.gameInfo}>
                 <div className={styles.gameText}>{item.price}</div>
-                <button className={styles.gameButton}><FaShoppingCart/> +Carrinho</button>
               </div>
             </div>
           </div>

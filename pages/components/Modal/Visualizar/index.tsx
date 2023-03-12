@@ -1,38 +1,95 @@
+import { useEffect, useState } from 'react';
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  FormControl,
+  FormLabel,
+  Input,
+  useDisclosure,
+  ModalCloseButton,
+} from '@chakra-ui/react';
 import styles from './visualizar.module.scss'
 
-type VisualizarProps = {
-  onClose: () => void;
-};
+interface Props {
+  id: number;
+}
 
-export default function Visualizar(props: VisualizarProps) {
+interface Funcionario {
+  aniversario: string;
+  cargo: string;
+  email: string;
+  id: number;
+  name: string;
+  salario: number;
+}
+
+const VisualizarModal: React.FC<Props> = ({ id }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [funcionario, setFuncionario] = useState<Funcionario | null>(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/funcionarios/${id}`)
+      .then((response) => response.json())
+      .then((data) => setFuncionario(data))
+      .catch((error) => console.log(error));
+  }, [id]);
+
+  if (!funcionario) {
+    return null;
+  }
 
   return (
-    <div className={styles.overlay} onClick={props.onClose}>
-      <div className={styles.formContainer} onClick={(e) => e.stopPropagation()}>
-      <div className={styles.criar__titulo} ><h1 className={styles.formTitle}>Dados do funcionário</h1></div>
-      <form className={styles.form} >
-        <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Nome</label>
-          <input type="text" className={styles.formInput} placeholder='Nome' />
-        </div>
-        <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Email</label>
-          <input type="email" className={styles.formInput} placeholder='Endereço de email' />
-        </div>
-        <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Aniversário</label>
-          <input type="date" className={styles.formInput} placeholder='Aniversário' />
-        </div>
-        <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Cargo</label>
-          <input type="text" className={styles.formInput} placeholder='Cargo' />
-        </div>
-        <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Salário</label>
-          <input type="text" className={styles.formInput} placeholder='Salário' />
-        </div>
-      </form>
-    </div>
-    </div>
+    <>
+      <button onClick={onOpen} className={styles.viewAdmin}>
+        Visualizar
+      </button>
+
+      <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose} motionPreset="slideInBottom">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Detalhes do funcionário</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <FormControl>
+              <FormLabel>Nome</FormLabel>
+              <Input type="text" value={funcionario.name} isReadOnly />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Email</FormLabel>
+              <Input type="email" value={funcionario.email} isReadOnly />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Aniversário</FormLabel>
+              <Input type="text" value={funcionario.aniversario} isReadOnly />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Cargo</FormLabel>
+              <Input type="text" value={funcionario.cargo} isReadOnly />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Salário</FormLabel>
+              <Input type="number" value={funcionario.salario} isReadOnly />
+            </FormControl>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Fechar
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
+
+export default VisualizarModal;

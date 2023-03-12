@@ -324,6 +324,17 @@ export const jogosAguardados = [
     categories: ['Ação', 'Hack and Slash', 'RPG', 'Ficção']
   },
   {
+    imageUrl: "/images/outlast.jpg",
+    nomePop: "The Outlast Trials",
+    description: "Red Barrels convida você a experimentar o terror entorpecente, desta vez com amigos. Quer você passe pelos testes sozinho ou em equipe, se sobreviver o suficiente e concluir a terapia, Murkoff ficará feliz em deixá-lo partir ... mas você será o mesmo?",
+    releaseDate: 'Em breve',
+    alt: 'Imagem do jogo The Outlast Trials',
+    price: 'R$: Não Divulgado',
+    devices: [<AiFillWindows />],
+    developer: 'Red Barrels',
+    categories: ['Terror', 'Primeira Pessoa', 'Cooperativo', 'Ação']
+  },
+  {
     imageUrl: "/images/starfield.jpg",
     nomePop: "Starfield",
     description: "Starfield é um futuro jogo eletrônico de RPG de ação e ficção em desenvolvimento pela Bethesda Game Studios, publicado pela Bethesda Softworks e distribuído pela Microsoft.",
@@ -367,6 +378,65 @@ export const jogosAguardados = [
     developer: 'Square Enix',
     categories: ['Ação', 'Aventura', 'RPG', 'Hack and Slash']
   },
+];
+
+export const atualizadosRecentemente = [
+  {
+    imageUrl: '/images/pathfinder.jpg',
+    price: 'R$: 149,99',
+    description: 'Uma atualização 2.1.0u está ativa. O DLC Last Sarkorians também está disponível. Hora de aprender a nova armadilha.',
+    name: 'Pathfinder: Wrath of the Righteous',
+    gameInformation: 'Jogo Base - Grande Atualização'
+  },
+  {
+    imageUrl: '/images/callisto3840.jpg',
+    price: 'R$: 249,90',
+    description: 'Uma visão desafiadora da experiência de terror e sobrevivência do Protocolo Callisto, destinada a levá-lo aos seus limites, o modo Hardcore não é para os fracos de coração.',
+    name: 'The Callisto Protocol',
+    gameInformation: 'Jogo Base - Grande Atualização'
+  },
+  {
+    imageUrl: '/images/rainbowsixsiege3840.png',
+    price: 'R$: 59,99',
+    description: 'Comemore o início do 8º ano de Rainbow Six Siege com a melhor oferta de passes de batalha que você pode obter o ano todo. O Passe do Ano 8 vem com todos os quatro Passes de Batalha do Ano 8, 4 novos Operadores e muito mais.',
+    name: 'Rainbow Six Siege',
+    gameInformation: 'Jogo Base - Grande Atualização'
+  },
+  {
+    imageUrl: '/images/eldenring3840.jpg',
+    price: 'R$: 249,90',
+    description: 'Uma expansão futura para ELDEN RING, Shadow of the Erdtree, está atualmente em desenvolvimento.',
+    name: 'Elden Ring',
+    gameInformation: 'Jogo Base - Grande Atualização'
+  },
+  {
+    imageUrl: '/images/huntshowdown3840.jpg',
+    price: 'R$: 54,78',
+    description: 'Esta nova atualização de Hunt: Showdown inclui um novo tutorial, alterações na interface do usuário, bônus individuais, novas variantes de armas e muito mais! Os Servidores de Teste estão agora AO VIVO com a Atualização 1.12!',
+    name: 'Hunt: Showdown',
+    gameInformation: 'Jogo Base - Grande Atualização'
+  },
+  {
+    imageUrl: '/images/prison3840.jpg',
+    price: 'R$: 57,99',
+    description: 'Nova atualização The JailHouse está disponível! Juntamente com Jungle Pack que é um pacote estético que situa o teu complexo numa floresta tropical profunda e verdejante. Longe da civilização, os teus guardas vão ter de gerir os seus prisioneiros enquanto lidam com os perigos da natureza.',
+    name: 'Prison Architect',
+    gameInformation: 'Jogo Base - Grande Atualização'
+  },
+  {
+    imageUrl: '/images/satisfactory3840.png',
+    price: 'R$: 59,99',
+    description: 'Os diagramas são a maior adição ao jogo que vem com a Atualização 7, mas lembre-se de que ainda não terminamos totalmente com eles. Para a atualização 7, isso é o que podemos compartilhar com você, e estamos ansiosos para receber seus comentários e o que você fizer com eles no acesso antecipado antes de finalizarmos o recurso em uma atualização futura.',
+    name: 'Satisfactory',
+    gameInformation: 'Jogo Base - Grande Atualização'
+  },
+  {
+    imageUrl: '/images/baldursgate3840.png',
+    price: 'R$: 199,99',
+    description: 'A atualização #9 é nossa atualização principal final antes do lançamento em agosto de 2023, enquanto damos os retoques finais no BG3. Esta atualização inspirada pela comunidade é uma resposta direta aos seus comentários e traz alguns dos recursos e alterações mais solicitados para Baldurs Gate 3. Aumentamos o limite de nível, renovamos nosso Sistema de Reações, desbloqueamos Voar e revelamos um jogo há muito esperado classe: Paladino, juntamente com muitas outras novas adições, ajustes e correções.',
+    name: 'Baldurs Gate 3',
+    gameInformation: 'Jogo Base - Grande Atualização'
+  }
 ];
 
 export const curiosidadesObjetos = [

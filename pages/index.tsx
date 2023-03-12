@@ -11,6 +11,7 @@ import Aguardados from './components/Aguardados'
 import Populares from './components/Populares'
 import { carouselImages } from './components/constants'
 import Carousel2 from './components/CarouselMainSlider'
+import Atualizados from './components/Atualizados'
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Categorias />
         <Destaques />
         <Aguardados />
+        <Atualizados />
         <Catalogo />
         <Curiosidades />
       </main>
