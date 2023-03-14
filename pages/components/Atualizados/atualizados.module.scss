@@ -98,125 +98,128 @@
             }
         }
 
-            .cardMiddle {
-                color: white;
+        .cardMiddle {
+            margin: 0 auto;
+            margin-top: 1rem;
+            width: 90%;
+
+            p {
+                color: rgba(245, 245, 245, 0.6);
+                line-height: 20px;
+                letter-spacing: 0.2px;
+                font-size: 18px;
+                font-weight: normal;
+                height: 5rem;
                 overflow: auto;
-                font-size: 20px;
-                margin: 0 auto;
-                height: 7rem;
-                margin-top: 1rem;
-                width: 90%;
-    
-                p {
-                    cursor: text;
-                    padding: 2px;
-                }
-    
+                cursor: text;
+
+
                 &::-webkit-scrollbar {
                     width: 12px;
                 }
-    
+
                 &::-webkit-scrollbar-track {
                     background-color: #000F18;
                 }
-    
+
                 &::-webkit-scrollbar-thumb {
                     background-color: #fff;
                 }
-    
+
                 &::-webkit-scrollbar-thumb:hover {
                     background-color: #9e9d9d;
                 }
             }
+        }
 
-            .gameInformation {
-                width: 90%;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                height: 3rem;
+        .gameInformation {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            height: 3rem;
 
-                h1 {
-                        text-transform: uppercase;
-                        color: rgb(255, 255, 255);
-                        font-weight: 600;
-                        letter-spacing: 1px;
-                        line-height: 15px;
-                        font-family: Inter, sans-serif;
-                        cursor: text;
-                        margin-top: 1rem;
-                }
-    
-                p {
-                    text-transform: uppercase;
-                    color: rgb(155, 147, 147);
-                    font-weight: 600;
-                    letter-spacing: 1px;
-                    line-height: 15px;
-                    font-family: Inter, sans-serif;
-                    cursor: text;
-                }
-            }
-
-            .detalhes {
-                color: rgb(199, 196, 196);
-                background: radial-gradient(circle, rgba(20,35,43,1) 0%, rgba(17,31,37,1) 100%);
-                width: 90%;
-                margin: 0 auto;
+            h1 {
+                text-transform: uppercase;
+                color: rgb(255, 255, 255);
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 15px;
+                font-family: Inter, sans-serif;
+                cursor: text;
                 margin-top: 1rem;
-
-                p {
-                    cursor: pointer;
-                    padding: 5px;
-
-                    &:hover {
-                        color: rgb(219, 219, 219);
-                        background: radial-gradient(circle, rgb(33, 59, 73) 0%, rgb(19, 43, 53) 100%);
-                    }
-                }
             }
 
-            .gameBox {
-                display: flex;
-                justify-content: flex-start;
-                width: 90%;
-                margin: 0 auto;
-                margin-top: 0.65rem;
+            p {
+                text-transform: uppercase;
+                color: rgb(155, 147, 147);
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 15px;
+                font-family: Inter, sans-serif;
+                cursor: text;
+            }
+        }
 
-                .gameName {
-                    color: white;
-                    font-size: 18px;
-                    justify-self: center;
-                    align-self: center;
-                    cursor: text;
-        
-                    @media screen and (max-width: 500px) {
-                        font-size: 22px;
-                        margin-bottom: 0.5rem;
-                    }
+        .detalhes {
+            color: rgb(199, 196, 196);
+            background: radial-gradient(circle, rgba(20, 35, 43, 1) 0%, rgba(17, 31, 37, 1) 100%);
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 1rem;
+
+            p {
+                cursor: pointer;
+                padding: 5px;
+
+                &:hover {
+                    color: rgb(219, 219, 219);
+                    background: radial-gradient(circle, rgb(33, 59, 73) 0%, rgb(19, 43, 53) 100%);
                 }
-        
-                .gameInfo {
-                    display: flex;
-                    align-items: center;
-                    padding: 5px 3.5px;
-                    background-color: rgba(0, 0, 0, 0.247);
-                    border-radius: 5px;
-                }
-        
-                .gameText {
-                    color: white;
-                    font-size: 16px;
-                    margin-right: 0.8rem;
-                    margin-left: 0.2rem;
-                    cursor: text;
-                }
-    
+            }
+        }
+
+        .gameBox {
+            display: flex;
+            justify-content: flex-start;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 0.65rem;
+
+            .gameName {
+                color: white;
+                font-size: 18px;
+                justify-self: center;
+                align-self: center;
+                cursor: text;
+
                 @media screen and (max-width: 500px) {
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
+                    font-size: 22px;
+                    margin-bottom: 0.5rem;
                 }
             }
+
+            .gameInfo {
+                display: flex;
+                align-items: center;
+                padding: 5px 3.5px;
+                background-color: rgba(0, 0, 0, 0.247);
+                border-radius: 5px;
+            }
+
+            .gameText {
+                color: white;
+                font-size: 16px;
+                margin-right: 0.8rem;
+                margin-left: 0.2rem;
+                cursor: text;
+            }
+
+            @media screen and (max-width: 500px) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     }
 }

@@ -9,11 +9,11 @@ import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons
 import { destaqueDescontos } from '../constants';
 import { AiOutlineRight } from 'react-icons/ai';
 
-function applyDiscount(antigoValor: string, desconto: string) {
+export function applyDiscount(antigoValor: string, desconto: string) {
     const antigoValorNumber = parseFloat(antigoValor.replace('R$ ', '').replace(',', '.'));
     const descontoNumber = parseFloat(desconto.replace('%', ''));
     const novoValor = antigoValorNumber * (1 - descontoNumber/100);
-    return novoValor.toFixed(2);
+    return `R$ ${novoValor.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
 }
 
 export default function Destaques() {
@@ -88,7 +88,7 @@ export default function Destaques() {
                             <div className={styles.cardBottomDestaques}>
                                 <p className={styles.cardDiscountDestaques}>-{item.desconto}</p>
                                 <p className={styles.cardOldDestaques}>{item.antigoValor}</p>
-                                <p>R$ {applyDiscount(item.antigoValor, item.desconto)}</p>
+                                <p>{applyDiscount(item.antigoValor, item.desconto)}</p>
                             </div>
                         </div>
                     )

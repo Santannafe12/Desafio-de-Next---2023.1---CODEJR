@@ -1,0 +1,266 @@
+.avaliadosApp {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 6rem;
+
+    .DestaquesTop {
+        width: 96.8%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 900px) {
+            width: 90%;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+
+                .DestaquesTopIcon {
+                    transform: scale(1.02);
+                    transform: translateX(10px);
+                }
+            }
+
+            .DestaquesTopIcon {
+                color: rgb(158, 158, 158);
+                margin-left: 0.5rem;
+                font-size: 20px;
+                margin-top: 0.3rem;
+                transition: transform 0.3s;
+            }
+
+            h1 {
+                font-size: 30px;
+                color: white;
+                font-weight: 400;
+
+                @media (max-width: 700px) {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .arrowButtonsDestaques {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 0.8rem;
+
+            .prevButtonIconDestaques {
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+                transition: 0.3s;
+                opacity: 80%;
+                margin-right: 0.55rem;
+                user-select: none;
+
+                &:hover {
+                    opacity: 100%;
+                }
+            }
+
+            .nextButtonIconDestaques {
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+                transition: 0.3s;
+                opacity: 80%;
+                user-select: none;
+
+                &:hover {
+                    opacity: 100%;
+                }
+            }
+        }
+    }
+
+    .avaliadosCard {
+        width: 90%;
+        margin: 0 auto;
+
+        .avaliadosImageDiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .avaliadosImage {
+                width: 90%;
+            }
+        }
+
+        .avaliadosTitle {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.4rem;
+
+            p {
+                color: white;
+                font-size: 24px;
+                letter-spacing: 2px;
+                height: 4.5rem;
+                cursor: text;
+            }
+
+            div {
+                display: flex;
+                color: rgb(189, 188, 188);
+                gap: 0.4rem;
+            }
+        }
+
+        .avaliadosDescription {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 0.4rem;
+            margin-bottom: 0.8rem;
+
+            p {
+                color: rgba(245, 245, 245, 0.6);
+                line-height: 20px;
+                letter-spacing: 0.2px;
+                font-size: 18px;
+                font-weight: normal;
+                height: 7rem;
+                overflow: auto;
+                cursor: text;
+
+                &::-webkit-scrollbar {
+                    width: 12px;
+                }
+    
+                &::-webkit-scrollbar-track {
+                    background-color: #000F18;
+                }
+    
+                &::-webkit-scrollbar-thumb {
+                    background-color: #fff;
+                }
+    
+                &::-webkit-scrollbar-thumb:hover {
+                    background-color: #9e9d9d;
+                }
+            }
+        }
+
+        .avaliadosReviews {
+            width: 90%;
+            margin: 0 auto;
+
+            h5 {
+                color: white;
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+
+            .reviewsNumbers {
+
+                .numbersTotal {
+                    display: flex;
+                    align-items: center;
+                    background: radial-gradient(circle, rgba(177,137,17,1) 0%, rgba(133,121,7,1) 100%);
+                    padding: 10px;
+                    margin-bottom: 0.4rem;
+                    cursor: pointer;
+                    color: white;
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.301);
+                    }
+
+                    span {
+                        color: rgb(243, 245, 153);
+                        font-size: 30px;
+                        padding: 5px;
+                        background-color: rgba(255, 255, 255, 0.233);
+                        margin-right: 10px;                  
+                    }
+                }
+
+                .numbersPositive {
+                    display: flex;
+                    align-items: center;
+                    background: radial-gradient(circle, rgba(29,116,163,1) 0%, rgba(11,96,133,1) 100%);
+                    padding: 10px;
+                    margin-bottom: 0.4rem;
+                    cursor: pointer;
+                    color: white;
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.301);
+                    }
+
+                    span {
+                        color: lightblue;
+                        font-size: 30px;
+                        padding: 5px;
+                        background-color: rgba(255, 255, 255, 0.233);
+                        margin-right: 10px;
+                    }
+                }
+
+                .numbersNegative {
+                    display: flex;
+                    align-items: center;
+                    background: radial-gradient(circle, rgba(163,56,29,1) 0%, rgba(133,11,11,1) 100%);
+                    padding: 10px;
+                    margin-bottom: 0.4rem;
+                    cursor: pointer;
+                    color: white;
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.301);
+                    }
+
+                    span {
+                        color: rgb(233, 98, 35);
+                        font-size: 30px;
+                        padding: 5px;
+                        background-color: rgba(255, 255, 255, 0.233);
+                        margin-right: 10px;
+                        -webkit-transform: scaleX(-1);
+                        transform: scaleX(-1);    
+                    }
+                }
+            }
+        }
+
+        .avaliadosPrice {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 1rem;
+            font-size: 20px;
+
+                .discount {
+                    color: white;
+                    background-color: #6289EC;
+                    padding: 3px 12px 3px 12px;
+                    border-radius: 5px;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .oldPrice {
+                    color: gray;
+                    text-decoration: line-through;
+                }
+
+                .newPrice {
+                    color: white;
+                }
+        }
+    }
+}

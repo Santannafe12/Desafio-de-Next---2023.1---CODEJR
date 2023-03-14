@@ -110,17 +110,18 @@
             cursor: default;
 
             div {
-                border-bottom: solid rgb(17, 28, 53) 1px;
-                background: radial-gradient(circle, rgba(20,35,43,1) 0%, rgba(17,31,37,1) 100%);
-                opacity: 80%;
+                border-bottom: solid rgb(0, 0, 0) 1px;
+                background-color: rgb(78, 78, 78);
                 cursor: pointer;
-                color: rgb(199, 196, 196);
+                color: rgb(255, 255, 255);
                 padding: 1.5px;
 
+                p {
+                    font-size: 18px;
+                }
+
                 &:hover {
-                    opacity: 100%;
-                    color: rgb(219, 219, 219);
-                    background: radial-gradient(circle, rgb(33, 59, 73) 0%, rgb(19, 43, 53) 100%);
+                    background-color: rgb(131, 125, 125)
                 }
             }
 
