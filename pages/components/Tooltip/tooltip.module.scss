@@ -1,0 +1,92 @@
+.tooltipApp {
+    padding: 15px 15px 20px 15px;
+    width: 400px;
+
+    .tooltipName {
+        width: 100%;
+        margin: 0 auto;
+
+        p {
+            font-size: 22px;
+        }
+    }
+
+    .tooltipInfo {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        width: 100%;
+        margin: 0 auto;
+
+        span {
+            color: rgb(189, 188, 188);
+        }
+    }
+
+    .tooltipImage {
+        width: 100%;
+        margin: 0 auto;
+
+        .imageTooltip {
+            width: 100%;
+        }
+    }
+
+    .tooltipReviews {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+        background-color: rgba(75, 75, 75, 0.877);
+        margin-top: 0.4rem;
+        padding: 0 0 0 5px;
+
+        p {
+            color: rgba(255, 255, 255, 0.767);
+        }
+
+        .reviewsInfo {
+            display: flex;
+            gap: 4px;
+
+            .infoValue {
+                color: white;
+            }
+
+            .reviewValue {
+                color: lightblue;
+            }
+        }
+    }
+
+    .tooltipCategories {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 0.6rem;
+
+        .categoriesValue {
+            display: flex;
+            gap: 10px;
+
+            p {
+                background-color: rgb(126, 125, 125);
+                padding: 5px;
+                font-size: 11px;
+            }
+        }
+    }
+
+    .tooltipFriends {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 0.2rem;
+        margin-top: 0.2rem;
+
+        .friendsImage {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

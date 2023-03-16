@@ -1,17 +1,25 @@
 import Image from 'next/image'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AiOutlineRight } from 'react-icons/ai'
 import { AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai'
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
 import Slider from 'react-slick'
 import { indies } from '../constants'
+import { Tooltip } from "@chakra-ui/react";
 import { NextArrow, PrevArrow } from '../Utils'
 import styles from './indies.module.scss'
+import Tooltip1 from '../Tooltip'
 
 export default function Indies() {
     const sliderRef = useRef<Slider>(null);
     const [currentIndex, setCurrentIndex] = useState<number>(0);
-    
+    const [activeIndex, setActiveIndex] = useState(-1);
+    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+
+    const handleMouseEnter = (index: number) => {
+        setTimeoutId(setTimeout(() => setActiveIndex(index), 600));
+    };
+
     const goToNext = () => {
         sliderRef?.current?.slickNext();
     };
@@ -70,25 +78,38 @@ export default function Indies() {
                     <AiOutlineRight className={styles.AtualizadosTopIcon} />
                 </div>
                 <div className={styles.arrowButtonsAtualizados}>
-                    < IoIosArrowDropleftCircle className={styles.prevButtonIconAtualizados} onClick={goToPrev} />
-                    < IoIosArrowDroprightCircle className={styles.nextButtonIconAtualizados} onClick={goToNext} />
+                    <IoIosArrowDropleftCircle className={styles.prevButtonIconAtualizados} onClick={goToPrev} />
+                    <IoIosArrowDroprightCircle className={styles.nextButtonIconAtualizados} onClick={goToNext} />
                 </div>
             </div>
-            <Slider {...settings} ref={sliderRef} >
+            <Slider {...settings} ref={sliderRef}>
                 {indies.map((item, index) => (
-                    <div className={styles.cardAtualizados}>
+                    <div className={styles.cardAtualizados} key={index}>
                         <div className={styles.cardTop}>
-                            <Image src={item.imageUrl} alt={''} width={1920} height={1080} className={styles.PopularesImg} />
+                            <Tooltip className={styles.tooltip} placement="right" openDelay={450} label={
+                                <Tooltip1 /> }>
+                                <Image src={item.imageUrl} alt={item.alt} width={1920} height={1080} className={styles.PopularesImg} onMouseOver={() => handleMouseEnter(index)} onMouseLeave={() => setActiveIndex(-1)} />
+                            </Tooltip>
+                            {/* {activeIndex === index && (
+                                <div className={styles.tooltip}>
+                                    <></>
+                                </div>
+                            )} */}
+                        </div>
+                        <div className={styles.cardInfo}>
+                            <p>{item.info}</p>
                         </div>
                         <div className={styles.gameInformation}>
-                            <div><h1>{item.name}</h1></div>
+                            <div>
+                                <h1>{item.name}</h1>
+                            </div>
                         </div>
                         <div>
                             <div className={styles.cardBottom}>
                                 <p>{item.developer}</p>
                                 <div className={styles.cardBottomIcons}>
-                                    {item.devices.map(device => (
-                                        <span>{device}</span>
+                                    {item.devices.map((device, deviceIndex) => (
+                                        <span key={deviceIndex}>{device}</span>
                                     ))}
                                 </div>
                             </div>
@@ -99,10 +120,9 @@ export default function Indies() {
                             </div>
                         </div>
                     </div>
-                ))
-                }
-            </Slider >
-        </div >
-    )
-}
+                ))}
+            </Slider>
+        </div>
+    );
 
+}

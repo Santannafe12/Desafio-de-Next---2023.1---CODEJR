@@ -1,10 +1,9 @@
 import styles from './display.module.scss'
-import { displayBestSellers, displayMostPlayeds, displaySales } from '../constants';
+import { applyDiscount, displayBestSellers, displayMostPlayeds, displaySales } from '../constants';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import { NextArrow, PrevArrow } from '../Utils';
 import { useRef, useState } from 'react';
-import { applyDiscount } from '../Destaques';
 
 export default function Display() {
     const sliderRef = useRef<Slider>(null);

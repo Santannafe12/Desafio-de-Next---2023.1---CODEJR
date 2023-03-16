@@ -64,9 +64,9 @@ export default function Categorias() {
         {categories.map(item => (
           <div className={styles.card}>
             <div className={styles.cardTop}  >
-              <Image src={item.image} alt="" width={3072} height={2048} className={styles.CategoriasImg} quality={100} />
+              <Image src={item.imageUrl} alt="" width={3072} height={2048} className={styles.CategoriasImg} quality={100} />
               <div className={styles.cardBottom}>
-                <p className={styles.description}>{item.text}</p>
+                <p className={styles.description}>{item.categorie}</p>
               </div>
             </div>
           </div>

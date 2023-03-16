@@ -104,14 +104,13 @@
 
         .cardTitle {
             display: flex;
-            justify-content: center;
             align-items: center;
             width: 90%;
             margin: 0 auto;
 
             h1 {
                 margin-top: 1rem;
-                color: rgb(16, 213, 219);
+                color: rgb(255, 255, 255);
                 text-align: center;
                 cursor: text;
                 font-size: 30px;
@@ -119,33 +118,36 @@
         }
 
         .cardMiddle {
-            color: white;
-            overflow: auto;
-            font-size: 20px;
             margin: 0 auto;
             height: 7rem;
             margin-top: 1rem;
             width: 90%;
 
             p {
+                color: rgba(245, 245, 245, 0.6);
+                line-height: 20px;
+                letter-spacing: 0.3px;
+                font-size: 18px;
+                font-weight: normal;
+                height: 7rem;
+                overflow: auto;
                 cursor: text;
-                padding: 2px;
-            }
 
-            &::-webkit-scrollbar {
-                width: 12px;
-            }
-
-            &::-webkit-scrollbar-track {
-                background-color: #000F18;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: #fff;
-            }
-
-            &::-webkit-scrollbar-thumb:hover {
-                background-color: #9e9d9d;
+                &::-webkit-scrollbar {
+                    width: 12px;
+                }
+    
+                &::-webkit-scrollbar-track {
+                    background-color: #000F18;
+                }
+    
+                &::-webkit-scrollbar-thumb {
+                    background-color: #fff;
+                }
+    
+                &::-webkit-scrollbar-thumb:hover {
+                    background-color: #9e9d9d;
+                }
             }
         }
 
@@ -166,50 +168,34 @@
             }
         }
 
-        .gameBox {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            background: linear-gradient(129deg, rgba(142, 123, 123, 1) 30%, rgba(105, 106, 105, 1) 70%);
-            padding: 10px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        .mostPlayedPrice {
             width: 90%;
             margin: 0 auto;
-            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0.6rem;
+            font-size: 20px;
 
-            .gameName {
+
+            .discount {
                 color: white;
-                font-size: 18px;
-                justify-self: center;
-                align-self: center;
-                cursor: text;
-    
-                @media screen and (max-width: 500px) {
-                    font-size: 22px;
-                    margin-bottom: 0.5rem;
-                }
-            }
-    
-            .gameInfo {
+                background-color: #6289EC;
+                padding: 3px 12px 3px 12px;
+                border-radius: 5px;
+                text-align: center;
                 display: flex;
-                flex-direction: row;
-                align-items: center;
-                padding: 5px 3.5px;
-                background-color: rgba(0, 0, 0, 0.247);
-            }
-    
-            .gameText {
-                color: white;
-                font-size: 16px;
-                margin-right: 0.8rem;
-                margin-left: 0.2rem;
-                cursor: text;
-            }
-
-            @media screen and (max-width: 500px) {
-                flex-direction: column;
                 justify-content: center;
                 align-items: center;
+            }
+
+            .oldPrice {
+                color: gray;
+                text-decoration: line-through;
+            }
+
+            .newPrice {
+                color: white;
             }
         }
 

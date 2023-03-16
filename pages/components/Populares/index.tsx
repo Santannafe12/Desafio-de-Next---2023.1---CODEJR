@@ -4,8 +4,7 @@ import { NextArrow, PrevArrow } from "../Utils";
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
 import Image from 'next/image';
 import styles from './populares.module.scss';
-import { novidadesPopulares } from "../constants";
-import { FaShoppingCart } from "react-icons/fa";
+import { applyDiscount, novidadesPopulares } from "../constants";
 import { AiOutlineRight } from "react-icons/ai";
 
 export default function Populares() {
@@ -55,8 +54,8 @@ export default function Populares() {
     <div className={styles.PopularesApp}>
       <div className={styles.PopularesTop}>
         <div>
-        <h1>Populares entre jogadores</h1>
-        <AiOutlineRight className={styles.PopularesTopIcon}/>
+          <h1>Populares entre jogadores</h1>
+          <AiOutlineRight className={styles.PopularesTopIcon} />
         </div>
         <div className={styles.arrowButtonsPopulares}>
           < IoIosArrowDropleftCircle className={styles.prevButtonIconPopulares} onClick={goToPrev} />
@@ -69,19 +68,20 @@ export default function Populares() {
             <div className={styles.cardTop}>
               <Image src={item.imageUrl} alt={item.alt} width={1920} height={1080} className={styles.PopularesImg} quality={100} />
             </div>
-            <div className={styles.cardTitle}><h1>{item.nomePop}</h1></div>
+            <div className={styles.cardTitle}><h1>{item.name}</h1></div>
             <div className={styles.cardMiddle}>
               <p className={styles.description}>{item.description}</p>
             </div>
-            <div className={styles.gameInformationPop}>
-              <p>{item.gameInformation}</p>
-            </div>
-            <div className={styles.gameBox}>
-              <div className={styles.gameInfo}>
-                <div className={styles.gameText}>{item.price}</div>
+              <div className={styles.mostPlayedPrice}>
+                {item.discount !== '' && (
+                  <>
+                    <p className={styles.discount}>{item.discount}</p>
+                    <p className={styles.oldPrice}>{item.price}</p>
+                  </>
+                )}
+                <p className={styles.newPrice}>{item.discount !== '' ? applyDiscount(item.price, item.discount) : item.price}</p>
               </div>
             </div>
-          </div>
         ))
         }
       </Slider >

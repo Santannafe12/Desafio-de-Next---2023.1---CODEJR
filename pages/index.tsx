@@ -25,9 +25,9 @@ export default function Home() {
         <Busca />
         <Carousel images={carouselImages} />
         <Carousel2 />
-        <Populares />
-        <Categorias />
         <Destaques />
+        <Categorias />
+        <Populares />
         <Aguardados />
         <Atualizados />
         <Indies />

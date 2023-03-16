@@ -18,22 +18,22 @@ const SocialBox: React.FC<SocialBoxProps> = ({
   return (
     <div className={styles.socialBox}>
       <div className={styles.socialItem}>
-        <Image src="/images/twitter.png" alt="Twitter" width={80} height={80} className={styles.icon} />
+        <Image src="/images/icons/twitter.png" alt="Twitter" width={80} height={80} className={styles.icon} />
         <span>Twitter</span>
         <p>{twitter}</p>
       </div>
       <div className={styles.socialItem}>
-        <Image src="/images/gmail.png" alt="Instagram" width={80} height={80} className={styles.icon} />
+        <Image src="/images/icons/gmail.png" alt="Instagram" width={80} height={80} className={styles.icon} />
         <span>Email</span>
         <p>{email}</p>
       </div>
       <div className={styles.socialItem}>
-        <Image src="/images/instagram_box.png" alt="Instagram" width={80} height={80} className={styles.icon} />
+        <Image src="/images/icons/instagram_box.png" alt="Instagram" width={80} height={80} className={styles.icon} />
         <span>Instagram</span>
         <p>{instagram}</p>
       </div>
       <div className={styles.socialItem}>
-        <Image src="/images/facebook.png" alt="Facebook" width={80} height={80} className={styles.icon} />
+        <Image src="/images/icons/facebook.png" alt="Facebook" width={80} height={80} className={styles.icon} />
         <span>Facebook</span>
         <p>{facebook}</p>
       </div>

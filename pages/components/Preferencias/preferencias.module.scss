@@ -1,7 +1,7 @@
 .AtualizadosApp {
     width: 85%;
     margin: 0 auto;
-    margin-top: 4.5rem;
+    margin-top: 3rem;
 
     @media screen and (max-width: 650px) {
         margin-top: 4.5rem;
@@ -174,21 +174,32 @@
                 }
             }
 
+            .cardInfo {
+                width: 90%;
+                margin: 0 auto;
+                color: rgba(245, 245, 245, 0.6);
+                font-size: 15px;
+                margin-top: 0.5rem;
+                font-weight: 600;
+                letter-spacing: 0.4px;
+            }
+
             .gameInformation {
                 width: 90%;
                 margin: 0 auto;
                 display: flex;
-                height: 3rem;
+                margin-bottom: 1rem;
 
                 h1 {
-                        text-transform: uppercase;
-                        color: rgb(255, 255, 255);
-                        font-weight: 600;
-                        letter-spacing: 1px;
-                        line-height: 15px;
-                        font-family: Inter, sans-serif;
-                        cursor: text;
-                        margin-top: 1rem;
+                    text-transform: uppercase;
+                    color: rgb(255, 255, 255);
+                    font-weight: 600;
+                    font-size: 18px;
+                    letter-spacing: 0.8px;
+                    line-height: 20px;
+                    font-family: Inter, sans-serif;
+                    cursor: text;
+                    margin-top: 0.2rem;
                 }
     
                 p {

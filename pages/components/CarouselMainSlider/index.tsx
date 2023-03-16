@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { NextArrow, PrevArrow } from '../Utils';
 import { useRef, useState } from 'react';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
-import { carouselObjects } from '../constants';
+import { mainSlider } from '../constants';
 import { AiOutlineRight } from 'react-icons/ai';
 
 export default function CarouselMainSlider() {
@@ -66,7 +66,7 @@ export default function CarouselMainSlider() {
         </div>
       </div>
       <Slider {...settings} ref={sliderRef} >
-        {carouselObjects.map(item => (
+        {mainSlider.map(item => (
           <div className={styles.card}>
             <div className={styles.cardTopDestaques}>
               <Image src={item.imageUrl} alt={item.alt} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />

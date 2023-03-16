@@ -75,7 +75,7 @@ export default function Aguardados() {
             <div className={styles.cardTop}>
               <Image src={item.imageUrl} alt="" width={1920} height={1080} className={styles.AguardadosImg} quality={100} />
             </div>
-            <div className={styles.cardTitle}><h1>{item.nomePop}</h1></div>
+            <div className={styles.cardTitle}><h1>{item.name}</h1></div>
             <div className={styles.cardMiddle}>
               <p className={styles.cardPrice}>{item.price}</p>
               <div>

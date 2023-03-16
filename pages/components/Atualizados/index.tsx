@@ -75,7 +75,10 @@ export default function Atualizados() {
                 {atualizadosRecentemente.map(item => (
                     <div className={styles.cardAtualizados}>
                         <div className={styles.cardTop}>
-                            <Image src={item.imageUrl} alt={''} width={1920} height={1080} className={styles.PopularesImg} />
+                            <Image src={item.imageUrl} alt={item.alt} width={1920} height={1080} className={styles.PopularesImg} />
+                        </div>
+                        <div className={styles.cardInfo}>
+                            <p>{item.info}</p>
                         </div>
                         <div className={styles.gameInformation}>
                             <div><h1>{item.name}</h1></div>

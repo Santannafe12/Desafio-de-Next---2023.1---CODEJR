@@ -1,13 +1,29 @@
-.displayApp {
-    width: 85%;
-    margin: 0 auto;
+.container {
+  position: relative;
+  display: inline-block;
+}
 
-    .displayGeneral {
-        display: flex;
-        align-items: center;
-        background-color: black;
-        margin-bottom: 1rem;
-        padding: 10px;
-      }
-      
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tab {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.container:hover .tab:active {
+  opacity: 1;
+  pointer-events: auto;
 }

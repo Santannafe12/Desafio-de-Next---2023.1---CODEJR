@@ -6,15 +6,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import { NextArrow, PrevArrow } from '../Utils';
 import { useRef, useState } from 'react';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
-import { destaqueDescontos } from '../constants';
+import { applyDiscount, destaqueDescontos } from '../constants';
 import { AiOutlineRight } from 'react-icons/ai';
-
-export function applyDiscount(antigoValor: string, desconto: string) {
-    const antigoValorNumber = parseFloat(antigoValor.replace('R$ ', '').replace(',', '.'));
-    const descontoNumber = parseFloat(desconto.replace('%', ''));
-    const novoValor = antigoValorNumber * (1 - descontoNumber/100);
-    return `R$ ${novoValor.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-}
 
 export default function Destaques() {
     const sliderRef = useRef<Slider>(null);
@@ -79,16 +72,13 @@ export default function Destaques() {
                             <div className={styles.cardTopDestaques}>
                                 <Image src={item.imageUrl} alt={item.alt} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />
                             </div>
-                            <div className={styles.gameInformationDestaques}>
-                                <p>{item.gameInformation}</p>
-                            </div>
                             <div className={styles.cardMiddleDestaques}>
-                                <p>{item.nome}</p>
+                                <p>{item.name}</p>
                             </div>
                             <div className={styles.cardBottomDestaques}>
-                                <p className={styles.cardDiscountDestaques}>-{item.desconto}</p>
-                                <p className={styles.cardOldDestaques}>{item.antigoValor}</p>
-                                <p>{applyDiscount(item.antigoValor, item.desconto)}</p>
+                                <p className={styles.cardDiscountDestaques}>-{item.discount}</p>
+                                <p className={styles.cardOldDestaques}>{item.price}</p>
+                                <p>{applyDiscount(item.price, item.discount)}</p>
                             </div>
                         </div>
                     )
