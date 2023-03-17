@@ -1,42 +1,36 @@
 .tooltipApp {
     padding: 15px 15px 20px 15px;
-    width: 400px;
+
 
     .tooltipName {
-        width: 100%;
-        margin: 0 auto;
 
         p {
             font-size: 22px;
+            color: black;
         }
     }
 
     .tooltipInfo {
+        margin-top: -3px;
         display: flex;
-        justify-content: space-between;
         font-size: 12px;
-        width: 100%;
-        margin: 0 auto;
 
-        span {
-            color: rgb(189, 188, 188);
+        p {
+            color: black;
         }
     }
 
-    .tooltipImage {
-        width: 100%;
-        margin: 0 auto;
-
-        .imageTooltip {
-            width: 100%;
+    .tooltipDescription {
+            margin-top: 0.4rem;
+        p {
+            color: black;
+            font-size: 14px;
         }
     }
 
     .tooltipReviews {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        margin: 0 auto;
         background-color: rgba(75, 75, 75, 0.877);
         margin-top: 0.4rem;
         padding: 0 0 0 5px;
@@ -48,45 +42,63 @@
         .reviewsInfo {
             display: flex;
             gap: 4px;
+            color: white;
+        }
+    }
 
-            .infoValue {
-                color: white;
-            }
-
-            .reviewValue {
-                color: lightblue;
-            }
+    .tooltipDevices {
+        display: flex;
+        gap: 5px;
+        margin-top: 0.7rem;
+        span {
+            background-color: gray;
+            padding: 8px;
+            border-radius: 2px;
         }
     }
 
     .tooltipCategories {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        margin: 0 auto;
-        margin-top: 0.6rem;
+        margin-top: 0.4rem;
+
+        p {
+            color: black;
+            font-size: 14px;
+        }
 
         .categoriesValue {
             display: flex;
-            gap: 10px;
+            gap: 5px;
 
             p {
                 background-color: rgb(126, 125, 125);
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
                 padding: 5px;
-                font-size: 11px;
+                font-size: 10px;
+                color: white;
             }
         }
     }
 
     .tooltipFriends {
-        width: 100%;
-        margin: 0 auto;
         margin-bottom: 0.2rem;
-        margin-top: 0.2rem;
+        margin-top: 0.4rem;
+
+        p {
+            color: black;
+        }
 
         .friendsImage {
             display: flex;
-            justify-content: space-between;
+            gap: 5px;
+
+            .friendImage {
+                border: solid gray 2px;
+            }
         }
     }
 }

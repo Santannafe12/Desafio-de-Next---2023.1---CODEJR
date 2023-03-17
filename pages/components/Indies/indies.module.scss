@@ -11,6 +11,7 @@
         width: 97.55%;
         margin: 0 auto;
         display: flex;
+        justify-content: space-between;
         
         @media screen and (max-width: 600px) {
             width: 90%;
@@ -19,7 +20,6 @@
         div {
             display: flex;
             align-items: center;
-            cursor: pointer;
 
             &:hover {
                 .AtualizadosTopIcon {
@@ -116,7 +116,7 @@
             width: 90%;
             margin: 0 auto;
             display: flex;
-            margin-bottom: 1rem;
+            margin-bottom: 0.4rem;
 
             h1 {
                 text-transform: uppercase;
@@ -222,6 +222,36 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+            }
+        }
+
+        .mostPlayedPrice {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+
+            .discount {
+                color: white;
+                background-color: #6289EC;
+                padding: 3px 12px 3px 12px;
+                border-radius: 5px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .oldPrice {
+                color: gray;
+                text-decoration: line-through;
+            }
+
+            .newPrice {
+                color: white;
             }
         }
     }

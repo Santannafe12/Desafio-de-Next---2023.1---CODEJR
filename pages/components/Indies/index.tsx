@@ -4,7 +4,7 @@ import { AiOutlineRight } from 'react-icons/ai'
 import { AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai'
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
 import Slider from 'react-slick'
-import { indies } from '../constants'
+import { applyDiscount, calculateValueReviews, indies } from '../constants'
 import { Tooltip } from "@chakra-ui/react";
 import { NextArrow, PrevArrow } from '../Utils'
 import styles from './indies.module.scss'
@@ -14,10 +14,13 @@ export default function Indies() {
     const sliderRef = useRef<Slider>(null);
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [activeIndex, setActiveIndex] = useState(-1);
-    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
-    const handleMouseEnter = (index: number) => {
-        setTimeoutId(setTimeout(() => setActiveIndex(index), 600));
+    const handleMouseEnter = (index: any) => {
+        setActiveIndex(index);
+    };
+
+    const handleMouseLeave = () => {
+        setActiveIndex(-1);
     };
 
     const goToNext = () => {
@@ -84,17 +87,33 @@ export default function Indies() {
             </div>
             <Slider {...settings} ref={sliderRef}>
                 {indies.map((item, index) => (
-                    <div className={styles.cardAtualizados} key={index}>
+                    <div className={styles.cardAtualizados}
+                        key={index}
+                        onMouseEnter={() => handleMouseEnter(index)}
+                        onMouseLeave={handleMouseLeave}>
                         <div className={styles.cardTop}>
-                            <Tooltip className={styles.tooltip} placement="right" openDelay={450} label={
-                                <Tooltip1 /> }>
-                                <Image src={item.imageUrl} alt={item.alt} width={1920} height={1080} className={styles.PopularesImg} onMouseOver={() => handleMouseEnter(index)} onMouseLeave={() => setActiveIndex(-1)} />
+                            <Tooltip
+                                className={styles.tooltip}
+                                hasArrow={true}
+                                placement="right"
+                                maxW="350px"
+                                closeDelay={120}
+                                openDelay={450}
+                                background="linear-gradient(132deg, rgba(186,245,246,1) 0%, rgba(171,218,235,1) 100%)"
+                                label={
+                                    <Tooltip1
+                                        name={item.name}
+                                        releaseDate={item.releaseDate}
+                                        description={item.description}
+                                        totalReviews={item.totalReviews}
+                                        positiveReviews={item.positiveReviews}
+                                        valueReviews={calculateValueReviews(item.positiveReviews)}
+                                        categories={item.categories}
+                                        devices={item.devices}
+                                        friends={item.friends}
+                                    />}>
+                                <Image src={item.imageUrl} alt={item.alt} width={1920} height={1080} className={styles.PopularesImg} />
                             </Tooltip>
-                            {/* {activeIndex === index && (
-                                <div className={styles.tooltip}>
-                                    <></>
-                                </div>
-                            )} */}
                         </div>
                         <div className={styles.cardInfo}>
                             <p>{item.info}</p>
@@ -114,10 +133,14 @@ export default function Indies() {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.gameBox}>
-                            <div className={styles.gameInfo}>
-                                <div className={styles.gameText}>{item.price}</div>
-                            </div>
+                        <div className={styles.mostPlayedPrice}>
+                            {item.discount !== '' && (
+                                <>
+                                    <p className={styles.discount}>{item.discount}</p>
+                                    <p className={styles.oldPrice}>{item.price}</p>
+                                </>
+                            )}
+                            <p className={styles.newPrice}>{item.discount !== '' ? applyDiscount(item.price, item.discount) : item.price}</p>
                         </div>
                     </div>
                 ))}
