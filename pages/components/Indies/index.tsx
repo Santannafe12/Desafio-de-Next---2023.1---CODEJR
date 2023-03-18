@@ -94,12 +94,12 @@ export default function Indies() {
                         <div className={styles.cardTop}>
                             <Tooltip
                                 className={styles.tooltip}
-                                hasArrow={true}
                                 placement="right"
                                 maxW="350px"
                                 closeDelay={120}
-                                openDelay={450}
-                                background="linear-gradient(132deg, rgba(186,245,246,1) 0%, rgba(171,218,235,1) 100%)"
+                                openDelay={380}
+                                background="gainsboro"
+                                hasArrow={true}
                                 label={
                                     <Tooltip1
                                         name={item.name}
@@ -136,7 +136,7 @@ export default function Indies() {
                         <div className={styles.mostPlayedPrice}>
                             {item.discount !== '' && (
                                 <>
-                                    <p className={styles.discount}>{item.discount}</p>
+                                    <p className={styles.discount}>-{item.discount}</p>
                                     <p className={styles.oldPrice}>{item.price}</p>
                                 </>
                             )}

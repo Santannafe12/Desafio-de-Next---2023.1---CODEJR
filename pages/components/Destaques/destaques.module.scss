@@ -8,7 +8,7 @@
 }
 
   .DestaquesTop {
-    width: 98%;
+    width: 95%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -108,7 +108,7 @@
       margin-top: 1rem;
 
       .DestaquesImg {
-        width: 90%;
+        width: 80%;
         height: 90%;
         margin: 0 auto;
         cursor: pointer;
@@ -121,28 +121,39 @@
       }
     }
 
-    .cardMiddleDestaques {
-      display: flex;
-      width: 90%;
+    .cardInfo {
+      width: 80%;
       margin: 0 auto;
-      align-items: center;
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-
+      
       p {
-        color: white;
-        font-size: 22px;
-        cursor: text;
+          color: rgba(245, 245, 245, 0.6);
+          font-size: 18px;
+          margin-top: 0.5rem;
+          font-weight: 600;
+          letter-spacing: 0.4px;
+          cursor: text;
       }
+  }
+
+  .cardTitle {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -5px;
+
+    h1 {
+        color: rgb(255, 255, 255);
+        cursor: text;
+        font-size: 26px;
+        letter-spacing: 0.4px;
     }
+}
 
     .cardBottomDestaques {
       display: flex;
       justify-content: space-between;
-      width: 90%;
+      width: 80%;
       margin: 0 auto;
       align-items: center;
-      padding: 5px;
       margin-top: 1rem;
 
       p {

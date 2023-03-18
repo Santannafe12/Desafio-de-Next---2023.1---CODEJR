@@ -1,9 +1,11 @@
+import { Tooltip } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import { AiOutlineRight } from 'react-icons/ai';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
 import Slider from 'react-slick';
-import { indies, preferencias } from '../constants';
+import { applyDiscount, calculateValueReviews, indies, preferencias } from '../constants';
+import Tooltip1 from '../Tooltip';
 import { NextArrow, PrevArrow } from '../Utils';
 import styles from './preferencias.module.scss'
 
@@ -77,7 +79,28 @@ export default function Preferencias() {
                 {preferencias.map(item => (
                     <div className={styles.cardAtualizados}>
                         <div className={styles.cardTop}>
-                            <Image src={item.imageUrl} alt={''} width={1920} height={1080} className={styles.PopularesImg} />
+                            <Tooltip
+                                className={styles.tooltip}
+                                placement="right"
+                                maxW="350px"
+                                closeDelay={120}
+                                openDelay={380}
+                                background="gainsboro"
+                                hasArrow={true}
+                                label={
+                                    <Tooltip1
+                                        name={item.name}
+                                        releaseDate={item.releaseDate}
+                                        description={item.description}
+                                        totalReviews={item.totalReviews}
+                                        positiveReviews={item.positiveReviews}
+                                        valueReviews={calculateValueReviews(item.positiveReviews)}
+                                        categories={item.categories}
+                                        devices={item.devices}
+                                        friends={item.friends}
+                                    />}>
+                                <Image src={item.imageUrl} alt={item.alt} width={1920} height={1080} className={styles.PopularesImg} />
+                            </Tooltip>
                         </div>
                         <div className={styles.cardInfo}>
                             <p>{item.info}</p>
@@ -92,10 +115,14 @@ export default function Preferencias() {
                                 ))}
                             </div>
                         </div>
-                        <div className={styles.gameBox}>
-                            <div className={styles.gameInfo}>
-                                <div className={styles.gameText}>{item.price}</div>
-                            </div>
+                        <div className={styles.mostPlayedPrice}>
+                            {item.discount !== '' && (
+                                <>
+                                    <p className={styles.discount}>-{item.discount}</p>
+                                    <p className={styles.oldPrice}>{item.price}</p>
+                                </>
+                            )}
+                            <p className={styles.newPrice}>{item.discount !== '' ? applyDiscount(item.price, item.discount) : item.price}</p>
                         </div>
                     </div>
                 ))

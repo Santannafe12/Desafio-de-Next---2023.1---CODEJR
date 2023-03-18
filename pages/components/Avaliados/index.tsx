@@ -4,10 +4,9 @@ import { AiOutlineRight } from 'react-icons/ai'
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle, IoMdThumbsDown, IoMdThumbsUp, } from 'react-icons/io'
 import { VscPreview } from 'react-icons/vsc'
 import Slider from 'react-slick'
-import { avaliados } from '../constants'
+import { applyDiscount, avaliados } from '../constants'
 import { NextArrow, PrevArrow } from '../Utils'
 import styles from './avaliados.module.scss'
-import { applyDiscount } from '../Destaques'
 
 export default function Avaliados() {
     const sliderRef = useRef<Slider>(null);

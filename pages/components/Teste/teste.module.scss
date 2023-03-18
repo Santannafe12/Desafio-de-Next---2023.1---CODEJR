@@ -1,29 +1,148 @@
-.container {
+.carouselApp {
+  width: 80%;
+  height: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel {
   position: relative;
-  display: inline-block;
-}
-
-.image {
-  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+
+  .carouselArrowLeft, .carouselArrowRight {
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: rgb(160, 160, 160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .carouselArrowLeft {
+    left: 25px;
+  }
+
+  .carouselArrowRight {
+    right: 25px;
+  }
+
+  .carouselPagination {
+    position: absolute;
+    bottom: 5px;
+    left: 25%;
+    transform: translate(-50%, 0);
+
+    .carouselDots {
+      height: 10px;
+      width: 10px;
+      background-color: white;
+      border-radius: 50%;
+      display: inline-block;
+      margin-left: 10px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    .carouselDotsActive {
+      background-color: steelblue;
+    }
+  } 
 }
 
-.tab {
+.carouselCard {
+  display: flex;
+  flex: 1;
   position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #000;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease-in-out;
+  transform: scale(0.8);
+  transition: 0.5s ease-in-out;
 }
 
-.container:hover .tab:active {
+.carouselCardActive {
   opacity: 1;
-  pointer-events: auto;
+  transform: scale(1);
+  pointer-events: visible;
+}
+
+.carouselImg {
+  width: 100%;
+  object-fit: cover;
+}
+
+.carouselInfo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.301);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 30px;
+
+  .carouselDescription {
+    width: 30%;
+  }
+
+  .carouselPriceText {
+    margin-top: 2rem;
+    font-size: 18px;
+  }
+
+  .carouselButtons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.4rem;
+
+    button {
+      padding: 14px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .buttonPurchase {
+      background-color: white;
+      color: black;
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.822);
+      }
+    }
+
+    .buttonWishlist {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: 0.6rem;
+      color: white;
+      transition: 0.45s;
+      font-size: 18px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.459);
+        transition: 0.45s;
+      }
+
+    }
+  }
+
+  p {
+    color: white;
+  }
 }

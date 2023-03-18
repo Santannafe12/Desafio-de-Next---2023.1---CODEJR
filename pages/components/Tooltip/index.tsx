@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { indies } from '../constants';
+import { IoMdThumbsUp } from 'react-icons/io';
 import styles from './tooltip.module.scss'
 
 type Tooltip1Props = {
@@ -30,22 +30,22 @@ export default function Tooltip1({ name, releaseDate, totalReviews, positiveRevi
             <div className={styles.tooltipReviews}>
                 <p>Análise de usuários:</p>
                 <div className={styles.reviewsInfo}>
-                    <p className={styles.infoValue} style={{ color: valueReviews === 'Negativas' ? 'red' : valueReviews === 'Neutras' ? 'yellow' : '#0bb3c9' }}>
+                    <p className={styles.infoValue} style={{ color: valueReviews === 'Negativas' ? 'red' : valueReviews === 'Neutras' ? 'goldenrod' : '#0bb3c9' }}>
                         {valueReviews}
                     </p>
                     <p className={styles.reviewValue}>({totalReviews})</p>
                 </div>
             </div>
             <div className={styles.tooltipDevices}>
-                    {devices.map(item => (
+                {devices.map(item => (
                     <span>{item}</span>
-                    ))}
-            </div>            
+                ))}
+            </div>
             <div className={styles.tooltipCategories}>
                 <p>Categorias:</p>
                 <div className={styles.categoriesValue}>
                     {categories.map(item => (
-                    <p>{item}</p>
+                        <p>{item}</p>
                     ))}
                 </div>
             </div>
@@ -53,8 +53,14 @@ export default function Tooltip1({ name, releaseDate, totalReviews, positiveRevi
                 <p>3 amigos possuem este jogo:</p>
                 <div className={styles.friendsImage}>
                     {friends.map(item => (
-                        <Image className={styles.friendImage} src={item} alt={''} width={40} height={40}/>
+                        <Image className={styles.friendImage} src={item} alt={''} width={40} height={40} />
                     ))}
+                </div>
+                <div className={styles.tooltipFriendsReview}>
+                    <div>
+                    <IoMdThumbsUp className={styles.friendsReviewIcon}/>
+                    </div>
+                    <p>1 amigo recomenda esse jogo</p>
                 </div>
             </div>
         </div>

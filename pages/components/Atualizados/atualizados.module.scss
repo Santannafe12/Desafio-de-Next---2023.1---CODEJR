@@ -16,7 +16,10 @@
         div {
             display: flex;
             align-items: center;
-            cursor: pointer;
+
+            h1 {
+                cursor: pointer;
+            }
 
             &:hover {
                 .AtualizadosTopIcon {
@@ -190,46 +193,33 @@
             }
         }
 
-        .gameBox {
-            display: flex;
-            justify-content: flex-start;
+        .mostPlayedPrice {
             width: 90%;
             margin: 0 auto;
-            margin-top: 0.65rem;
+            margin-top: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.8rem;
 
-            .gameName {
+            .discount {
                 color: white;
-                font-size: 18px;
-                justify-self: center;
-                align-self: center;
-                cursor: text;
-
-                @media screen and (max-width: 500px) {
-                    font-size: 22px;
-                    margin-bottom: 0.5rem;
-                }
-            }
-
-            .gameInfo {
-                display: flex;
-                align-items: center;
-                padding: 5px 3.5px;
-                background-color: rgba(0, 0, 0, 0.247);
+                background-color: #6289EC;
+                padding: 3px 12px 3px 12px;
                 border-radius: 5px;
-            }
-
-            .gameText {
-                color: white;
-                font-size: 16px;
-                margin-right: 0.8rem;
-                margin-left: 0.2rem;
-                cursor: text;
-            }
-
-            @media screen and (max-width: 500px) {
-                flex-direction: column;
+                text-align: center;
+                display: flex;
                 justify-content: center;
                 align-items: center;
+            }
+
+            .oldPrice {
+                color: gray;
+                text-decoration: line-through;
+            }
+
+            .newPrice {
+                color: white;
             }
         }
     }

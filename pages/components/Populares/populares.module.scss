@@ -102,18 +102,30 @@
             }
         }
 
-        .cardTitle {
-            display: flex;
-            align-items: center;
+        .cardInfo {
             width: 90%;
             margin: 0 auto;
+            
+            p {
+                color: rgba(245, 245, 245, 0.6);
+                font-size: 18px;
+                margin-top: 0.5rem;
+                font-weight: 600;
+                letter-spacing: 0.4px;
+                cursor: text;
+            }
+        }
+
+        .cardTitle {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: -5px;
 
             h1 {
-                margin-top: 1rem;
                 color: rgb(255, 255, 255);
-                text-align: center;
                 cursor: text;
-                font-size: 30px;
+                font-size: 32px;
+                letter-spacing: 0.4px;
             }
         }
 

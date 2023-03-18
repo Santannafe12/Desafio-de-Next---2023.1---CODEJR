@@ -20,8 +20,11 @@
         div {
             display: flex;
             align-items: center;
-            cursor: pointer;
 
+            h1 {
+                cursor: pointer;
+            }
+            
             &:hover {
                 .AtualizadosTopIcon {
                     transform: scale(1.02);
@@ -143,132 +146,119 @@
             color: white;
         }
 
-            .cardMiddle {
-                color: white;
-                overflow: auto;
-                font-size: 20px;
-                margin: 0 auto;
-                height: 7rem;
-                margin-top: 1rem;
-                width: 90%;
-    
-                p {
-                    cursor: text;
-                    padding: 2px;
-                }
-    
-                &::-webkit-scrollbar {
-                    width: 12px;
-                }
-    
-                &::-webkit-scrollbar-track {
-                    background-color: #000F18;
-                }
-    
-                &::-webkit-scrollbar-thumb {
-                    background-color: #fff;
-                }
-    
-                &::-webkit-scrollbar-thumb:hover {
-                    background-color: #9e9d9d;
-                }
+        .cardMiddle {
+            color: white;
+            overflow: auto;
+            font-size: 20px;
+            margin: 0 auto;
+            height: 7rem;
+            margin-top: 1rem;
+            width: 90%;
+
+            p {
+                cursor: text;
+                padding: 2px;
             }
 
-            .cardInfo {
-                width: 90%;
-                margin: 0 auto;
-                color: rgba(245, 245, 245, 0.6);
-                font-size: 15px;
-                margin-top: 0.5rem;
+            &::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: #000F18;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #fff;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: #9e9d9d;
+            }
+        }
+
+        .cardInfo {
+            width: 90%;
+            margin: 0 auto;
+            color: rgba(245, 245, 245, 0.6);
+            font-size: 15px;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+        }
+
+        .gameInformation {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            margin-bottom: 1rem;
+
+            h1 {
+                text-transform: uppercase;
+                color: rgb(255, 255, 255);
                 font-weight: 600;
-                letter-spacing: 0.4px;
+                font-size: 18px;
+                letter-spacing: 0.8px;
+                line-height: 20px;
+                font-family: Inter, sans-serif;
+                cursor: text;
+                margin-top: 0.2rem;
             }
 
-            .gameInformation {
-                width: 90%;
-                margin: 0 auto;
+            p {
+                text-transform: uppercase;
+                color: rgb(155, 147, 147);
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 15px;
+                font-family: Inter, sans-serif;
+                cursor: text;
+            }
+        }
+
+        .detalhes {
+            color: rgb(46, 117, 250);
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 1rem;
+
+            p {
+                cursor: pointer;
+
+                &:hover {
+                    color: rgb(128, 169, 245);
+                }
+            }
+        }
+
+        .mostPlayedPrice {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+
+            .discount {
+                color: white;
+                background-color: #6289EC;
+                padding: 3px 12px 3px 12px;
+                border-radius: 5px;
+                text-align: center;
                 display: flex;
-                margin-bottom: 1rem;
-
-                h1 {
-                    text-transform: uppercase;
-                    color: rgb(255, 255, 255);
-                    font-weight: 600;
-                    font-size: 18px;
-                    letter-spacing: 0.8px;
-                    line-height: 20px;
-                    font-family: Inter, sans-serif;
-                    cursor: text;
-                    margin-top: 0.2rem;
-                }
-    
-                p {
-                    text-transform: uppercase;
-                    color: rgb(155, 147, 147);
-                    font-weight: 600;
-                    letter-spacing: 1px;
-                    line-height: 15px;
-                    font-family: Inter, sans-serif;
-                    cursor: text;
-                }
+                justify-content: center;
+                align-items: center;
             }
 
-            .detalhes {
-                color: rgb(46, 117, 250);
-                width: 90%;
-                margin: 0 auto;
-                margin-top: 1rem;
-
-                p {
-                    cursor: pointer;
-
-                    &:hover {
-                        color: rgb(128, 169, 245);
-                    }
-                }
+            .oldPrice {
+                color: gray;
+                text-decoration: line-through;
             }
 
-            .gameBox {
-                display: flex;
-                justify-content: flex-start;
-                width: 90%;
-                margin: 0 auto;
-                margin-top: 0.65rem;
-
-                .gameName {
-                    color: white;
-                    font-size: 18px;
-                    justify-self: center;
-                    align-self: center;
-                    cursor: text;
-        
-                    @media screen and (max-width: 500px) {
-                        font-size: 22px;
-                        margin-bottom: 0.5rem;
-                    }
-                }
-        
-                .gameInfo {
-                    display: flex;
-                    align-items: center;
-                    padding: 5px 3.5px;
-                    background-color: rgba(0, 0, 0, 0.247);
-                    border-radius: 5px;
-                }
-        
-                .gameText {
-                    color: white;
-                    font-size: 16px;
-                    margin-right: 0.8rem;
-                    margin-left: 0.2rem;
-                    cursor: text;
-                }
-    
-                @media screen and (max-width: 500px) {
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
+            .newPrice {
+                color: white;
             }
+        }
     }
 }

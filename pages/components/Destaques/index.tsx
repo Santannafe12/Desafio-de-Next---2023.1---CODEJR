@@ -72,9 +72,12 @@ export default function Destaques() {
                             <div className={styles.cardTopDestaques}>
                                 <Image src={item.imageUrl} alt={item.alt} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />
                             </div>
-                            <div className={styles.cardMiddleDestaques}>
-                                <p>{item.name}</p>
+                            <div className={styles.cardInfo}>
+                                <p>{item.info}</p>
                             </div>
+                            <div className={styles.cardTitle}>
+              <h1>{item.name}</h1>
+            </div>
                             <div className={styles.cardBottomDestaques}>
                                 <p className={styles.cardDiscountDestaques}>-{item.discount}</p>
                                 <p className={styles.cardOldDestaques}>{item.price}</p>
