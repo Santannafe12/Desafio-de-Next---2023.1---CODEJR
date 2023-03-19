@@ -14,7 +14,6 @@ import Atualizados from './components/Atualizados'
 import Indies from './components/Indies'
 import Preferencias from './components/Preferencias'
 import Display from './components/Display'
-import Avaliados from './components/Avaliados'
 
 export default function Home() {
   return (
@@ -32,7 +31,6 @@ export default function Home() {
         <Indies />
         <Preferencias />
         <Display />
-        <Avaliados />
         <Catalogo />
         <Curiosidades />
       </main>

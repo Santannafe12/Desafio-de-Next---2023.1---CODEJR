@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import Botao from '../Botao';
+import Botao from '../BotaoLogin';
 import styles from './login.module.scss'
 
 export default function Login() {

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react';
-import { applyDiscount, carouselImage } from '../constants';
+import { applyDiscount, carousel } from '../constants';
 import styles from './carousel.module.scss'
 
 export default function Carousel() {
@@ -16,17 +16,17 @@ export default function Carousel() {
   }, [autoPlay, current]);
 
   const slideRight = () => {
-    setCurrent(current === carouselImage.length - 1 ? 0 : current + 1)
+    setCurrent(current === carousel.length - 1 ? 0 : current + 1)
   }
 
   const slideLeft = () => {
-    setCurrent(current === 0 ? carouselImage.length - 1 : current - 1)
+    setCurrent(current === 0 ? carousel.length - 1 : current - 1)
   }
 
   return (
     <div className={styles.carouselApp}>
       <div className={styles.carousel}>
-        {carouselImage.map((item, index) => (
+        {carousel.map((item, index) => (
           <div
             onMouseEnter={() => {
               setAutoPlay(false);
@@ -42,7 +42,7 @@ export default function Carousel() {
               : `${styles.carouselCard}`
             }
           >
-            <Image src={item.imageUrl} alt={''} width={2560} height={1440} className={styles.carouselImg} quality={100} />
+            <Image src={item.imageUrl} alt={''} width={2560} height={1440} className={styles.carouselImg} quality={100} priority={false}/>
             <div className={styles.carouselInfo}>
               {item.logoUrl !== '' ?
                 <div className={styles.carouselLogo}>
@@ -85,7 +85,7 @@ export default function Carousel() {
         ))}
       </div>
       <div className={styles.carouselPaginationApp}>
-        {carouselImage.map((item, index) => (
+        {carousel.map((item, index) => (
           <div
             key={index}
             className={index == current

@@ -30,28 +30,20 @@ export default function Display() {
         beforeChange: (current: number, next: number) => setCurrentIndex(next),
         responsive: [
             {
-                breakpoint: 1280,
+                breakpoint: 1650,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                 },
             },
             {
-                breakpoint: 900,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    initialSlide: 1,
-                },
-            },
-            {
-                breakpoint: 600,
+                breakpoint: 1000,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 1,
                 },
-            }
+            },
         ],
     };
 
@@ -63,13 +55,13 @@ export default function Display() {
                         <h1>Mais vendidos</h1>
                         <button>Ver mais</button>
                     </div>
-                    {displayBestSellers.map(bestSeller => (
-                        <div className={styles.info}>
+                    {displayBestSellers.map((bestSeller, index) => (
+                        <div className={styles.info} key={index} >
                             <Image src={bestSeller.imageUrl} alt={''} width={1440} height={2160} className={styles.image} />
                             <div className={styles.gameInfo}>
                                 <p className={styles.gameName}>{bestSeller.name}</p>
                                 <div className={styles.mostPlayedPrice}>
-                                {bestSeller.discount !== '' && (
+                                    {bestSeller.discount !== '' && (
                                         <>
                                             <p className={styles.discount}>{bestSeller.discount}</p>
                                             <p className={styles.oldPrice}>{bestSeller.price}</p>
@@ -78,8 +70,8 @@ export default function Display() {
                                     <p className={styles.newPrice}>{bestSeller.discount !== '' ? applyDiscount(bestSeller.price, bestSeller.discount) : bestSeller.price}</p>
                                 </div>
                                 <div className={styles.devices}>
-                                    {bestSeller.devices.map(device => (
-                                        <span>{device}</span>
+                                    {bestSeller.devices.map((device, index) => (
+                                        <span key={index}>{device}</span>
                                     ))}
                                 </div>
                             </div>
@@ -91,8 +83,8 @@ export default function Display() {
                         <h1>Mais jogados</h1>
                         <button>Ver mais</button>
                     </div>
-                    {displayMostPlayeds.map(mostPlayed => (
-                        <div className={styles.info}>
+                    {displayMostPlayeds.map((mostPlayed, index) => (
+                        <div className={styles.info} key={index} >
                             <Image src={mostPlayed.imageUrl} alt={''} width={1440} height={2160} className={styles.image} />
                             <div className={styles.gameInfo}>
                                 <p className={styles.gameName}>{mostPlayed.name}</p>
@@ -106,8 +98,8 @@ export default function Display() {
                                     <p className={styles.newPrice}>{mostPlayed.discount !== '' ? applyDiscount(mostPlayed.price, mostPlayed.discount) : mostPlayed.price}</p>
                                 </div>
                                 <div className={styles.devices}>
-                                    {mostPlayed.devices.map(device => (
-                                        <span>{device}</span>
+                                    {mostPlayed.devices.map((device, index) => (
+                                        <span key={index}>{device}</span>
                                     ))}
                                 </div>
                             </div>
@@ -119,13 +111,13 @@ export default function Display() {
                         <h1>Promoções</h1>
                         <button>Ver mais</button>
                     </div>
-                    {displaySales.map(sale => (
-                        <div className={styles.info}>
+                    {displaySales.map((sale, index) => (
+                        <div className={styles.info} key={index} >
                             <Image src={sale.imageUrl} alt={''} width={1440} height={2160} className={styles.image} />
                             <div className={styles.gameInfo}>
                                 <p className={styles.gameName}>{sale.name}</p>
                                 <div className={styles.mostPlayedPrice}>
-                                {sale.discount !== '' && (
+                                    {sale.discount !== '' && (
                                         <>
                                             <p className={styles.discount}>{sale.discount}</p>
                                             <p className={styles.oldPrice}>{sale.price}</p>
@@ -134,8 +126,8 @@ export default function Display() {
                                     <p className={styles.newPrice}>{sale.discount !== '' ? applyDiscount(sale.price, sale.discount) : sale.price}</p>
                                 </div>
                                 <div className={styles.devices}>
-                                    {sale.devices.map(device => (
-                                        <span>{device}</span>
+                                    {sale.devices.map((device, index) => (
+                                        <span key={index}>{device}</span>
                                     ))}
                                 </div>
                             </div>

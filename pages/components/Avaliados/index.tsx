@@ -63,18 +63,13 @@ export default function Avaliados() {
                 </div>
             </div>
             <Slider {...settings} ref={sliderRef}>
-                {avaliados.map(avaliado => (
-                    <div className={styles.avaliadosCard}>
+                {avaliados.map((avaliado, index) => (
+                    <div className={styles.avaliadosCard} key={index}>
                         <div className={styles.avaliadosImageDiv}>
                             <Image className={styles.avaliadosImage} src={avaliado.imageUrl} alt={''} width={1920} height={1080} quality={100} />
                         </div>
                         <div className={styles.avaliadosTitle}>
                             <p>{avaliado.name}</p>
-                            {/* <div>
-                            {avaliado.devices.map(device => (
-                                <span>{device}</span>
-                            ))}
-                            </div> */}
                         </div>
                         <div className={styles.avaliadosDescription}>
                             <p>{avaliado.description}</p>

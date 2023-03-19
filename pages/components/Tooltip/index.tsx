@@ -14,7 +14,6 @@ type Tooltip1Props = {
     friends: string[];
 }
 
-
 export default function Tooltip1({ name, releaseDate, totalReviews, positiveReviews, valueReviews, categories, description, devices, friends }: Tooltip1Props) {
     return (
         <div className={styles.tooltipApp}>
@@ -37,28 +36,28 @@ export default function Tooltip1({ name, releaseDate, totalReviews, positiveRevi
                 </div>
             </div>
             <div className={styles.tooltipDevices}>
-                {devices.map(item => (
-                    <span>{item}</span>
+                {devices.map((item, index) => (
+                    <span key={index}>{item}</span>
                 ))}
             </div>
             <div className={styles.tooltipCategories}>
                 <p>Categorias:</p>
                 <div className={styles.categoriesValue}>
-                    {categories.map(item => (
-                        <p>{item}</p>
+                    {categories.map((item, index) => (
+                        <p key={index}>{item}</p>
                     ))}
                 </div>
             </div>
             <div className={styles.tooltipFriends}>
                 <p>3 amigos possuem este jogo:</p>
                 <div className={styles.friendsImage}>
-                    {friends.map(item => (
-                        <Image className={styles.friendImage} src={item} alt={''} width={40} height={40} />
+                    {friends.map((item, index) => (
+                        <Image key={index} className={styles.friendImage} src={item} alt={''} width={40} height={40} />
                     ))}
                 </div>
                 <div className={styles.tooltipFriendsReview}>
                     <div>
-                    <IoMdThumbsUp className={styles.friendsReviewIcon}/>
+                        <IoMdThumbsUp className={styles.friendsReviewIcon} />
                     </div>
                     <p>1 amigo recomenda esse jogo</p>
                 </div>

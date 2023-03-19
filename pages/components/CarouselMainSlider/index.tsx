@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { NextArrow, PrevArrow } from '../Utils';
 import { useRef, useState } from 'react';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
-import { mainSlider } from '../constants';
+import { applyDiscount, carousel } from '../constants';
 import { AiOutlineRight } from 'react-icons/ai';
 
 export default function CarouselMainSlider() {
@@ -57,8 +57,8 @@ export default function CarouselMainSlider() {
     <div className={styles.AppDestaques}>
       <div className={styles.DestaquesTop}>
         <div>
-        <h1>Jogos em destaques</h1>
-        <AiOutlineRight className={styles.DestaquesTopIcon}/>
+          <h1>Jogos em destaques</h1>
+          <AiOutlineRight className={styles.DestaquesTopIcon} />
         </div>
         <div className={styles.arrowButtonsDestaques}>
           < IoIosArrowDropleftCircle className={styles.prevButtonIconDestaques} onClick={goToPrev} />
@@ -66,21 +66,29 @@ export default function CarouselMainSlider() {
         </div>
       </div>
       <Slider {...settings} ref={sliderRef} >
-        {mainSlider.map(item => (
-          <div className={styles.card}>
+        {carousel.map((item, index) => (
+          <div className={styles.card} key={index}>
             <div className={styles.cardTopDestaques}>
-              <Image src={item.imageUrl} alt={item.alt} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />
+              <Image src={item.imageUrl} alt={''} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />
             </div>
             <div className={styles.gameInformationDestaques}>
               <h5>{item.name}</h5>
               <p>{item.description}</p>
             </div>
-            <div className={styles.carouselPurchaseTop}>
-              <p>{item.price}</p>
-              <div className={styles.carouselPurchaseButton}>
-                <button className={styles.carouselBuyNow}>{item.purchaseButton}</button>
-                <button className={styles.carouselWishlist}>{item.wishlist}</button>
-              </div>
+            <div className={styles.carouselPrice}>
+              <p className={styles.carouselPriceText}>{item.priceText}</p>
+              {item.discount !== '' ?
+                <div className={styles.carouselDiscount}>
+                  <p className={styles.oldPrice}>{item.price}</p>
+                  <p className={`${styles.carouselPriceValue} ${styles.discountedPrice}`}>{applyDiscount(item.price, item.discount)}</p>
+                </div>
+                :
+                <p className={styles.carouselPriceValue}>{item.price}</p>
+              }
+            </div>
+            <div className={styles.carouselButtons}>
+              <button className={styles.buttonPurchase}>{item.priceButton}</button>
+              <button className={styles.buttonWishlist}>{item.wishlist}</button>
             </div>
           </div>
         ))}

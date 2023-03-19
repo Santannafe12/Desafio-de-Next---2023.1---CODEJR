@@ -61,8 +61,8 @@ export default function Categorias() {
         </div>
       </div>
       <Slider {...settings} ref={sliderRef} className={styles.categoriasSlider}>
-        {categories.map(item => (
-          <div className={styles.card}>
+        {categories.map((item, index) => (
+          <div className={styles.card} key={index}>
             <div className={styles.cardTop}  >
               <Image src={item.imageUrl} alt="" width={3072} height={2048} className={styles.CategoriasImg} quality={100} />
               <div className={styles.cardBottom}>

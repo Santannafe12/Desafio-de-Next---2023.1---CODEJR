@@ -76,8 +76,8 @@ export default function Preferencias() {
                 </div>
             </div>
             <Slider {...settings} ref={sliderRef} >
-                {preferencias.map(item => (
-                    <div className={styles.cardAtualizados}>
+                {preferencias.map((item, index) => (
+                    <div className={styles.cardAtualizados} key={index} >
                         <div className={styles.cardTop}>
                             <Tooltip
                                 className={styles.tooltip}
@@ -110,8 +110,8 @@ export default function Preferencias() {
                         </div>
                         <div>
                             <div className={styles.cardBottom}>
-                                {item.categories.map(categoria => (
-                                    <div><p>{categoria}</p></div>
+                                {item.categories.map((categoria, index) => (
+                                    <div key={index}><p>{categoria}</p></div>
                                 ))}
                             </div>
                         </div>

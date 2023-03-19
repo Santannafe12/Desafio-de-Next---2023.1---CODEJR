@@ -2,7 +2,6 @@ import { Tooltip } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import { AiOutlineRight } from 'react-icons/ai';
-import { FaShoppingCart } from 'react-icons/fa';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
 import Slider from 'react-slick';
 import { applyDiscount, atualizadosRecentemente, calculateValueReviews, novidadesPopulares } from '../constants';
@@ -74,8 +73,8 @@ export default function Atualizados() {
                 </div>
             </div>
             <Slider {...settings} ref={sliderRef} >
-                {atualizadosRecentemente.map(item => (
-                    <div className={styles.cardAtualizados}>
+                {atualizadosRecentemente.map((item, index) => (
+                    <div className={styles.cardAtualizados} key={index}>
                         <div className={styles.cardTop}>
                             <Tooltip
                                 className={styles.tooltip}

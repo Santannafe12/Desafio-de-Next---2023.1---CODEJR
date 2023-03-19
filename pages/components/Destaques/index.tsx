@@ -66,9 +66,9 @@ export default function Destaques() {
                 </div>
             </div>
             <Slider {...settings} ref={sliderRef} >
-                {destaqueDescontos.map((item) => {
+                {destaqueDescontos.map((item, index) => {
                     return (
-                        <div className={styles.card} >
+                        <div className={styles.card} key={index}>
                             <div className={styles.cardTopDestaques}>
                                 <Image src={item.imageUrl} alt={item.alt} width={1440} height={2160} className={styles.DestaquesImg} quality={100} />
                             </div>

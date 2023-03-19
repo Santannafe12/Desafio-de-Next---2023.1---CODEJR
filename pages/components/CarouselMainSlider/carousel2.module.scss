@@ -2,7 +2,7 @@
     width: 85%;
     margin: 0 auto;
     margin-bottom: 8rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
     background-color: rgb(0, 0, 0, 0.5);
 
     display: none;
@@ -128,7 +128,7 @@
                 line-height: 15px;
                 font-family: Inter, sans-serif;
                 overflow: auto;
-                height: 3rem;
+                height: 5rem;
                 cursor: text;
 
                 &::-webkit-scrollbar {
@@ -210,62 +210,87 @@
     }
 }
 
-.carouselPurchaseTop {
-    width: 90%;
-    margin: 0 auto;
+.carouselPrice {
+    margin-top: 1.6rem;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
 
-    p {
-        font-size: 18px;
-        color: rgb(233, 233, 250);
-        margin-bottom: 0.3rem;
-        margin-top: 1rem;
-        letter-spacing: 1.5px;
-        width: 80%;
-        cursor: text;
-
-        @media (max-width: 768px) {
-            font-size: 14px;
-            margin-bottom: 0.2rem;
-        }
+    @media screen and (max-width: 320px) {
+        font-size: 14px;
     }
 
-    .carouselPurchaseButton {
-        display: flex;
-        flex-direction: column;
-
-        button {
-            margin-top: 0.8rem;
-            margin-right: 1rem;
-            font-size: 20px;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 4px;
-
-            @media (max-width: 768px) {
-                font-size: 16px;
-                padding: 10px;
-            }
-        }
-
-        .carouselBuyNow {
-            transition: 0.3s;
-            background-color: white;
-
-            &:hover {
-                opacity: 80%;
-            }
-        }
-
-        .carouselWishlist {
-            background: transparent;
-            transition: 0.3s;
-            color: white;
-            margin-bottom: 1rem;
-
-            &:hover {
-                background: rgb(255, 255, 255, 0.2);
-            }
-        }
+    @media screen and (max-width: 250px) {
+        font-size: 12px;
     }
-}
+
+    .carouselPriceText {
+        color: white;
+    }
+
+    .carouselPriceValue {
+        color: white;
+    }
+
+    .carouselDiscount {
+      display: flex;
+      gap: 7px;
+
+      .oldPrice {
+        text-decoration: line-through;
+        color: gray;
+      }
+    }
+  }
+
+  .carouselButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.4rem;
+
+    button {
+      padding: 14px;
+      border-radius: 5px;
+      font-size: 16px;
+
+      @media screen and (max-width: 320px) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: 250px) {
+        font-size: 12px;
+    }
+    }
+
+    .buttonPurchase {
+      background-color: white;
+      width: 90%;
+      margin: 0 auto;
+      color: black;
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.822);
+      }
+    }
+
+    .buttonWishlist {
+      display: flex;
+      width: 90%;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-left: 0.6rem;
+      color: white;
+      transition: 0.45s;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.459);
+        transition: 0.45s;
+      }
+
+    }
+  }

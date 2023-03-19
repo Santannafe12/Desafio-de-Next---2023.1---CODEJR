@@ -1,7 +1,6 @@
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { AiOutlineRight } from 'react-icons/ai'
-import { AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai'
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
 import Slider from 'react-slick'
 import { applyDiscount, calculateValueReviews, indies } from '../constants'

@@ -53,7 +53,7 @@ const VisualizarModal: React.FC<Props> = ({ id }) => {
         <ModalOverlay />
         <ModalContent className={styles.modalContent}>
           <ModalHeader className={styles.modalHeader}>Detalhes do funcionário</ModalHeader>
-          <ModalCloseButton className={styles.modalCloseButton}/>
+          <ModalCloseButton className={styles.modalCloseButton} />
           <ModalBody className={styles.modalBody}>
             <FormControl>
               <FormLabel>Nome</FormLabel>

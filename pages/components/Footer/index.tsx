@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './footer.module.scss'
 
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.section__padding}>
@@ -33,9 +33,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-
       <hr></hr>
-
       <div className={styles.footer__below}>
         <div className={styles.footer__copyright}>
           <p>
@@ -49,11 +47,8 @@ const Footer: React.FC = () => {
           <Link href={''} className={styles.footer__links_next}><div><p>Política de Cookies</p></div></Link>
         </div>
       </div>
-
       </div>
     </footer>
   );
 };
-
-export default Footer;
 

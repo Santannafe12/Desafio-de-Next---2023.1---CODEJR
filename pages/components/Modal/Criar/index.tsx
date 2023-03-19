@@ -56,15 +56,15 @@ const CreateModal = () => {
     useEffect(() => {
         const userEdited = localStorage.getItem("userEdited");
         if (userEdited === "true") {
-          toast({
-            title: "Ação feita com sucesso!",
-            status: "success",
-            duration: 3000,
-            isClosable: true,
-          });
-          localStorage.removeItem("userEdited");
+            toast({
+                title: "Ação feita com sucesso!",
+                status: "success",
+                duration: 3000,
+                isClosable: true,
+            });
+            localStorage.removeItem("userEdited");
         }
-      }, []);
+    }, []);
 
     function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = event.target;
@@ -92,7 +92,7 @@ const CreateModal = () => {
                         <FormControl>
                             <FormLabel>Nome</FormLabel>
                             <Input
-                                name="nome"
+                                name="name"
                                 value={newFuncionario.name}
                                 onChange={handleInputChange}
                                 placeholder="Digite o nome" />

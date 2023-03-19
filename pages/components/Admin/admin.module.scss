@@ -1,3 +1,7 @@
+.tbody {
+  align-items: center;
+}
+
 .popoverFooter {
   display: flex;
   justify-content: flex-end;
@@ -65,43 +69,29 @@
   width: 100%;
   margin: 0 auto;
   overflow-x: auto;
-}
-
-.nav__titulo_botao {
-  width: 300px;
-  height: 60px;
-  background-color: rgb(38, 148, 38);
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  border: none;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-
-  &:hover {
-    transform: scale(1.02);
-  }
+  background-color: #000F18;
 }
 
 .table {
   width: 100%;
-  margin-bottom: 2rem;
   font-size: 16px;
   padding-top: 2rem;
   padding-bottom: 2rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  background-color: #ffffff;
 
+  
   @media screen and (max-width: 600px) {
     padding-left: 0;
     padding-right: 0;
   }
 
   thead {
+    background-color: #ffffff;
     tr {
+      background-color: #ffffff;
+
       .adminAction {
         text-align: center;
       }
@@ -110,13 +100,14 @@
 
   th,
   td {
+    background-color: #ffffff;
     padding: 0.5rem;
     text-align: left;
     font-size: 20px;
   }
 
   tr:nth-child(even) {
-    background-color: #e6e6e6;
+    background-color: #ffffff;
   }
 
   @media (max-width: 768px) {
@@ -125,6 +116,7 @@
     th,
     td {
       padding: 0.3rem;
+      background-color: #ffffff;
     }
   }
 }
@@ -132,6 +124,9 @@
 .crud__box {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #ffffff;
 
   button {
     padding: 10px;
@@ -168,15 +163,21 @@
   }
 }
 
-
 .nav__titulo {
-  height: 126px;
   width: 100%;
   background-color: #000F18;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+
+  @media screen and (max-width: 620px) {
+    margin-left: 10rem;
+  }
+
+  @media screen and (max-width: 400px) {
+    margin-left: 20rem;
+  }
 
   .admin_icon {
     font-size: 66px;

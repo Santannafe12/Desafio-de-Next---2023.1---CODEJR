@@ -70,8 +70,8 @@ export default function Aguardados() {
       </div>
 
       <Slider {...settings} ref={sliderRef}>
-        {jogosAguardados.map(item => (
-          <div className={styles.card}>
+        {jogosAguardados.map((item, index) => (
+          <div className={styles.card} key={index}>
             <div className={styles.cardTop}>
               <Image src={item.imageUrl} alt="" width={1920} height={1080} className={styles.AguardadosImg} quality={100} />
             </div>
@@ -89,14 +89,14 @@ export default function Aguardados() {
             <div className={styles.cardBottom}>
               <p>{item.developer}</p>
               <div className={styles.cardBottomIcons}>
-                {item.devices.map(device => (
-                  <span>{device}</span>
+                {item.devices.map((device, index) => (
+                  <span key={index}>{device}</span>
                 ))}
               </div>
             </div>
             <div className={styles.cardCategories}>
-              {item.categories.map(categorie => (
-                <p>{categorie}</p>
+              {item.categories.map((categorie, index) => (
+                <p key={index}>{categorie}</p>
               ))}
             </div>
             <div className={styles.cardAguardadosWishlist}><button>+ Lista de desejos</button></div>

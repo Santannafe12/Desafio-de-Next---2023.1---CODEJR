@@ -40,6 +40,7 @@
 
         .info {
             display: flex;
+            width: 100%;
             justify-content: space-between;
             padding: 20px;
             cursor: pointer;
@@ -54,6 +55,15 @@
             .image {
                 width: 25%;
                 border-radius: 10px;
+
+                @media screen and (max-width: 500px) {
+                    width: 40%;
+                }
+
+                
+                @media screen and (max-width: 400px) {
+                    width: 55%;
+                }
             }
 
             .gameInfo {
@@ -64,11 +74,23 @@
                 flex-direction: column;
                 padding: 5px;
 
+                @media screen and (max-width: 500px) {
+                    width: 60%;
+                }
+
+                @media screen and (max-width: 400px) {
+                    width: 45%;
+                }
+
                 .gameName {
                     color: white;
                     font-size: 22px;
                     overflow: auto;
                     margin-bottom: 0.8rem;
+
+                    @media screen and (max-width: 400px) {
+                        font-size: 10px;
+                    }
                 }
 
                 .devices {
@@ -76,6 +98,10 @@
                     color: rgb(189, 188, 188);
                     gap: 0.4rem;
                     font-size: 18px;
+
+                    @media screen and (max-width: 400px) {
+                        font-size: 12px;
+                    }
                 }
 
                 .mostPlayedPrice {
@@ -83,6 +109,11 @@
                     align-items: center;
                     gap: 10px;
                     margin-bottom: 0.8rem;
+
+                    @media screen and (max-width: 400px) {
+                        font-size: 8px;
+                        gap: 2px;
+                    }
 
                     .discount {
                         color: white;
@@ -93,6 +124,10 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+
+                        @media screen and (max-width: 400px) {
+                            padding: 2px;
+                        }
                     }
 
                     .oldPrice {

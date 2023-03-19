@@ -15,7 +15,6 @@ import {
   ModalCloseButton,
   useToast,
 } from "@chakra-ui/react";
-import { BsPlusCircleFill } from "react-icons/bs";
 
 interface Funcionario {
   aniversario: string;
@@ -51,7 +50,6 @@ const EditarModal = ({ id }: Props) => {
   }, [id]);
 
   function handleSave() {
-    localStorage.setItem("userEdited", "true");
     window.location.reload();
 
     fetch(`http://localhost:3000/funcionarios/${currentFuncionario.id}`, {
@@ -67,20 +65,6 @@ const EditarModal = ({ id }: Props) => {
       })
       .catch((error) => console.log(error));
   }
-
-  useEffect(() => {
-    const userEdited = localStorage.getItem("userEdited");
-    if (userEdited === "true") {
-      toast({
-        title: "Ação feita com sucesso!",
-        status: "success",
-        duration: 3000,
-        isClosable: true,
-      });
-      localStorage.removeItem("userEdited");
-    }
-  }, []);
-
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
@@ -105,7 +89,7 @@ const EditarModal = ({ id }: Props) => {
         <ModalOverlay />
         <ModalContent className={styles.modalContent}>
           <ModalHeader className={styles.modalHeader}>Editar Funcionário</ModalHeader>
-          <ModalCloseButton className={styles.modalCloseButton}/>
+          <ModalCloseButton className={styles.modalCloseButton} />
           <ModalBody className={styles.modalBody}>
             <FormControl>
               <FormLabel>Nome</FormLabel>

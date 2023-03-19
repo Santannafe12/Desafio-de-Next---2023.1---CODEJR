@@ -65,8 +65,8 @@ export default function Populares() {
         </div>
       </div>
       <Slider {...settings} ref={sliderRef} >
-        {novidadesPopulares.map(item => (
-          <div className={styles.card}>
+        {novidadesPopulares.map((item, index) => (
+          <div className={styles.card} key={index} >
             <div className={styles.cardTop}>
               <Tooltip
                 className={styles.tooltip}
@@ -96,9 +96,6 @@ export default function Populares() {
             </div>
             <div className={styles.cardTitle}>
               <h1>{item.name}</h1>
-            </div>
-            <div className={styles.cardMiddle}>
-              <p className={styles.description}>{item.description}</p>
             </div>
             <div className={styles.mostPlayedPrice}>
               {item.discount !== '' && (
