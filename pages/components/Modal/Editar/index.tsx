@@ -29,7 +29,7 @@ type Props = {
   id: number;
 };
 
-const EditarModal = ({ id }: Props) => {
+export default function EditarModal ({ id }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
 
@@ -149,7 +149,6 @@ const EditarModal = ({ id }: Props) => {
   );
 };
 
-export default EditarModal;
 
 
 

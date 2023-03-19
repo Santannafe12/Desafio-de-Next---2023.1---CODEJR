@@ -9,12 +9,8 @@ type SocialBoxProps = {
   facebook: string;
 };
 
-const SocialBox: React.FC<SocialBoxProps> = ({
-  twitter,
-  email,
-  instagram,
-  facebook,
-}) => {
+export default function SocialBox({ twitter, email, instagram, facebook }: SocialBoxProps) {
+
   return (
     <div className={styles.socialBox}>
       <div className={styles.socialItem}>
@@ -40,5 +36,3 @@ const SocialBox: React.FC<SocialBoxProps> = ({
     </div>
   );
 };
-
-export default SocialBox;

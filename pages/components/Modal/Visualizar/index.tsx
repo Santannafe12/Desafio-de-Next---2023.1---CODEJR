@@ -27,8 +27,8 @@ interface Funcionario {
   name: string;
   salario: number;
 }
+export default function VisualizarModal({ id }: Props) {
 
-const VisualizarModal: React.FC<Props> = ({ id }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [funcionario, setFuncionario] = useState<Funcionario | null>(null);
 
@@ -92,4 +92,3 @@ const VisualizarModal: React.FC<Props> = ({ id }) => {
   );
 };
 
-export default VisualizarModal;

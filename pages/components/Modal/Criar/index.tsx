@@ -13,8 +13,8 @@ interface Funcionario {
     name: string;
     salario: number;
 }
+export default function CreateModal() {
 
-const CreateModal = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const toast = useToast();
     const [funcionarios, setFuncionarios] = useState<Funcionario[]>([]);
@@ -140,5 +140,3 @@ const CreateModal = () => {
         </>
     )
 }
-
-export default CreateModal;
