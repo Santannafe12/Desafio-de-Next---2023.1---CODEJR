@@ -9,7 +9,6 @@ import Catalogo from './components/Catalogo'
 import Categorias from './components/Categorias'
 import Aguardados from './components/Aguardados'
 import Populares from './components/Populares'
-import { carouselImages } from './components/constants'
 import Carousel2 from './components/CarouselMainSlider'
 import Atualizados from './components/Atualizados'
 import Indies from './components/Indies'
@@ -23,7 +22,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Busca />
-        <Carousel images={carouselImages} />
+        <Carousel />
         <Carousel2 />
         <Destaques />
         <Categorias />

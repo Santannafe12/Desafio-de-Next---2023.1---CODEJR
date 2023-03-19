@@ -51,7 +51,9 @@ const EditarModal = ({ id }: Props) => {
   }, [id]);
 
   function handleSave() {
+    localStorage.setItem("userEdited", "true");
     window.location.reload();
+
     fetch(`http://localhost:3000/funcionarios/${currentFuncionario.id}`, {
       method: "PUT",
       body: JSON.stringify(currentFuncionario),
@@ -62,15 +64,23 @@ const EditarModal = ({ id }: Props) => {
       .then((response) => response.json())
       .then((data) => {
         onClose();
-        toast({
-          title: "Funcionário atualizado com sucesso!",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-        });
       })
       .catch((error) => console.log(error));
   }
+
+  useEffect(() => {
+    const userEdited = localStorage.getItem("userEdited");
+    if (userEdited === "true") {
+      toast({
+        title: "Ação feita com sucesso!",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+      localStorage.removeItem("userEdited");
+    }
+  }, []);
+
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
@@ -93,10 +103,10 @@ const EditarModal = ({ id }: Props) => {
         size="xl"
       >
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Editar Funcionário</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
+        <ModalContent className={styles.modalContent}>
+          <ModalHeader className={styles.modalHeader}>Editar Funcionário</ModalHeader>
+          <ModalCloseButton className={styles.modalCloseButton}/>
+          <ModalBody className={styles.modalBody}>
             <FormControl>
               <FormLabel>Nome</FormLabel>
               <Input
@@ -121,7 +131,6 @@ const EditarModal = ({ id }: Props) => {
                 name="aniversario"
                 value={currentFuncionario.aniversario}
                 onChange={handleInputChange}
-                type="date"
               />
             </FormControl>
             <FormControl>

@@ -162,6 +162,18 @@
                 color: rgb(255, 255, 255);
                 text-align: center;
                 cursor: text;
+
+                @media screen and (max-width: 1700px) {
+                    font-size: 24px;
+                }
+
+                @media screen and (max-width: 1400px) {
+                    font-size: 22px;
+                }
+
+                @media screen and (max-width: 1280px) {
+                    font-size: 26px;
+                }
             }
         }
 
@@ -216,7 +228,7 @@
                 color: rgba(245, 245, 245, 0.6);
                 line-height: 20px;
                 letter-spacing: 0.3px;
-                font-size: 18px;
+                font-size: 20px;
                 font-weight: normal;
                 height: 7rem;
                 overflow: auto;
@@ -238,9 +250,21 @@
                     background-color: #9e9d9d;
                 }
 
-                @media screen and (max-width: 500px) {
+                @media screen and (max-width: 1700px) {
                     font-size: 16px;
-                }
+                  }
+          
+                  @media screen and (max-width: 1400px) {
+                    font-size: 14px;
+                  }
+          
+                  @media screen and (max-width: 1280px) {
+                    font-size: 20px;
+                  }
+          
+                  @media screen and (max-width: 400px) {
+                    font-size: 14px;
+                  }
             }
         }
 

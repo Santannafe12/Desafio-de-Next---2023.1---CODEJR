@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Ana Beatriz Lana",
       "email": "ana.armond@codejr.com.br",
-      "salario": "2000",
+      "salario": 2000,
       "aniversario": "06/10",
       "cargo": "vendedor"
     },
@@ -247,14 +247,6 @@
       "salario": 1000,
       "aniversario": "06/22",
       "cargo": "vendedor"
-    },
-    {
-      "aniversario": "2023-03-17",
-      "cargo": "assessor",
-      "email": "felipe.santanna@codejr.com.br",
-      "id": 32,
-      "name": "Felipe Sant'Anna",
-      "salario": "2000"
     }
   ]
 }

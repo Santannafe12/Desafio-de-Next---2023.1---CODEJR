@@ -1,182 +1,248 @@
 .carouselApp {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 650px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  cursor: pointer;
+  margin-top: 2rem;
 
-  @media screen and (max-width: 1150px) {
+  @media screen and (max-width: 650px) {
     display: none;
   }
+}
 
-  .carousel__Box {
-    width: 80%;
-    height: auto;
+.carouselPaginationApp {
+  height: 100%;
+  max-height: 700px;
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 0.4rem;
+  position: relative;
+  
+  .carouselPaginationImage {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 20px;
 
-    @media (max-width: 1562px) {
-      margin: 0 16px;
-      height: auto;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.075);
     }
 
-    .carousel {
-      position: relative;
-      margin: 0 auto;
+    .paginationImg {
+      width: 32%;
+      margin-right: 10px;
 
-      .imageContainer {
-        position: relative;
-        transition: 0.3s;
-        height: 800px;
+      @media screen and (max-width: 1100px) {
+        width: 65%;
+      }
+  
+      @media screen and (max-width: 800px) {
+        width: 80%;
+      }
+
+      .paginationImage {
         width: 100%;
-        margin: 0 auto;
-        cursor: pointer;
-
-        @media (max-width: 1562px) {
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%;
-          }
-
-        .imagem_redonda {
-          cursor: pointer;
-          width: 100%;
-          height: 100%;
-        }
-
-        .carousel__text {
-          position: absolute;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          height: 100%;
-          color: white;
-          font-size: 2vw;
-          text-align: left;
-          padding: 20px;
-          z-index: 1;
-
-          .carouselTextTop {
-            margin-top: 10rem;
-
-            h1 {
-              font-size: 20px;
-              color: rgb(187, 187, 187);
-              margin-bottom: 1.5rem;
-              cursor: text;
-            }
-
-            p {
-              font-size: 20px;
-              width: 35%;
-              margin-bottom: 2rem;
-              font-family: 'Roboto', sans-serif;
-              font-weight: 500;
-              letter-spacing: 1.5px;
-              cursor: text;
-
-              @media screen and (max-width: 1400px) {
-                font-size: 14px;
-              }
-            }
-          }
-
-          .carouselPurchaseTop {
-
-            p {
-              font-size: 20px;
-              color: rgb(233, 233, 250);
-              margin-bottom: 0.3rem;
-              letter-spacing: 1.5px;
-              width: 80%;
-              cursor: text;
-
-              @media screen and (max-width: 1400px) {
-                font-size: 18px;
-              }
-
-            }
-
-            .carouselPurchaseButton {
-
-              button {
-                margin-right: 1rem;
-                font-size: 20px;
-                border: none;
-                cursor: pointer;
-                padding: 16px;
-                border-radius: 4px;
-
-                @media screen and (max-width: 1400px) {
-                  font-size: 14px;
-                }
-
-              }
-
-              .carouselBuyNow {
-                transition: 0.3s;
-                background-color: white;
-                color: black;
-                opacity: 80%;
-
-                &:hover {
-                  opacity: 100%;
-                }
-              }
-
-              .carouselWishlist {
-                background: transparent;
-                transition: 0.3s;
-                color: white;
-
-                &:hover {
-                  background: rgb(255, 255, 255, 0.2);
-                }
-              }
-            }
-          }
-        }
+        border-radius: 6px;
       }
     }
 
-      .indicatorsImage {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1.2rem;
-        width: 80%;
-        margin: 0 auto;
+    .paginationName {
+      width: 68%;
+      display: flex;
+      align-items: center;
+
+      @media screen and (max-width: 1100px) {
+        width: 35%;
+      }
   
-        .indicatorImage {
-          cursor: pointer;
-          transition: transform 0.2s ease;
-          margin-top: 1rem;
+      @media screen and (max-width: 800px) {
+        width: 20%;
+      }
 
-          @media screen and (max-width: 1550px) {
-            display: none;
-          }
-        }
-
-        .indicatorButton {
-          color: white;
-          background-color: rgb(122, 122, 122);
-          padding: 10px;
-          border-radius: 50%;
-          margin-top: 1.2rem;
-          margin-bottom: 3rem;
-          display: none;
-
-          @media screen and (max-width: 1550px) {
-            display: block;
-          }
-
-          &:hover {
-            background-color: rgb(185, 185, 185);
-          }
-        }
-  
-        .activeIndicatorImage {
-          opacity: 30%;
-        }
+      p {
+        color: white;
       }
     }
   }
+
+  .carouselPaginationImageActive {
+    background-color: rgba(255, 255, 255, 0.075);
+    border-radius: 20px;
+    cursor: pointer;
+  }
+}
+
+.carousel {
+  position: relative;
+  width: 84%;
+  height: 100%;
+}
+
+.carouselCard {
+  display: flex;
+  flex: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-30%, 0);
+  transition: 0.5s ease-in-out;
+}
+
+.carouselCardActive {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: visible;
+}
+
+.carouselImg {
+  width: 100%;
+  object-fit: cover;
+}
+
+.carouselInfo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.301);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 30px;
+
+  .carouselReleaseDate {
+    margin-top: 1.5rem;
+    width: 30%;
+
+    @media screen and (max-width: 1100px) {
+      width: 65%;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 80%;
+    }
+
+    p {
+      font-size: 15px;
+      text-transform: uppercase;
+      font-style: italic;
+      font-weight: 700;
+    }
+  }
+
+  .carouselItensInfo {
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    width: 30%;
+
+    @media screen and (max-width: 1100px) {
+      width: 65%;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 80%;
+    }
+
+    p {
+      font-size: 15px;
+      text-transform: uppercase;
+      font-style: italic;
+      font-weight: 700;
+    }
+  }
+
+  .carouselLogoImg {
+    width: 30%;
+    margin-left: -10px;
+
+    @media screen and (max-width: 1100px) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 70%;
+    }
+  }
+
+  .carouselDescription {
+    width: 40%;
+    margin-top: 0.2rem;
+
+    @media screen and (max-width: 1100px) {
+      width: 65%;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 80%;
+    }
+  }
+
+  .carouselPrice {
+    margin-top: 1.6rem;
+    font-size: 18px;
+    display: flex;
+    gap: 7px;
+
+    .carouselDiscount {
+      display: flex;
+      gap: 7px;
+
+      .oldPrice {
+        text-decoration: line-through;
+        color: gray;
+      }
+    }
+  }
+
+  .carouselButtons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.4rem;
+
+    button {
+      padding: 14px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .buttonPurchase {
+      background-color: white;
+      color: black;
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.822);
+      }
+    }
+
+    .buttonWishlist {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: 0.6rem;
+      color: white;
+      transition: 0.45s;
+      font-size: 18px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.459);
+        transition: 0.45s;
+      }
+
+    }
+  }
+
+  p {
+    color: white;
+  }
+}

@@ -1,7 +1,7 @@
 .AppDestaques {
   width: 85%;
   margin: 0 auto;
-  margin-top: 6rem;
+  margin-top: 4rem;
 
   @media screen and (max-width: 650px) {
     margin-top: 4.5rem;
@@ -132,19 +132,38 @@
           font-weight: 600;
           letter-spacing: 0.4px;
           cursor: text;
+
+          @media screen and (max-width: 1700px) {
+            font-size: 14px;
+          }
+          
+          @media screen and (max-width: 1280px) {
+            font-size: 18px;
+          }
       }
   }
 
   .cardTitle {
     width: 80%;
     margin: 0 auto;
-    margin-top: -5px;
 
     h1 {
         color: rgb(255, 255, 255);
         cursor: text;
-        font-size: 26px;
+        font-size: 22px;
         letter-spacing: 0.4px;
+
+        @media screen and (max-width: 1700px) {
+          font-size: 18px;
+        }
+
+        @media screen and (max-width: 1400px) {
+          font-size: 16px;
+        }
+
+        @media screen and (max-width: 1280px) {
+          font-size: 22px;
+        }
     }
 }
 
@@ -160,6 +179,18 @@
         color: white;
         font-size: 20px;
         cursor: text;
+
+        @media screen and (max-width: 1700px) {
+          font-size: 16px;
+        }
+
+        @media screen and (max-width: 1400px) {
+          font-size: 14px;
+        }
+
+        @media screen and (max-width: 1280px) {
+          font-size: 20px;
+        }
 
         @media screen and (max-width: 400px) {
           font-size: 14px;

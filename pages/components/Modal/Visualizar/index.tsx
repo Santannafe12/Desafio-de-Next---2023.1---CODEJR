@@ -51,10 +51,10 @@ const VisualizarModal: React.FC<Props> = ({ id }) => {
 
       <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose} motionPreset="slideInBottom">
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Detalhes do funcionário</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
+        <ModalContent className={styles.modalContent}>
+          <ModalHeader className={styles.modalHeader}>Detalhes do funcionário</ModalHeader>
+          <ModalCloseButton className={styles.modalCloseButton}/>
+          <ModalBody className={styles.modalBody}>
             <FormControl>
               <FormLabel>Nome</FormLabel>
               <Input type="text" value={funcionario.name} isReadOnly />

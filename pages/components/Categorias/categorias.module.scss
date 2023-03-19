@@ -1,11 +1,7 @@
 .CategoriasApp {
     width: 85%;
     margin: 0 auto;
-    margin-top: 6rem;
-
-    @media screen and (max-width: 650px) {
-        margin-top: 4.5rem;
-    }
+    margin-top: 4rem;
 
     .categoriasSlider {
         background: #0A1A22;

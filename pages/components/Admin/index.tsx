@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import styles from './admin.module.scss';
 import Link from 'next/link';
 import { AiFillHome } from 'react-icons/ai';
-import { useToast } from '@chakra-ui/react';
+import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal, useDisclosure, useToast } from '@chakra-ui/react';
 import EditarModal from '../Modal/Editar';
 import VisualizarModal from '../Modal/Visualizar';
 import CreateModal from '../Modal/Criar';
 import DeletarModal from '../Modal/Deletar';
+import { BsPlusCircleFill } from 'react-icons/bs';
 
 interface Funcionario {
   aniversario: string;
@@ -18,53 +19,69 @@ interface Funcionario {
 }
 
 export default function AdminTabela() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const toast = useToast();
   const [funcionarios, setFuncionarios] = useState<Funcionario[]>([]);
-  // const [newFuncionario, setNewFuncionario] = useState<Funcionario>({
-  //   aniversario: '',
-  //   cargo: '',
-  //   email: '',
-  //   id: 0,
-  //   name: '',
-  //   salario: 0,
-  // });
 
-  // function handleCreate() {
-  //   fetch('http://localhost:3000/funcionarios', {
-  //     method: 'POST',
-  //     body: JSON.stringify(newFuncionario),
-  //     headers: {
-  //       'Content-type': 'application/json; charset=UTF-8',
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setFuncionarios([...funcionarios, data]);
-  //       setNewFuncionario({
-  //         aniversario: '',
-  //         cargo: '',
-  //         email: '',
-  //         id: 0,
-  //         name: '',
-  //         salario: 0,
-  //       });
-  //       toast({
-  //         title: 'Funcionário criado com sucesso!',
-  //         status: 'success',
-  //         duration: 3000,
-  //         isClosable: true,
-  //       });
-  //     })
-  //     .catch((error) => console.log(error));
-  // }
+  const [currentFuncionario, setCurrentFuncionario] = useState<Funcionario>({
+    aniversario: "",
+    cargo: "",
+    email: "",
+    id: 0,
+    name: "",
+    salario: 0,
+  });
 
-  // function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-  //   const { name, value } = event.target;
-  //   setNewFuncionario((prevState) => ({
-  //     ...prevState,
-  //     [name]: value,
-  //   }));
-  // }
+  const [newFuncionario, setNewFuncionario] = useState<Funcionario>({
+    aniversario: '',
+    cargo: '',
+    email: '',
+    id: 0,
+    name: '',
+    salario: 0,
+  });
+
+  function handleCreate() {
+    fetch('http://localhost:3000/funcionarios', {
+      method: 'POST',
+      body: JSON.stringify(newFuncionario),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setFuncionarios([...funcionarios, data]);
+        setNewFuncionario({
+          aniversario: '',
+          cargo: '',
+          email: '',
+          id: 0,
+          name: '',
+          salario: 0,
+        });
+        toast({
+          title: 'Funcionário criado com sucesso!',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        });
+      })
+      .catch((error) => console.log(error));
+  }
+
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target;
+    setNewFuncionario((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  }
+
+  function handleCreateAndClose() {
+    handleCreate();
+    onClose();
+  }
 
   function handleDelete(id: number) {
     fetch(`http://localhost:3000/funcionarios/${id}`, {
@@ -97,7 +114,7 @@ export default function AdminTabela() {
           <AiFillHome className={styles.admin_icon} />
         </Link>
         <h1>Gerenciamento de Funcionários</h1>
-        <CreateModal />
+      <CreateModal />
       </nav>
       <table className={styles.table}>
         <thead>
@@ -121,11 +138,24 @@ export default function AdminTabela() {
               <td className={styles.crud__box}>
                 <VisualizarModal id={funcionario.id} />
                 <EditarModal id={funcionario.id} />
-                <button
-                  className={styles.deleteAdmin}
-                  onClick={() => handleDelete(funcionario.id)}>
-                  Excluir
-                </button>
+                <Popover>
+                  <PopoverTrigger>
+                    <Button className={styles.deleteAdmin}>Excluir</Button>
+                  </PopoverTrigger>
+                  <Portal>
+                    <PopoverContent>
+                      <PopoverArrow />
+                      <PopoverHeader className={styles.popoverHeader}><h1>Deletar Funcionário</h1></PopoverHeader>
+                      <PopoverCloseButton />
+                      <PopoverBody className={styles.popoverBody}>
+                        <p>Você tem certeza? Você não poderá desfazer essa ação.</p>
+                      </PopoverBody>
+                      <PopoverFooter className={styles.popoverFooter}>
+                        <Button onClick={() => handleDelete(funcionario.id)} colorScheme="red">Deletar</Button>
+                      </PopoverFooter>
+                    </PopoverContent>
+                  </Portal>
+                </Popover>
               </td>
             </tr>
           ))}

@@ -104,13 +104,12 @@ export default function Atualizados() {
                             <p>{item.info}</p>
                         </div>
                         <div className={styles.gameInformation}>
-                            <div><h1>{item.name}</h1></div>
+                            <div>
+                                <h1>{item.name}</h1>
+                            </div>
                         </div>
                         <div className={styles.cardMiddle}>
                             <p className={styles.description}>{item.descriptionUpdate}</p>
-                        </div>
-                        <div className={styles.detalhes}>
-                            <p>VER DETALHES DA ATUALIZAÇÃO</p>
                         </div>
                         <div className={styles.mostPlayedPrice}>
                             {item.discount !== '' && (

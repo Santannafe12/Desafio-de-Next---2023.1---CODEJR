@@ -1,63 +1,68 @@
 .carouselApp {
   width: 80%;
-  height: 800px;
+  height: 650px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.carouselPaginationApp {
+  height: 100%;
+  max-height: 700px;
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 0.4rem;
+  position: relative;
+  
+  .carouselPaginationImage {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.075);
+    }
+
+    .paginationImg {
+      width: 32%;
+      margin-right: 10px;
+
+      .paginationImage {
+        width: 100%;
+        border-radius: 6px;
+      }
+    }
+
+    .paginationName {
+      width: 68%;
+      display: flex;
+      align-items: center;
+
+      p {
+        color: white;
+      }
+    }
+  }
+
+  .carouselPaginationImageActive {
+    background-color: rgba(255, 255, 255, 0.075);
+    border-radius: 20px;
+    cursor: pointer;
+  }
 }
 
 .carousel {
   position: relative;
-  width: 100%;
+  width: 84%;
   height: 100%;
-
-  .carouselArrowLeft, .carouselArrowRight {
-    position: absolute;
-    font-size: 30px;
-    top: 50%;
-    transform: translate(0, -50%);
-    background-color: rgb(160, 160, 160);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-  }
-
-  .carouselArrowLeft {
-    left: 25px;
-  }
-
-  .carouselArrowRight {
-    right: 25px;
-  }
-
-  .carouselPagination {
-    position: absolute;
-    bottom: 5px;
-    left: 25%;
-    transform: translate(-50%, 0);
-
-    .carouselDots {
-      height: 10px;
-      width: 10px;
-      background-color: white;
-      border-radius: 50%;
-      display: inline-block;
-      margin-left: 10px;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.2);
-      }
-    }
-
-    .carouselDotsActive {
-      background-color: steelblue;
-    }
-  } 
 }
 
 .carouselCard {
@@ -70,7 +75,7 @@
   border-radius: 20px;
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.8);
+  transform: translate(-30%, 0);
   transition: 0.5s ease-in-out;
 }
 
@@ -95,13 +100,56 @@
   justify-content: center;
   padding: 40px 30px;
 
-  .carouselDescription {
+  .carouselReleaseDate {
+    margin-top: 1.5rem;
     width: 30%;
+
+    p {
+      font-size: 15px;
+      text-transform: uppercase;
+      font-style: italic;
+      font-weight: 700;
+    }
   }
 
-  .carouselPriceText {
-    margin-top: 2rem;
+  .carouselItensInfo {
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    width: 30%;
+
+    p {
+      font-size: 15px;
+      text-transform: uppercase;
+      font-style: italic;
+      font-weight: 700;
+    }
+  }
+
+  .carouselLogoImg {
+    width: 30%;
+    margin-left: -10px;
+  }
+
+  .carouselDescription {
+    width: 40%;
+    margin-top: 0.2rem;
+  }
+
+  .carouselPrice {
+    margin-top: 1.6rem;
     font-size: 18px;
+    display: flex;
+    gap: 7px;
+
+    .carouselDiscount {
+      display: flex;
+      gap: 7px;
+
+      .oldPrice {
+        text-decoration: line-through;
+        color: gray;
+      }
+    }
   }
 
   .carouselButtons {

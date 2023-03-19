@@ -67,7 +67,7 @@ export default function Preferencias() {
         <div className={styles.AtualizadosApp}>
             <div className={styles.AtualizadosTop}>
                 <div>
-                    <h1>Baseado em suas preferências (User: ' Felipe ' )</h1>
+                    <h1>Baseado em suas preferências</h1>
                     <AiOutlineRight className={styles.AtualizadosTopIcon} />
                 </div>
                 <div className={styles.arrowButtonsAtualizados}>

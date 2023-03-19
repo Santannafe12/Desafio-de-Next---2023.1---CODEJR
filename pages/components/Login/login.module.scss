@@ -38,6 +38,7 @@
         border: 1px solid #ddd;
         margin-bottom: 1rem;
         align-self: center;
+        color: black;
       }
     }
   
@@ -57,6 +58,7 @@
         margin-right: 0.5rem;
         margin-left: 0.5rem;
         transition: color 0.2s;
+        cursor: pointer;
 
         &:hover {
             color: #6289EC;

@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^2.5.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@fontsource/montserrat": "^4.5.14",
     "@next/font": "^13.1.6",
     "@types/node": "18.14.0",
     "@types/react": "18.0.28",

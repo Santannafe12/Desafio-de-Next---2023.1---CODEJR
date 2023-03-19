@@ -1,102 +1,110 @@
-import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import styles from './carousel.module.scss';
-import { carouselText, carouselPrice, purchaseButton, carouselTitle, carouselWishlist } from "../constants";
-import Slider from "react-slick";
-import { NextArrow, PrevArrow } from "../Utils";
-import CarouselMainSlider from "../CarouselMainSlider";
+import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react';
+import { applyDiscount, carouselImage } from '../constants';
+import styles from './carousel.module.scss'
 
-type Props = {
-  images: string[];
-};
+export default function Carousel() {
+  const [current, setCurrent] = useState(0)
+  const [autoPlay, setAutoPlay] = useState(true)
+  const timeoutRef = useRef<any>(null);
 
-export default function Carousel({ images }: Props) {
-  const sliderRef = useRef<Slider>(null);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-
-  const goToNext = () => {
-      sliderRef?.current?.slickNext();
-  };
-
-  const goToPrev = () => {
-      sliderRef?.current?.slickPrev();
-  };
-
-  const settings = {
-      dots: false,
-      infinite: false,
-      speed: 600,
-      slidesToShow: 5,
-      slidesToScroll: 3,
-      initialSlide: 0,
-      nextArrow: <NextArrow />,
-      prevArrow: <PrevArrow />,
-      arrows: false,
-      beforeChange: (current: number, next: number) => setCurrentIndex(next),
-      responsive: [
-          {
-              breakpoint: 1280,
-              settings: {
-                  slidesToShow: 5,
-                  slidesToScroll: 5,
-                  infinite: false,
-                  dots: false,
-              },
-          },
-      ],
-  };
-  
-  const [currentImage, setCurrentImage] = useState(0);
-
-  function handleIndicatorClick(index: number) {
-    setCurrentImage(index);
-  };
-
-  useEffect(function () {
-    const intervalId = setInterval(function () {
-      setCurrentImage((currentImage + 1) % images.length);
-    }, 8000);
-
-    return function () {
-      clearInterval(intervalId);
+  useEffect(() => {
+    timeoutRef.current = autoPlay && setTimeout(() => { slideRight() }, 8000);
+    return () => {
+      clearTimeout(timeoutRef.current);
     };
-  }, [currentImage]);
+  }, [autoPlay, current]);
+
+  const slideRight = () => {
+    setCurrent(current === carouselImage.length - 1 ? 0 : current + 1)
+  }
+
+  const slideLeft = () => {
+    setCurrent(current === 0 ? carouselImage.length - 1 : current - 1)
+  }
 
   return (
-    <div className={styles.carouselApp}>   
-    <CarouselMainSlider/>
-    <div className={styles.carousel__Box}>
+    <div className={styles.carouselApp}>
       <div className={styles.carousel}>
-        <div className={styles.imageContainer}>
-          <Image src={images[currentImage]} 
-          alt={"Imagem do carousel"} 
-          fill 
-          quality={100} 
-          sizes=" 100vw, 50vw, 33.3vw" 
-          className={styles.imagem_redonda} 
-          priority={true}/>
-          <div className={styles.carousel__text}>
-            <div className={styles.carouselTextTop}>
-              <h1>{carouselTitle[currentImage]}</h1>
-              <p>{carouselText[currentImage]}</p>
-            </div>
-            <div className={styles.carouselPurchaseTop}>
-              <p>{carouselPrice[currentImage]}</p>
-              <div className={styles.carouselPurchaseButton}>
-                <button className={styles.carouselBuyNow}>{purchaseButton[currentImage]}</button>
-                <button className={styles.carouselWishlist}>{carouselWishlist[currentImage]}</button>
+        {carouselImage.map((item, index) => (
+          <div
+            onMouseEnter={() => {
+              setAutoPlay(false);
+              clearTimeout(timeoutRef.current);
+            }}
+            onMouseLeave={() => {
+              setAutoPlay(true);
+              clearTimeout(timeoutRef.current);
+            }}
+            key={index}
+            className={index == current
+              ? `${styles.carouselCard} ${styles.carouselCardActive}`
+              : `${styles.carouselCard}`
+            }
+          >
+            <Image src={item.imageUrl} alt={''} width={2560} height={1440} className={styles.carouselImg} quality={100} />
+            <div className={styles.carouselInfo}>
+              {item.logoUrl !== '' ?
+                <div className={styles.carouselLogo}>
+                  <Image src={item.logoUrl} alt={''} width={600} height={160} quality={100} className={styles.carouselLogoImg} />
+                </div>
+                :
+                <></>
+              }
+              <div className={styles.carouselReleaseDate}>
+                <p>{item.releaseDate}</p>
               </div>
+
+              <div className={styles.carouselItensInfo}>
+                <p>{item.info1}</p>
+              </div>
+
+              <div className={styles.carouselDescription}>
+                <p>{item.description}</p>
+              </div>
+
+              <div className={styles.carouselPrice}>
+                <p className={styles.carouselPriceText}>{item.priceText}</p>
+                {item.discount !== '' ?
+                  <div className={styles.carouselDiscount}>
+                    <p className={styles.oldPrice}>{item.price}</p>
+                    <p className={`${styles.carouselPriceValue} ${styles.discountedPrice}`}>{applyDiscount(item.price, item.discount)}</p>
+                  </div>
+                  :
+                  <p className={styles.carouselPriceValue}>{item.price}</p>
+                }
+              </div>
+
+              <div className={styles.carouselButtons}>
+                <button className={styles.buttonPurchase}>{item.priceButton}</button>
+                <button className={styles.buttonWishlist}>{item.wishlist}</button>
+              </div>
+
             </div>
           </div>
-        </div>
+        ))}
       </div>
-        <div className={styles.indicatorsImage}>
-          {images.map((image, index,) => (
-            <><Image className={`${styles.indicatorImage} ${currentImage === index ? styles.activeIndicatorImage : ""}`} onClick={() => handleIndicatorClick(index)} src={image} alt={''} width={200} height={120} quality={100} />
-            <button onClick={() => handleIndicatorClick(index)} className={styles.indicatorButton}></button></>
-          ))}
-        </div>
+      <div className={styles.carouselPaginationApp}>
+        {carouselImage.map((item, index) => (
+          <div
+            key={index}
+            className={index == current
+              ? `${styles.carouselPaginationImage} ${styles.carouselPaginationImageActive}`
+              : `${styles.carouselPaginationImage}`
+            }
+            onClick={() => {
+              setCurrent(index); clearTimeout(timeoutRef.current);
+            }}
+          >
+            <div className={styles.paginationImg}>
+              <Image src={item.paginationUrl} alt={''} width={1440} height={2160} className={styles.paginationImage} />
+            </div>
+            <div className={styles.paginationName}>
+              <p>{item.name}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-    </div>
-  );
-};
+  )
+}

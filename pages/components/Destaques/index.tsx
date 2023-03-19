@@ -76,8 +76,8 @@ export default function Destaques() {
                                 <p>{item.info}</p>
                             </div>
                             <div className={styles.cardTitle}>
-              <h1>{item.name}</h1>
-            </div>
+                                <h1>{item.name}</h1>
+                            </div>
                             <div className={styles.cardBottomDestaques}>
                                 <p className={styles.cardDiscountDestaques}>-{item.discount}</p>
                                 <p className={styles.cardOldDestaques}>{item.price}</p>

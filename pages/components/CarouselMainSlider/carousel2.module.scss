@@ -7,11 +7,8 @@
 
     display: none;
 
-    @media screen and (max-width: 1150px) {
-        display: block;
-    }
-
     @media screen and (max-width: 650px) {
+        display: block;
         margin-bottom: 4rem;
     }
 

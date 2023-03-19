@@ -1,7 +1,7 @@
 .AtualizadosApp {
     width: 85%;
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 4rem;
 
     @media screen and (max-width: 650px) {
         margin-top: 4.5rem;
@@ -97,12 +97,11 @@
                 height: 90%;
                 margin: 0 auto;
                 cursor: pointer;
-                // transition: transform 0.3s ease-in-out;
+                opacity: 85%;
 
-                // &:hover {
-                //     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 1);
-                //     transform: scale(1.02);
-                // }
+                &:hover {
+                    opacity: 100%;
+                }
             }
         }
 
@@ -117,6 +116,10 @@
                 font-weight: 600;
                 letter-spacing: 0.4px;
                 cursor: text;
+
+                @media screen and (max-width: 1600px) {
+                    font-size: 13px;
+                }
             }
         }
 
@@ -136,6 +139,10 @@
                 font-family: Inter, sans-serif;
                 cursor: text;
                 margin-top: 0.2rem;
+
+                @media screen and (max-width: 1600px) {
+                    font-size: 16px;
+                }
             }
         }
 
@@ -153,11 +160,15 @@
 
             p {
                 color: rgb(126, 125, 125);
-                font-size: 20px;
+                font-size: 18px;
                 cursor: text;
 
-                @media screen and (max-width: 500px) {
+                @media screen and (max-width: 1600px) {
                     font-size: 16px;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    font-size: 14px;
                 }
             }
 

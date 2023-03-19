@@ -28,7 +28,9 @@ const CreateModal = () => {
     });
 
     function handleCreate() {
+        localStorage.setItem("userEdited", "true");
         window.location.reload();
+
         fetch('http://localhost:3000/funcionarios', {
             method: 'POST',
             body: JSON.stringify(newFuncionario),
@@ -47,15 +49,22 @@ const CreateModal = () => {
                     name: '',
                     salario: 0,
                 });
-                toast({
-                    title: 'Funcionário criado com sucesso!',
-                    status: 'success',
-                    duration: 3000,
-                    isClosable: true,
-                });
             })
             .catch((error) => console.log(error));
     }
+
+    useEffect(() => {
+        const userEdited = localStorage.getItem("userEdited");
+        if (userEdited === "true") {
+          toast({
+            title: "Ação feita com sucesso!",
+            status: "success",
+            duration: 3000,
+            isClosable: true,
+          });
+          localStorage.removeItem("userEdited");
+        }
+      }, []);
 
     function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = event.target;
@@ -68,7 +77,7 @@ const CreateModal = () => {
     function handleCreateAndClose() {
         handleCreate();
         onClose();
-      }
+    }
 
     return (
         <>
@@ -83,30 +92,34 @@ const CreateModal = () => {
                         <FormControl>
                             <FormLabel>Nome</FormLabel>
                             <Input
-                                name="name"
+                                name="nome"
                                 value={newFuncionario.name}
-                                onChange={handleInputChange} />
+                                onChange={handleInputChange}
+                                placeholder="Digite o nome" />
                         </FormControl>
                         <FormControl>
                             <FormLabel>E-mail</FormLabel>
                             <Input
                                 name="email"
                                 value={newFuncionario.email}
-                                onChange={handleInputChange} />
+                                onChange={handleInputChange}
+                                placeholder="Digite o e-mail" />
                         </FormControl>
                         <FormControl>
                             <FormLabel>Aniversário</FormLabel>
                             <Input
                                 name="aniversario"
                                 value={newFuncionario.aniversario}
-                                onChange={handleInputChange} />
+                                onChange={handleInputChange}
+                                placeholder="Digite o aniversário" />
                         </FormControl>
                         <FormControl>
                             <FormLabel>Cargo</FormLabel>
                             <Input
                                 name="cargo"
                                 value={newFuncionario.cargo}
-                                onChange={handleInputChange} />
+                                onChange={handleInputChange}
+                                placeholder="Digite o cargo" />
                         </FormControl>
                         <FormControl>
                             <FormLabel>Salário</FormLabel>
@@ -114,7 +127,8 @@ const CreateModal = () => {
                                 name="salario"
                                 type="number"
                                 value={newFuncionario.salario}
-                                onChange={handleInputChange} />
+                                onChange={handleInputChange}
+                                placeholder="Digite o salário" />
                         </FormControl>
                     </ModalBody>
                     <ModalFooter className={styles.modalFooter}>

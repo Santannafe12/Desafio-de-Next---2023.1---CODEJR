@@ -29,7 +29,7 @@ export default function Login() {
                 <Botao texto={'Iniciar Sessão'} href={'/admin'}/>
             </div>
             <div className={styles.login__cadastro}>
-                <Link href="/forgot-password"><p className={styles.login__link}>Esqueceu a senha?</p></Link>
+                <p className={styles.login__link}>Esqueceu a senha?</p>
                 <Link href="/login"><p className={styles.login__link}>Cadastrar-se</p></Link>
             </div>
         </form>
