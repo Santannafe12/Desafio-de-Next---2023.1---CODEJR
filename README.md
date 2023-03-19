@@ -1,3 +1,15 @@
+********************************************************************************************************
+
+Para o projeto funcionar corretamente, utilize 'npm run dev', 
+e também utilize o comando 'json-server --watch db.json'.
+
+O primeiro comando serve para iniciar o localhost:3005 no browser.
+O segundo comando irá rodar a API FAKE no projeto, necessário para as ações do CRUD.
+
+documentação API FAKE: https://github.com/typicode/json-server
+
+********************************************************************************************************
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
